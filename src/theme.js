@@ -17,12 +17,26 @@ const theme = createMuiTheme({
       default: "#f8f9fe",
     },
     text: {
-      primary: "#525f7f"
+      primary: "#525f7f",
     },
   },
   typography: {
     fontFamily: "Open Sans,sans-serif",
-  }
+  },
+  overrides: {
+    MuiDrawer: {
+      paper: {
+        width: "250px",
+      },
+      paperAnchorDockedLeft: {
+        borderRight: "none",
+        boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
+      },
+      docked: {
+        width: "250px",
+      },
+    },
+  },
 });
 
 export default theme;
