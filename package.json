@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "author": "Creative Tim",
   "license": "MIT",
-  "homepage": "https://demos.creative-tim.com/argon-dashboard-material-ui/",
   "description": "Material UI version of Argon Dashboard React by Creative Tim",
   "bugs": {
     "url": "https://github.com/creativetimofficial/argon-dashboard-material-ui/issues"
@@ -35,5 +34,17 @@
   },
   "optionalDependencies": {
     "typescript": "4.1.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
