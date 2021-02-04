@@ -1,11 +1,11 @@
 import React from "react";
 
 // material-ui components
-import Grid from '@material-ui/core/Grid';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemLink from '@material-ui/core/ListItemText';
+import Grid from "@material-ui/core/Grid";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemLink from "@material-ui/core/ListItemText";
 
 const Footer = () => {
   return (
