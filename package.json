@@ -1,19 +1,39 @@
 {
   "name": "create-react-app",
-  "version": "5.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "author": "Creative Tim",
+  "license": "MIT",
+  "homepage": "https://demos.creative-tim.com/argon-dashboard-material-ui/",
+  "description": "Material UI version of Argon Dashboard React by Creative Tim",
+  "bugs": {
+    "url": "https://github.com/creativetimofficial/argon-dashboard-material-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativetimofficial/argon-dashboard-material-ui.git"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
   },
   "dependencies": {
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "@material-ui/core": "next",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-scripts": "latest"
+    "@emotion/react": "11.1.4",
+    "@emotion/styled": "11.0.0",
+    "@fortawesome/fontawesome-free": "5.15.2",
+    "@material-ui/core": "4.11.3",
+    "chart.js": "2.9.4",
+    "nouislider": "14.6.3",
+    "react": "17.0.1",
+    "react-chartjs-2": "2.11.1",
+    "react-copy-to-clipboard": "5.0.3",
+    "react-datetime": "3.0.4",
+    "react-dom": "17.0.1",
+    "react-scripts": "4.0.2"
+  },
+  "optionalDependencies": {
+    "typescript": "4.1.3"
   }
 }
