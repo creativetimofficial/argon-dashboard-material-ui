@@ -7,3 +7,4 @@
 - Added React Hooks
 - Added design from Argon Dashboard React by Creative Tim
 - Added features from Argon Dashboard React by Creative Tim (such as routing system and components)
+**The TypeScript dependencies are installed only to stop console warnings on install. They are not actually used in our product. So the product is not on TypeScript!**
