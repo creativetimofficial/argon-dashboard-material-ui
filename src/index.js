@@ -1,18 +1,33 @@
-import * as React from "react";
+import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
-import App from "./App";
+
 import theme from "theme.js";
 
 import "assets/plugins/nucleo/css/nucleo.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
+import AdminLayout from "layouts/Admin.js";
+// import AuthLayout from "layouts/Auth.js";
+
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
     <CssBaseline />
-    <App />
+    <BrowserRouter>
+      <Switch>
+        <Route
+          path="/documentation"
+          render={(props) => <Documentation {...props} />}
+        />
+        <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+        {/* <Route path="/auth" render={(props) => <AuthLayout {...props} />} /> */}
+        <Redirect from="/" to="/admin/index" />
+      </Switch>
+    </BrowserRouter>
   </ThemeProvider>,
   document.querySelector("#root")
 );
