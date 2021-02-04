@@ -1,0 +1,19 @@
+{
+  "name": "create-react-app",
+  "version": "5.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@material-ui/core": "next",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest"
+  }
+}
