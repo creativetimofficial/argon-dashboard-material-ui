@@ -34,6 +34,9 @@
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.2"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "optionalDependencies": {
     "typescript": "4.1.3"
   },
