@@ -6,6 +6,7 @@ import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
+import Hidden from "@material-ui/core/Hidden";
 import Typography from "@material-ui/core/Typography";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -212,18 +213,22 @@ export default function TemporaryDrawer({ routes, logo }) {
   );
   return (
     <>
-      <Drawer variant="permanent" anchor="left" open>
-        {logo && logo.innerLink ? (
-          <Link to={logo.innerLink} className={classes.logoLinkClasses}>
-            {logoImage}
-          </Link>
-        ) : logo && logo.outterLink ? (
-          <a href={logo.outterLink} className={classes.logoLinkClasses}>
-            {logoImage}
-          </a>
-        ) : null}
-        <List classes={{ root: classes.listRoot }}>{createLinks(routes)}</List>
-      </Drawer>
+      <Hidden smDown implementation="css">
+        <Drawer variant="permanent" anchor="left" open>
+          {logo && logo.innerLink ? (
+            <Link to={logo.innerLink} className={classes.logoLinkClasses}>
+              {logoImage}
+            </Link>
+          ) : logo && logo.outterLink ? (
+            <a href={logo.outterLink} className={classes.logoLinkClasses}>
+              {logoImage}
+            </a>
+          ) : null}
+          <List classes={{ root: classes.listRoot }}>
+            {createLinks(routes)}
+          </List>
+        </Drawer>
+      </Hidden>
     </>
   );
 }
