@@ -18,7 +18,7 @@
 import React from "react";
 import { useLocation, Route, Switch, Redirect } from "react-router-dom";
 // material-ui components
-import { flexGrow } from "@material-ui/system";
+// import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
@@ -29,11 +29,13 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 
 import routes from "routes.js";
 
-// const styles = {
-//   "flex-grow": {
-//     flexGrow: 1
-//   }
-// }
+// const useStyles = makeStyles((theme) => ({
+//   listItemRoot: {
+//     width: "auto",
+//     color: "#8898aa",
+//     fontSize: ".875rem",
+//   },
+// }));
 
 const Admin = (props) => {
   const mainContent = React.useRef(null);
@@ -87,9 +89,14 @@ const Admin = (props) => {
             {getRoutes(routes)}
             <Redirect from="*" to="/admin/index" />
           </Switch>
-          <Container>
+          <Grid
+            container
+            component={Box}
+            paddingLeft="24px"
+            paddingRight="24px"
+          >
             <AdminFooter />
-          </Container>
+          </Grid>
         </Box>
       </Grid>
     </>
