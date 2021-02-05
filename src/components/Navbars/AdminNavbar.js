@@ -1,5 +1,5 @@
 import React from "react";
-import { fade, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
@@ -17,7 +17,6 @@ import Typography from "@material-ui/core/Typography";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
-import MoreIcon from "@material-ui/icons/MoreVert";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import SearchIcon from "@material-ui/icons/Search";
 
