@@ -1,7 +1,15 @@
 import React from "react";
 
+// core components
+import Header from "components/Headers/Header.js";
+
 function Dashboard() {
-  return <>Hey from Dashboard</>;
+  return (
+    <>
+      <Header />
+      Hey from Dashboard
+    </>
+  );
 }
 
 export default Dashboard;
