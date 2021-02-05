@@ -81,7 +81,7 @@ const Admin = (props) => {
             imgAlt: "...",
           }}
         />
-        <Box flexGrow="1" flexBasis="auto">
+        <Box flexGrow="1" flexBasis="auto" position="relative">
           <AdminNavbar brandText={getBrandText(location.pathname)} />
           <Switch>
             {getRoutes(routes)}
