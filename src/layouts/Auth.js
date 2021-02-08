@@ -75,7 +75,13 @@ const Auth = () => {
         <AuthNavbar />
         <AuthHeader />
         {/* Page content */}
-        <Box component={Container} marginTop="-8rem" paddingBottom="3rem">
+        <Box
+          component={Container}
+          marginTop="-8rem"
+          paddingBottom="3rem"
+          position="relative"
+          zIndex="101"
+        >
           <Box component={Grid} container justifyContent="center">
             <Switch>
               {getRoutes(routes)}
