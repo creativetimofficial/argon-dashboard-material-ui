@@ -44,6 +44,10 @@ const useStyles = makeStyles((theme) => ({
       marginRight: ".5rem",
     },
   },
+  headerImg: {
+    verticalAlign: "middle",
+    borderStyle: "none",
+  },
 }));
 
 export default function AuthNavbar() {
@@ -73,10 +77,8 @@ export default function AuthNavbar() {
               <Box
                 alt="..."
                 height="30px"
-                verticalAlign="middle"
-                borderStyle="none"
                 component="img"
-                className={classes.brandImage}
+                className={classes.headerImg}
                 src={require("assets/img/brand/argon-react-white.png").default}
               />
             </div>
