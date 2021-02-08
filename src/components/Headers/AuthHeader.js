@@ -29,7 +29,7 @@ const AuthHeader = () => {
               justifyContent="center"
               color="#fff"
             >
-              <Grid item lg="5" md="6">
+              <Grid item lg={5} md={6}>
                 <h1>Welcome!</h1>
                 <Box
                   component="p"
