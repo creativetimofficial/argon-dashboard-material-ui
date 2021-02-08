@@ -1,112 +1,135 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Link } from "react-router-dom";
 // material-ui components
-import {
-  UncontrolledCollapse,
-  NavbarBrand,
-  Navbar,
-  NavItem,
-  NavLink,
-  Nav,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+// import Badge from "@material-ui/core/Badge";
+import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
+// import Divider from "@material-ui/core/Divider";
+import Hidden from "@material-ui/core/Hidden";
+import IconButton from "@material-ui/core/IconButton";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+// import Menu from "@material-ui/core/Menu";
+// import MenuItem from "@material-ui/core/MenuItem";
+import Toolbar from "@material-ui/core/Toolbar";
+// import Typography from "@material-ui/core/Typography";
+// material-ui icons
+// import AccountCircle from "@material-ui/icons/AccountCircle";
+// import MailIcon from "@material-ui/icons/Mail";
+import MenuIcon from "@material-ui/icons/Menu";
+// import NotificationsIcon from "@material-ui/icons/Notifications";
 
-const AdminNavbar = () => {
+const useStyles = makeStyles((theme) => ({
+  listItemRoot: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "hsla(0,0%,100%,.95)",
+    fontSize: "1rem",
+    paddingLeft: ".5rem",
+    paddingRight: ".5rem",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
+    transition: "all .15s linear",
+    fontWeight: "400",
+    "& i": {
+      marginRight: "0.25rem",
+    },
+    "&:hover": {
+      color: "hsla(0,0%,100%,.65)",
+    },
+    [theme.breakpoints.up("md")]: {
+      marginRight: ".5rem",
+    },
+  },
+}));
+
+export default function AuthNavbar() {
+  const classes = useStyles();
+
   return (
     <>
-      <Navbar className="navbar-top navbar-horizontal navbar-dark" expand="md">
-        <Container className="px-4">
-          <NavbarBrand to="/" tag={Link}>
-            <img
-              alt="..."
-              src={
-                require("../../assets/img/brand/argon-react-white.png").default
-              }
-            />
-          </NavbarBrand>
-          <button className="navbar-toggler" id="navbar-collapse-main">
-            <span className="navbar-toggler-icon" />
-          </button>
-          <UncontrolledCollapse navbar toggler="#navbar-collapse-main">
-            <div className="navbar-collapse-header d-md-none">
-              <Row>
-                <Col className="collapse-brand" xs="6">
-                  <Link to="/">
-                    <img
-                      alt="..."
-                      src={
-                        require("../../assets/img/brand/argon-react.png")
-                          .default
-                      }
-                    />
-                  </Link>
-                </Col>
-                <Col className="collapse-close" xs="6">
-                  <button className="navbar-toggler" id="navbar-collapse-main">
-                    <span />
-                    <span />
-                  </button>
-                </Col>
-              </Row>
+      <AppBar position="absolute" color="transparent" elevation={0}>
+        <Toolbar>
+          <Box
+            display="flex!important"
+            justifyContent="space-between"
+            alignItems="center"
+            marginTop="1rem"
+            component={Container}
+          >
+            <div>
+              <Hidden mdUp>
+                <IconButton
+                  edge="start"
+                  color="inherit"
+                  aria-label="open drawer"
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Hidden>
+              <Box
+                alt="..."
+                height="30px"
+                verticalAlign="middle"
+                borderStyle="none"
+                component="img"
+                className={classes.brandImage}
+                src={require("assets/img/brand/argon-react-white.png").default}
+              />
             </div>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink className="nav-link-icon" to="/" tag={Link}>
-                  <i className="ni ni-planet" />
-                  <span className="nav-link-inner--text">Dashboard</span>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  className="nav-link-icon"
-                  to="/auth/register"
-                  tag={Link}
-                >
-                  <i className="ni ni-circle-08" />
-                  <span className="nav-link-inner--text">Register</span>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link-icon" to="/auth/login" tag={Link}>
-                  <i className="ni ni-key-25" />
-                  <span className="nav-link-inner--text">Login</span>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  className="nav-link-icon"
-                  to="/admin/user-profile"
-                  tag={Link}
-                >
-                  <i className="ni ni-single-02" />
-                  <span className="nav-link-inner--text">Profile</span>
-                </NavLink>
-              </NavItem>
-            </Nav>
-          </UncontrolledCollapse>
-        </Container>
-      </Navbar>
+            <Box
+              display="flex"
+              alignItems="center"
+              width="auto"
+              component={List}
+            >
+              <ListItem
+                component={Link}
+                to="/admin/dashboard"
+                classes={{
+                  root: classes.listItemRoot,
+                }}
+              >
+                <i className={"ni ni-planet"} />
+                Dashboard
+              </ListItem>
+              <ListItem
+                component={Link}
+                to="/auth/register"
+                classes={{
+                  root: classes.listItemRoot,
+                }}
+              >
+                <i className={"ni ni-circle-08"} />
+                Register
+              </ListItem>
+              <ListItem
+                component={Link}
+                to="/auth/login"
+                classes={{
+                  root: classes.listItemRoot,
+                }}
+              >
+                <i className={"ni ni-key-25"} />
+                Login
+              </ListItem>
+              <ListItem
+                component={Link}
+                to="/admin/user-profile"
+                classes={{
+                  root: classes.listItemRoot,
+                }}
+              >
+                <i className={"ni ni-single-02"} />
+                Profile
+              </ListItem>
+            </Box>
+          </Box>
+        </Toolbar>
+      </AppBar>
     </>
   );
-};
-
-export default AdminNavbar;
+}
