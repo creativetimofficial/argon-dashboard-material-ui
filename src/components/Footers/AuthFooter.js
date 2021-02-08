@@ -1,85 +1,125 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-/*eslint-disable*/
 import React from "react";
 
 // material-ui components
-import { NavItem, NavLink, Nav, Container, Row, Col } from "reactstrap";
+import { makeStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
 
-const Login = () => {
+const useStyles = makeStyles((theme) => ({
+  listItemRoot: {
+    width: "auto",
+    fontSize: "0.875rem",
+    "&:hover": {
+      color: "#5e72e4",
+    },
+  },
+  copyrightWrapper: {
+    color: "#8898aa",
+    fontSize: "1rem",
+    textAlign: "center",
+    [theme.breakpoints.up("md")]: {
+      textAlign: "left",
+    },
+  },
+  copyrightLink: {
+    fontWeight: "600",
+    marginLeft: ".25rem",
+    color: "#5e72e4",
+    backgroundColor: "initial",
+    textDecoration: "none",
+    "&:hover": {
+      color: "#233dd2",
+    },
+  },
+}));
+
+const Footer = () => {
+  const classes = useStyles();
   return (
-    <>
-      <footer className="py-5">
-        <Container>
-          <Row className="align-items-center justify-content-xl-between">
-            <Col xl="6">
-              <div className="copyright text-center text-xl-left text-muted">
-                © {new Date().getFullYear()}{" "}
-                <a
-                  className="font-weight-bold ml-1"
-                  href="https://www.creative-tim.com?ref=adr-auth-footer"
-                  target="_blank"
-                >
-                  Creative Tim
-                </a>
-              </div>
-            </Col>
-            <Col xl="6">
-              <Nav className="nav-footer justify-content-center justify-content-xl-end">
-                <NavItem>
-                  <NavLink
-                    href="https://www.creative-tim.com?ref=adr-auth-footer"
-                    target="_blank"
-                  >
-                    Creative Tim
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    href="https://www.creative-tim.com/presentation?ref=adr-auth-footer"
-                    target="_blank"
-                  >
-                    About Us
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    href="http://blog.creative-tim.com?ref=adr-auth-footer"
-                    target="_blank"
-                  >
-                    Blog
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md?ref=adr-auth-footer"
-                    target="_blank"
-                  >
-                    MIT License
-                  </NavLink>
-                </NavItem>
-              </Nav>
-            </Col>
-          </Row>
-        </Container>
-      </footer>
-    </>
+    <Box component="footer" width="100%" paddingTop="1rem">
+      <Box component={Container} display="flex!important" alignItems="center">
+        <Grid item xl={6}>
+          <div className={classes.copyrightWrapper}>
+            © {new Date().getFullYear()}{" "}
+            <a
+              className={classes.copyrightLink}
+              href="https://www.creative-tim.com?ref=adr-admin-footer"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Creative Tim
+            </a>
+          </div>
+        </Grid>
+
+        <Grid
+          item
+          xl={6}
+          component={Box}
+          display="flex"
+          justifyContent="flex-end"
+        >
+          <Box
+            component={List}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <ListItem
+              component="a"
+              href="https://www.creative-tim.com?ref=adr-admin-footer"
+              rel="noopener noreferrer"
+              target="_blank"
+              classes={{
+                root: classes.listItemRoot,
+              }}
+            >
+              Creative Tim
+            </ListItem>
+
+            <ListItem
+              component="a"
+              href="https://www.creative-tim.com/presentation?ref=adr-admin-footer"
+              rel="noopener noreferrer"
+              target="_blank"
+              classes={{
+                root: classes.listItemRoot,
+              }}
+            >
+              About Us
+            </ListItem>
+
+            <ListItem
+              component="a"
+              href="http://blog.creative-tim.com?ref=adr-admin-footer"
+              rel="noopener noreferrer"
+              target="_blank"
+              classes={{
+                root: classes.listItemRoot,
+              }}
+            >
+              Blog
+            </ListItem>
+
+            <ListItem
+              component="a"
+              href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md?ref=adr-admin-footer"
+              rel="noopener noreferrer"
+              target="_blank"
+              classes={{
+                root: classes.listItemRoot,
+              }}
+            >
+              MIT License
+            </ListItem>
+          </Box>
+        </Grid>
+      </Box>
+    </Box>
   );
 };
 
-export default Login;
+export default Footer;
