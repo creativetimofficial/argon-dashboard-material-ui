@@ -146,6 +146,59 @@ const theme = createMuiTheme({
         fontSize: ".875rem",
       },
     },
+    MuiCard: {
+      root: {
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        minWidth: 0,
+        wordWrap: "break-word",
+        backgroundColor: "#fff",
+        backgroundClip: "initial",
+        border: "1px solid rgba(0,0,0,.05)",
+        borderRadius: ".375rem",
+      },
+    },
+    MuiCardContent: {
+      root: {
+        flex: "1 1 auto",
+        minHeight: "1px",
+        padding: "1.5rem",
+      },
+    },
+    MuiButton: {
+      root: {
+        position: "relative",
+        textTransform: "none",
+        transition: "all .15s ease",
+        letterSpacing: ".025em",
+        fontSize: ".875rem",
+        padding: ".625rem 1.25rem",
+        willChange: "transform",
+        border: "1px solid transparent",
+        lineHeight: "1.5",
+        borderRadius: ".375rem",
+        userSelect: "none",
+        display: "inline-block",
+        fontWeight: "600",
+        textAlign: "center",
+        verticalAlign: "middle",
+        "&:hover": {
+          boxShadow:
+            "0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%)",
+          transform: "translateY(-1px)",
+        },
+      },
+      text: {
+        padding: ".625rem 1.25rem",
+      },
+      contained: {
+        "&:hover": {
+          boxShadow:
+            "0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%)",
+        },
+      },
+    },
   },
 });
 
