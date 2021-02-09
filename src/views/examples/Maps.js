@@ -10,10 +10,16 @@ import Grid from "@material-ui/core/Grid";
 // core components
 import Header from "components/Headers/Header.js";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   cardRoot: {
     boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
     border: "0!important",
+  },
+  containerRoot: {
+    [theme.breakpoints.up("md")]: {
+      paddingLeft: "39px",
+      paddingRight: "39px",
+    },
   },
 }));
 
@@ -115,7 +121,12 @@ const Maps = () => {
     <>
       <Header />
       {/* Page content */}
-      <Container maxWidth="xl" component={Box} marginTop="-6rem">
+      <Container
+        maxWidth="xl"
+        component={Box}
+        marginTop="-6rem"
+        classes={{ root: classes.containerRoot }}
+      >
         <Grid container>
           <Grid item xs={12}>
             <Card classes={{ root: classes.cardRoot }}>
