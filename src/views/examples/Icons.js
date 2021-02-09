@@ -12,12 +12,29 @@ import Tooltip from "@material-ui/core/Tooltip";
 // core components
 import Header from "components/Headers/Header.js";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   cardRoot: {
     boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
   },
   cardHeader: {
     backgroundColor: "initial",
+  },
+  button: {
+    verticalAlign: "middle",
+    backgroundColor: "#f8f9fa",
+    outline: "none!important",
+    cursor: "pointer",
+    textDecoration: "none",
+    "&:hover": {
+      backgroundColor: "#fff",
+      boxShadow: "0 0 0 1px rgb(0 0 0 / 10%), 0 4px 16px rgb(0 0 0 / 10%)",
+    },
+  },
+  containerRoot: {
+    [theme.breakpoints.up("md")]: {
+      paddingLeft: "39px",
+      paddingRight: "39px",
+    },
   },
 }));
 
@@ -28,7 +45,12 @@ const Icons = () => {
     <>
       <Header />
       {/* Page content */}
-      <Container maxWidth="xl" component={Box} marginTop="-6rem">
+      <Container
+        maxWidth="xl"
+        component={Box}
+        marginTop="-6rem"
+        classes={{ root: classes.containerRoot }}
+      >
         {/* Table */}
         <Grid container>
           <Grid item xs={12}>
@@ -37,7 +59,6 @@ const Icons = () => {
                 padding="1.25rem 1.5rem"
                 marginBottom="0"
                 borderBottom="1px solid rgba(0,0,0,.05)"
-                paddingBottom="3rem"
                 borderRadius="calc(.375rem - 1px) calc(.375rem - 1px) 0 0"
                 className={classes.cardHeader}
               >
@@ -47,7 +68,14 @@ const Icons = () => {
               </Box>
               <CardContent>
                 <Grid container>
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-active-40"}
                       onCopy={() => setCopiedText("ni ni-active-40")}
@@ -60,8 +88,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -69,12 +110,19 @@ const Icons = () => {
                             <i className="ni ni-active-40" />
                             <span>active-40</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-air-baloon"}
                       onCopy={() => setCopiedText("ni ni-air-baloon")}
@@ -87,8 +135,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -96,12 +157,19 @@ const Icons = () => {
                             <i className="ni ni-air-baloon" />
                             <span>air-baloon</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-album-2"}
                       onCopy={() => setCopiedText("ni ni-album-2")}
@@ -114,8 +182,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -123,12 +204,19 @@ const Icons = () => {
                             <i className="ni ni-album-2" />
                             <span>album-2</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-align-center"}
                       onCopy={() => setCopiedText("ni ni-align-center")}
@@ -141,8 +229,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -150,12 +251,19 @@ const Icons = () => {
                             <i className="ni ni-align-center" />
                             <span>align-center</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-align-left-2"}
                       onCopy={() => setCopiedText("ni ni-align-left-2")}
@@ -168,8 +276,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -177,12 +298,19 @@ const Icons = () => {
                             <i className="ni ni-align-left-2" />
                             <span>align-left-2</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-ambulance"}
                       onCopy={() => setCopiedText("ni ni-ambulance")}
@@ -195,8 +323,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -204,12 +345,19 @@ const Icons = () => {
                             <i className="ni ni-ambulance" />
                             <span>ambulance</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-app"}
                       onCopy={() => setCopiedText("ni ni-app")}
@@ -222,8 +370,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -231,12 +392,19 @@ const Icons = () => {
                             <i className="ni ni-app" />
                             <span>app</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-archive-2"}
                       onCopy={() => setCopiedText("ni ni-archive-2")}
@@ -249,8 +417,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -258,12 +439,19 @@ const Icons = () => {
                             <i className="ni ni-archive-2" />
                             <span>archive-2</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-atom"}
                       onCopy={() => setCopiedText("ni ni-atom")}
@@ -276,8 +464,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -285,12 +486,19 @@ const Icons = () => {
                             <i className="ni ni-atom" />
                             <span>atom</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-badge"}
                       onCopy={() => setCopiedText("ni ni-badge")}
@@ -303,8 +511,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -312,12 +533,19 @@ const Icons = () => {
                             <i className="ni ni-badge" />
                             <span>badge</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-bag-17"}
                       onCopy={() => setCopiedText("ni ni-bag-17")}
@@ -330,8 +558,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -339,12 +580,19 @@ const Icons = () => {
                             <i className="ni ni-bag-17" />
                             <span>bag-17</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-basket"}
                       onCopy={() => setCopiedText("ni ni-basket")}
@@ -357,8 +605,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -366,12 +627,19 @@ const Icons = () => {
                             <i className="ni ni-basket" />
                             <span>basket</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-bell-55"}
                       onCopy={() => setCopiedText("ni ni-bell-55")}
@@ -384,8 +652,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -393,12 +674,19 @@ const Icons = () => {
                             <i className="ni ni-bell-55" />
                             <span>bell-55</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-bold-down"}
                       onCopy={() => setCopiedText("ni ni-bold-down")}
@@ -411,8 +699,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -420,12 +721,19 @@ const Icons = () => {
                             <i className="ni ni-bold-down" />
                             <span>bold-down</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-bold-left"}
                       onCopy={() => setCopiedText("ni ni-bold-left")}
@@ -438,8 +746,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -447,12 +768,19 @@ const Icons = () => {
                             <i className="ni ni-bold-left" />
                             <span>bold-left</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-bold-right"}
                       onCopy={() => setCopiedText("ni ni-bold-right")}
@@ -465,8 +793,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -474,12 +815,19 @@ const Icons = () => {
                             <i className="ni ni-bold-right" />
                             <span>bold-right</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-bold-up"}
                       onCopy={() => setCopiedText("ni ni-bold-up")}
@@ -492,8 +840,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -501,12 +862,19 @@ const Icons = () => {
                             <i className="ni ni-bold-up" />
                             <span>bold-up</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-bold"}
                       onCopy={() => setCopiedText("ni ni-bold")}
@@ -519,8 +887,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -528,12 +909,19 @@ const Icons = () => {
                             <i className="ni ni-bold" />
                             <span>bold</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-book-bookmark"}
                       onCopy={() => setCopiedText("ni ni-book-bookmark")}
@@ -546,8 +934,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -555,12 +956,19 @@ const Icons = () => {
                             <i className="ni ni-book-bookmark" />
                             <span>book-bookmark</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-books"}
                       onCopy={() => setCopiedText("ni ni-books")}
@@ -573,8 +981,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -582,12 +1003,19 @@ const Icons = () => {
                             <i className="ni ni-books" />
                             <span>books</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-box-2"}
                       onCopy={() => setCopiedText("ni ni-box-2")}
@@ -600,8 +1028,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -609,12 +1050,19 @@ const Icons = () => {
                             <i className="ni ni-box-2" />
                             <span>box-2</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-briefcase-24"}
                       onCopy={() => setCopiedText("ni ni-briefcase-24")}
@@ -627,8 +1075,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -636,12 +1097,19 @@ const Icons = () => {
                             <i className="ni ni-briefcase-24" />
                             <span>briefcase-24</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-building"}
                       onCopy={() => setCopiedText("ni ni-building")}
@@ -654,8 +1122,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -663,12 +1144,19 @@ const Icons = () => {
                             <i className="ni ni-building" />
                             <span>building</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-bulb-61"}
                       onCopy={() => setCopiedText("ni ni-bulb-61")}
@@ -681,8 +1169,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -690,12 +1191,19 @@ const Icons = () => {
                             <i className="ni ni-bulb-61" />
                             <span>bulb-61</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-bullet-list-67"}
                       onCopy={() => setCopiedText("ni ni-bullet-list-67")}
@@ -708,8 +1216,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -717,12 +1238,19 @@ const Icons = () => {
                             <i className="ni ni-bullet-list-67" />
                             <span>bullet-list-67</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-bus-front-12"}
                       onCopy={() => setCopiedText("ni ni-bus-front-12")}
@@ -735,8 +1263,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -744,12 +1285,19 @@ const Icons = () => {
                             <i className="ni ni-bus-front-12" />
                             <span>bus-front-12</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-button-pause"}
                       onCopy={() => setCopiedText("ni ni-button-pause")}
@@ -762,8 +1310,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -771,12 +1332,19 @@ const Icons = () => {
                             <i className="ni ni-button-pause" />
                             <span>button-pause</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-button-play"}
                       onCopy={() => setCopiedText("ni ni-button-play")}
@@ -789,8 +1357,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -798,12 +1379,19 @@ const Icons = () => {
                             <i className="ni ni-button-play" />
                             <span>button-play</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-button-power"}
                       onCopy={() => setCopiedText("ni ni-button-power")}
@@ -816,8 +1404,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -825,12 +1426,19 @@ const Icons = () => {
                             <i className="ni ni-button-power" />
                             <span>button-power</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-calendar-grid-58"}
                       onCopy={() => setCopiedText("ni ni-calendar-grid-58")}
@@ -843,8 +1451,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -852,12 +1473,19 @@ const Icons = () => {
                             <i className="ni ni-calendar-grid-58" />
                             <span>calendar-grid-58</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-camera-compact"}
                       onCopy={() => setCopiedText("ni ni-camera-compact")}
@@ -870,8 +1498,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -879,12 +1520,19 @@ const Icons = () => {
                             <i className="ni ni-camera-compact" />
                             <span>camera-compact</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-caps-small"}
                       onCopy={() => setCopiedText("ni ni-caps-small")}
@@ -897,8 +1545,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -906,12 +1567,19 @@ const Icons = () => {
                             <i className="ni ni-caps-small" />
                             <span>caps-small</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-cart"}
                       onCopy={() => setCopiedText("ni ni-cart")}
@@ -924,8 +1592,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -933,12 +1614,19 @@ const Icons = () => {
                             <i className="ni ni-cart" />
                             <span>cart</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-chart-bar-32"}
                       onCopy={() => setCopiedText("ni ni-chart-bar-32")}
@@ -951,8 +1639,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -960,12 +1661,19 @@ const Icons = () => {
                             <i className="ni ni-chart-bar-32" />
                             <span>chart-bar-32</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-chart-pie-35"}
                       onCopy={() => setCopiedText("ni ni-chart-pie-35")}
@@ -978,8 +1686,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -987,12 +1708,19 @@ const Icons = () => {
                             <i className="ni ni-chart-pie-35" />
                             <span>chart-pie-35</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-chat-round"}
                       onCopy={() => setCopiedText("ni ni-chat-round")}
@@ -1005,8 +1733,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1014,12 +1755,19 @@ const Icons = () => {
                             <i className="ni ni-chat-round" />
                             <span>chat-round</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-check-bold"}
                       onCopy={() => setCopiedText("ni ni-check-bold")}
@@ -1032,8 +1780,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1041,12 +1802,19 @@ const Icons = () => {
                             <i className="ni ni-check-bold" />
                             <span>check-bold</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-circle-08"}
                       onCopy={() => setCopiedText("ni ni-circle-08")}
@@ -1059,8 +1827,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1068,12 +1849,19 @@ const Icons = () => {
                             <i className="ni ni-circle-08" />
                             <span>circle-08</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-cloud-download-95"}
                       onCopy={() => setCopiedText("ni ni-cloud-download-95")}
@@ -1086,8 +1874,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1095,12 +1896,19 @@ const Icons = () => {
                             <i className="ni ni-cloud-download-95" />
                             <span>cloud-download-95</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-cloud-upload-96"}
                       onCopy={() => setCopiedText("ni ni-cloud-upload-96")}
@@ -1113,8 +1921,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1122,12 +1943,19 @@ const Icons = () => {
                             <i className="ni ni-cloud-upload-96" />
                             <span>cloud-upload-96</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-compass-04"}
                       onCopy={() => setCopiedText("ni ni-compass-04")}
@@ -1140,8 +1968,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1149,12 +1990,19 @@ const Icons = () => {
                             <i className="ni ni-compass-04" />
                             <span>compass-04</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-controller"}
                       onCopy={() => setCopiedText("ni ni-controller")}
@@ -1167,8 +2015,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1176,12 +2037,19 @@ const Icons = () => {
                             <i className="ni ni-controller" />
                             <span>controller</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-credit-card"}
                       onCopy={() => setCopiedText("ni ni-credit-card")}
@@ -1194,8 +2062,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1203,12 +2084,19 @@ const Icons = () => {
                             <i className="ni ni-credit-card" />
                             <span>credit-card</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-curved-next"}
                       onCopy={() => setCopiedText("ni ni-curved-next")}
@@ -1221,8 +2109,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1230,12 +2131,19 @@ const Icons = () => {
                             <i className="ni ni-curved-next" />
                             <span>curved-next</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-delivery-fast"}
                       onCopy={() => setCopiedText("ni ni-delivery-fast")}
@@ -1248,8 +2156,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1257,12 +2178,19 @@ const Icons = () => {
                             <i className="ni ni-delivery-fast" />
                             <span>delivery-fast</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-diamond"}
                       onCopy={() => setCopiedText("ni ni-diamond")}
@@ -1275,8 +2203,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1284,12 +2225,19 @@ const Icons = () => {
                             <i className="ni ni-diamond" />
                             <span>diamond</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-email-83"}
                       onCopy={() => setCopiedText("ni ni-email-83")}
@@ -1302,8 +2250,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1311,12 +2272,19 @@ const Icons = () => {
                             <i className="ni ni-email-83" />
                             <span>email-83</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-fat-add"}
                       onCopy={() => setCopiedText("ni ni-fat-add")}
@@ -1329,8 +2297,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1338,12 +2319,19 @@ const Icons = () => {
                             <i className="ni ni-fat-add" />
                             <span>fat-add</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-fat-delete"}
                       onCopy={() => setCopiedText("ni ni-fat-delete")}
@@ -1356,8 +2344,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1365,12 +2366,19 @@ const Icons = () => {
                             <i className="ni ni-fat-delete" />
                             <span>fat-delete</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-fat-remove"}
                       onCopy={() => setCopiedText("ni ni-fat-remove")}
@@ -1383,8 +2391,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1392,12 +2413,19 @@ const Icons = () => {
                             <i className="ni ni-fat-remove" />
                             <span>fat-remove</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-favourite-28"}
                       onCopy={() => setCopiedText("ni ni-favourite-28")}
@@ -1410,8 +2438,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1419,12 +2460,19 @@ const Icons = () => {
                             <i className="ni ni-favourite-28" />
                             <span>favourite-28</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-folder-17"}
                       onCopy={() => setCopiedText("ni ni-folder-17")}
@@ -1437,8 +2485,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1446,12 +2507,19 @@ const Icons = () => {
                             <i className="ni ni-folder-17" />
                             <span>folder-17</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-glasses-2"}
                       onCopy={() => setCopiedText("ni ni-glasses-2")}
@@ -1464,8 +2532,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1473,12 +2554,19 @@ const Icons = () => {
                             <i className="ni ni-glasses-2" />
                             <span>glasses-2</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-hat-3"}
                       onCopy={() => setCopiedText("ni ni-hat-3")}
@@ -1491,8 +2579,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1500,12 +2601,19 @@ const Icons = () => {
                             <i className="ni ni-hat-3" />
                             <span>hat-3</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-headphones"}
                       onCopy={() => setCopiedText("ni ni-headphones")}
@@ -1518,8 +2626,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1527,12 +2648,19 @@ const Icons = () => {
                             <i className="ni ni-headphones" />
                             <span>headphones</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-html5"}
                       onCopy={() => setCopiedText("ni ni-html5")}
@@ -1545,8 +2673,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1554,12 +2695,19 @@ const Icons = () => {
                             <i className="ni ni-html5" />
                             <span>html5</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-istanbul"}
                       onCopy={() => setCopiedText("ni ni-istanbul")}
@@ -1572,8 +2720,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1581,12 +2742,19 @@ const Icons = () => {
                             <i className="ni ni-istanbul" />
                             <span>istanbul</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-circle-08"}
                       onCopy={() => setCopiedText("ni ni-circle-08")}
@@ -1599,8 +2767,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1608,12 +2789,19 @@ const Icons = () => {
                             <i className="ni ni-circle-08" />
                             <span>circle-08</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-key-25"}
                       onCopy={() => setCopiedText("ni ni-key-25")}
@@ -1626,8 +2814,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1635,12 +2836,19 @@ const Icons = () => {
                             <i className="ni ni-key-25" />
                             <span>key-25</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-laptop"}
                       onCopy={() => setCopiedText("ni ni-laptop")}
@@ -1653,8 +2861,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1662,12 +2883,19 @@ const Icons = () => {
                             <i className="ni ni-laptop" />
                             <span>laptop</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-like-2"}
                       onCopy={() => setCopiedText("ni ni-like-2")}
@@ -1680,8 +2908,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1689,12 +2930,19 @@ const Icons = () => {
                             <i className="ni ni-like-2" />
                             <span>like-2</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-lock-circle-open"}
                       onCopy={() => setCopiedText("ni ni-lock-circle-open")}
@@ -1707,8 +2955,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1716,12 +2977,19 @@ const Icons = () => {
                             <i className="ni ni-lock-circle-open" />
                             <span>lock-circle-open</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-map-big"}
                       onCopy={() => setCopiedText("ni ni-map-big")}
@@ -1734,8 +3002,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1743,12 +3024,19 @@ const Icons = () => {
                             <i className="ni ni-map-big" />
                             <span>map-big</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-mobile-button"}
                       onCopy={() => setCopiedText("ni ni-mobile-button")}
@@ -1761,8 +3049,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1770,12 +3071,19 @@ const Icons = () => {
                             <i className="ni ni-mobile-button" />
                             <span>mobile-button</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-money-coins"}
                       onCopy={() => setCopiedText("ni ni-money-coins")}
@@ -1788,8 +3096,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1797,12 +3118,19 @@ const Icons = () => {
                             <i className="ni ni-money-coins" />
                             <span>money-coins</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-note-03"}
                       onCopy={() => setCopiedText("ni ni-note-03")}
@@ -1815,8 +3143,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1824,12 +3165,19 @@ const Icons = () => {
                             <i className="ni ni-note-03" />
                             <span>note-03</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-notification-70"}
                       onCopy={() => setCopiedText("ni ni-notification-70")}
@@ -1842,8 +3190,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1851,12 +3212,19 @@ const Icons = () => {
                             <i className="ni ni-notification-70" />
                             <span>notification-70</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-palette"}
                       onCopy={() => setCopiedText("ni ni-palette")}
@@ -1869,8 +3237,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1878,12 +3259,19 @@ const Icons = () => {
                             <i className="ni ni-palette" />
                             <span>palette</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-paper-diploma"}
                       onCopy={() => setCopiedText("ni ni-paper-diploma")}
@@ -1896,8 +3284,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1905,12 +3306,19 @@ const Icons = () => {
                             <i className="ni ni-paper-diploma" />
                             <span>paper-diploma</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-pin-3"}
                       onCopy={() => setCopiedText("ni ni-pin-3")}
@@ -1923,8 +3331,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1932,12 +3353,19 @@ const Icons = () => {
                             <i className="ni ni-pin-3" />
                             <span>pin-3</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-planet"}
                       onCopy={() => setCopiedText("ni ni-planet")}
@@ -1950,8 +3378,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1959,12 +3400,19 @@ const Icons = () => {
                             <i className="ni ni-planet" />
                             <span>planet</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-ruler-pencil"}
                       onCopy={() => setCopiedText("ni ni-ruler-pencil")}
@@ -1977,8 +3425,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1986,12 +3447,19 @@ const Icons = () => {
                             <i className="ni ni-ruler-pencil" />
                             <span>ruler-pencil</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-satisfied"}
                       onCopy={() => setCopiedText("ni ni-satisfied")}
@@ -2004,8 +3472,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2013,12 +3494,19 @@ const Icons = () => {
                             <i className="ni ni-satisfied" />
                             <span>satisfied</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-scissors"}
                       onCopy={() => setCopiedText("ni ni-scissors")}
@@ -2031,8 +3519,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2040,12 +3541,19 @@ const Icons = () => {
                             <i className="ni ni-scissors" />
                             <span>scissors</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-send"}
                       onCopy={() => setCopiedText("ni ni-send")}
@@ -2058,8 +3566,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2067,12 +3588,19 @@ const Icons = () => {
                             <i className="ni ni-send" />
                             <span>send</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-settings-gear-65"}
                       onCopy={() => setCopiedText("ni ni-settings-gear-65")}
@@ -2085,8 +3613,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2094,12 +3635,19 @@ const Icons = () => {
                             <i className="ni ni-settings-gear-65" />
                             <span>settings-gear-65</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-settings"}
                       onCopy={() => setCopiedText("ni ni-settings")}
@@ -2112,8 +3660,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2121,12 +3682,19 @@ const Icons = () => {
                             <i className="ni ni-settings" />
                             <span>settings</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-single-02"}
                       onCopy={() => setCopiedText("ni ni-single-02")}
@@ -2139,8 +3707,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2148,12 +3729,19 @@ const Icons = () => {
                             <i className="ni ni-single-02" />
                             <span>single-02</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-single-copy-04"}
                       onCopy={() => setCopiedText("ni ni-single-copy-04")}
@@ -2166,8 +3754,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2175,12 +3776,19 @@ const Icons = () => {
                             <i className="ni ni-single-copy-04" />
                             <span>single-copy-04</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-sound-wave"}
                       onCopy={() => setCopiedText("ni ni-sound-wave")}
@@ -2193,8 +3801,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2202,12 +3823,19 @@ const Icons = () => {
                             <i className="ni ni-sound-wave" />
                             <span>sound-wave</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-spaceship"}
                       onCopy={() => setCopiedText("ni ni-spaceship")}
@@ -2220,8 +3848,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2229,12 +3870,19 @@ const Icons = () => {
                             <i className="ni ni-spaceship" />
                             <span>spaceship</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-square-pin"}
                       onCopy={() => setCopiedText("ni ni-square-pin")}
@@ -2247,8 +3895,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2256,12 +3917,19 @@ const Icons = () => {
                             <i className="ni ni-square-pin" />
                             <span>square-pin</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-support-16"}
                       onCopy={() => setCopiedText("ni ni-support-16")}
@@ -2274,8 +3942,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2283,12 +3964,19 @@ const Icons = () => {
                             <i className="ni ni-support-16" />
                             <span>support-16</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-tablet-button"}
                       onCopy={() => setCopiedText("ni ni-tablet-button")}
@@ -2301,8 +3989,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2310,12 +4011,19 @@ const Icons = () => {
                             <i className="ni ni-tablet-button" />
                             <span>tablet-button</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-tag"}
                       onCopy={() => setCopiedText("ni ni-tag")}
@@ -2328,8 +4036,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2337,12 +4058,19 @@ const Icons = () => {
                             <i className="ni ni-tag" />
                             <span>tag</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-tie-bow"}
                       onCopy={() => setCopiedText("ni ni-tie-bow")}
@@ -2355,8 +4083,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2364,12 +4105,19 @@ const Icons = () => {
                             <i className="ni ni-tie-bow" />
                             <span>tie-bow</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-time-alarm"}
                       onCopy={() => setCopiedText("ni ni-time-alarm")}
@@ -2382,8 +4130,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2391,12 +4152,19 @@ const Icons = () => {
                             <i className="ni ni-time-alarm" />
                             <span>time-alarm</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-trophy"}
                       onCopy={() => setCopiedText("ni ni-trophy")}
@@ -2409,8 +4177,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2418,12 +4199,19 @@ const Icons = () => {
                             <i className="ni ni-trophy" />
                             <span>trophy</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-tv-2"}
                       onCopy={() => setCopiedText("ni ni-tv-2")}
@@ -2436,8 +4224,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2445,12 +4246,19 @@ const Icons = () => {
                             <i className="ni ni-tv-2" />
                             <span>tv-2</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-umbrella-13"}
                       onCopy={() => setCopiedText("ni ni-umbrella-13")}
@@ -2463,8 +4271,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2472,12 +4293,19 @@ const Icons = () => {
                             <i className="ni ni-umbrella-13" />
                             <span>umbrella-13</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-user-run"}
                       onCopy={() => setCopiedText("ni ni-user-run")}
@@ -2490,8 +4318,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2499,12 +4340,19 @@ const Icons = () => {
                             <i className="ni ni-user-run" />
                             <span>user-run</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-vector"}
                       onCopy={() => setCopiedText("ni ni-vector")}
@@ -2517,8 +4365,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2526,12 +4387,19 @@ const Icons = () => {
                             <i className="ni ni-vector" />
                             <span>vector</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-watch-time"}
                       onCopy={() => setCopiedText("ni ni-watch-time")}
@@ -2544,8 +4412,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2553,12 +4434,19 @@ const Icons = () => {
                             <i className="ni ni-watch-time" />
                             <span>watch-time</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-world"}
                       onCopy={() => setCopiedText("ni ni-world")}
@@ -2571,8 +4459,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2580,12 +4481,19 @@ const Icons = () => {
                             <i className="ni ni-world" />
                             <span>world</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-zoom-split-in"}
                       onCopy={() => setCopiedText("ni ni-zoom-split-in")}
@@ -2598,8 +4506,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2607,12 +4528,19 @@ const Icons = () => {
                             <i className="ni ni-zoom-split-in" />
                             <span>zoom-split-in</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-collection"}
                       onCopy={() => setCopiedText("ni ni-collection")}
@@ -2625,8 +4553,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2634,12 +4575,19 @@ const Icons = () => {
                             <i className="ni ni-collection" />
                             <span>collection</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-image"}
                       onCopy={() => setCopiedText("ni ni-image")}
@@ -2652,8 +4600,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2661,12 +4622,19 @@ const Icons = () => {
                             <i className="ni ni-image" />
                             <span>image</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-shop"}
                       onCopy={() => setCopiedText("ni ni-shop")}
@@ -2679,8 +4647,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2688,12 +4669,19 @@ const Icons = () => {
                             <i className="ni ni-shop" />
                             <span>shop</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-ungroup"}
                       onCopy={() => setCopiedText("ni ni-ungroup")}
@@ -2706,8 +4694,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2715,12 +4716,19 @@ const Icons = () => {
                             <i className="ni ni-ungroup" />
                             <span>ungroup</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-world-2"}
                       onCopy={() => setCopiedText("ni ni-world-2")}
@@ -2733,8 +4741,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2742,12 +4763,19 @@ const Icons = () => {
                             <i className="ni ni-world-2" />
                             <span>world-2</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
 
-                  <Grid item lg={3} md={6}>
+                  <Grid
+                    item
+                    lg={3}
+                    md={6}
+                    component={Box}
+                    paddingLeft="15px"
+                    paddingRight="15px"
+                  >
                     <CopyToClipboard
                       text={"ni ni-ui-04"}
                       onCopy={() => setCopiedText("ni ni-ui-04")}
@@ -2760,8 +4788,21 @@ const Icons = () => {
                         }
                         placement="top"
                       >
-                        <button
-                          className="btn-icon-clipboard"
+                        <Box
+                          component="button"
+                          fontFamily="inherit"
+                          fontSize="16px"
+                          fontWeight="400"
+                          lineHeight="1.25"
+                          display="inline-block"
+                          width="100%"
+                          margin=".5rem 0"
+                          padding="24px"
+                          textAlign="left"
+                          color="#393f49"
+                          border="0"
+                          borderRadius="4px"
+                          className={classes.button}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2769,7 +4810,7 @@ const Icons = () => {
                             <i className="ni ni-ui-04" />
                             <span>ui-04</span>
                           </div>
-                        </button>
+                        </Box>
                       </Tooltip>
                     </CopyToClipboard>
                   </Grid>
