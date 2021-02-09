@@ -18,7 +18,7 @@
 import React from "react";
 import { useLocation, Route, Switch, Redirect } from "react-router-dom";
 // material-ui components
-// import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 // core components
@@ -28,15 +28,16 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 
 import routes from "routes.js";
 
-// const useStyles = makeStyles((theme) => ({
-//   listItemRoot: {
-//     width: "auto",
-//     color: "#8898aa",
-//     fontSize: ".875rem",
-//   },
-// }));
+const useStyles = makeStyles((theme) => ({
+  mainContent: {
+    [theme.breakpoints.up("md")]: {
+      marginLeft: "250px",
+    },
+  },
+}));
 
 const Admin = (props) => {
+  const classes = useStyles();
   const mainContent = React.useRef(null);
   const location = useLocation();
 
@@ -73,7 +74,7 @@ const Admin = (props) => {
 
   return (
     <>
-      <Grid container>
+      <>
         <Sidebar
           routes={routes}
           logo={{
@@ -82,7 +83,7 @@ const Admin = (props) => {
             imgAlt: "...",
           }}
         />
-        <Box flexGrow="1" flexBasis="auto" position="relative">
+        <Box position="relative" className={classes.mainContent}>
           <AdminNavbar brandText={getBrandText(location.pathname)} />
           <Switch>
             {getRoutes(routes)}
@@ -97,7 +98,7 @@ const Admin = (props) => {
             <AdminFooter />
           </Grid>
         </Box>
-      </Grid>
+      </>
     </>
   );
 };
