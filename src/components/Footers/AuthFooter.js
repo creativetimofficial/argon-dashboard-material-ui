@@ -40,7 +40,12 @@ const Footer = () => {
   const classes = useStyles();
   return (
     <Box component="footer" width="100%" paddingTop="1rem">
-      <Box component={Container} display="flex!important" alignItems="center">
+      <Container
+        component={Box}
+        maxWidth="xl"
+        display="flex!important"
+        alignItems="center"
+      >
         <Grid item xl={6}>
           <div className={classes.copyrightWrapper}>
             © {new Date().getFullYear()}{" "}
@@ -117,7 +122,7 @@ const Footer = () => {
             </ListItem>
           </Box>
         </Grid>
-      </Box>
+      </Container>
     </Box>
   );
 };
