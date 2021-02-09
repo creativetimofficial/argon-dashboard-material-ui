@@ -8,6 +8,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import Hidden from "@material-ui/core/Hidden";
 import Tooltip from "@material-ui/core/Tooltip";
 // core components
 import Header from "components/Headers/Header.js";
@@ -53,6 +54,11 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: "39px",
     },
   },
+  iframe: {
+    width: "100%",
+    height: "500px",
+    border: "0",
+  },
 }));
 
 const Icons = () => {
@@ -69,7 +75,7 @@ const Icons = () => {
         classes={{ root: classes.containerRoot }}
       >
         {/* Table */}
-        <Grid container>
+        <Grid container component={Box} marginBottom="39px">
           <Grid item xs={12}>
             <Card classes={{ root: classes.cardRoot }}>
               <Box
@@ -80,7 +86,7 @@ const Icons = () => {
                 className={classes.cardHeader}
               >
                 <Box component="h3" marginBottom="0">
-                  Icons
+                  Nucleo Icons
                 </Box>
               </Box>
               <CardContent>
@@ -4832,6 +4838,51 @@ const Icons = () => {
                     </CopyToClipboard>
                   </Grid>
                 </Grid>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+        <Grid container component={Box} marginBottom="39px">
+          <Grid item xs={12}>
+            <Card classes={{ root: classes.cardRoot }}>
+              <Box
+                padding="1.25rem 1.5rem"
+                marginBottom="0"
+                borderBottom="1px solid rgba(0,0,0,.05)"
+                borderRadius="calc(.375rem - 1px) calc(.375rem - 1px) 0 0"
+                className={classes.cardHeader}
+              >
+                <Box component="h3" marginBottom="0">
+                  Material Icons
+                </Box>
+              </Box>
+              <CardContent>
+                <Hidden mdDown implementation="css">
+                  <iframe
+                    className={classes.iframe}
+                    src="https://material.io/icons/?ref=creativetim"
+                    title="Icons iframe"
+                  >
+                    <p>Your browser does not support iframes.</p>
+                  </iframe>
+                </Hidden>
+                <Hidden mdUp implementation="css">
+                  <Grid item xs={12} sm={12} md={6}>
+                    <h5>
+                      The icons are visible on Desktop mode inside an iframe.
+                      Since the iframe is not working on Mobile and Tablets
+                      please visit the icons on their original page on Google.
+                      Check the
+                      {/*eslint-disable-next-line*/}
+                      <a
+                        href="https://design.google.com/icons/?ref=creativetime"
+                        target="_blank"
+                      >
+                        Material Icons
+                      </a>
+                    </h5>
+                  </Grid>
+                </Hidden>
               </CardContent>
             </Card>
           </Grid>
