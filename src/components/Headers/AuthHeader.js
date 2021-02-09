@@ -21,7 +21,7 @@ const AuthHeader = () => {
         paddingTop="8rem"
         paddingBottom="8rem"
       >
-        <Container>
+        <Container maxWidth="xl">
           <Box marginBottom="6rem" textAlign="center">
             <Box
               component={Grid}
