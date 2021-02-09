@@ -36,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
 const Footer = () => {
   const classes = useStyles();
   return (
-    <Box component="footer" width="100%">
-      <Grid container spacing={3}>
-        <Grid item xl={6}>
+    <Box component="footer" width="100%" padding="2.5rem 0">
+      <Grid container>
+        <Grid item xl={6} component={Box} display="flex" alignItems="center">
           <div className={classes.copyrightWrapper}>
             © {new Date().getFullYear()}{" "}
             <a
