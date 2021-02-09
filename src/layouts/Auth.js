@@ -75,8 +75,9 @@ const Auth = () => {
         <AuthNavbar />
         <AuthHeader />
         {/* Page content */}
-        <Box
-          component={Container}
+        <Container
+          component={Box}
+          maxWidth="xl"
           marginTop="-8rem"
           paddingBottom="3rem"
           position="relative"
@@ -88,7 +89,7 @@ const Auth = () => {
               <Redirect from="*" to="/auth/login" />
             </Switch>
           </Box>
-        </Box>
+        </Container>
       </div>
       <AuthFooter />
     </>
