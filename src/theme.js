@@ -208,6 +208,46 @@ const theme = createMuiTheme({
         },
       },
     },
+    MuiContainer: {
+      root: {
+        width: "100%",
+        paddingRight: "15px",
+        paddingLeft: "15px",
+        marginRight: "auto",
+        marginLeft: "auto",
+      },
+      maxWidthXs: {
+        "@media (min-width: 576px)": {
+          maxWidth: "540px",
+        },
+      },
+      maxWidthSm: {
+        "@media (min-width: 576px)": {
+          maxWidth: "540px",
+        },
+      },
+      maxWidthMd: {
+        "@media (min-width: 768px)": {
+          maxWidth: "720px",
+        },
+      },
+      maxWidthLg: {
+        "@media (min-width: 992px)": {
+          maxWidth: "960px",
+        },
+      },
+      maxWidthXl: {
+        "@media (min-width: 1200px)": {
+          maxWidth: "1140px",
+        },
+      },
+    },
+    MuiSvgIcon: {
+      root: {
+        width: "14px",
+        height: "14px",
+      },
+    },
   },
 });
 
