@@ -19,6 +19,9 @@ import React from "react";
 // material-ui components
 import { makeStyles } from "@material-ui/core/styles";
 
+// core components
+import CardStats from "components/Cards/CardStats.js";
+
 const useStyles = makeStyles((theme) => ({
   header: {
     position: "relative",
@@ -35,7 +38,9 @@ const Header = () => {
   const classes = useStyles();
   return (
     <>
-      <div className={classes.header}></div>
+      <div className={classes.header}>
+        <CardStats />
+      </div>
     </>
   );
 };
