@@ -14,9 +14,10 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 // import FormLabel from '@material-ui/core/FormLabel';
 import Grid from "@material-ui/core/Grid";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import InputLabel from "@material-ui/core/InputLabel";
 // material-ui icons
-import AccountCircle from "@material-ui/icons/AccountCircle";
+// import AccountCircle from "@material-ui/icons/AccountCircle";
+import Email from "@material-ui/icons/Email";
+import Lock from "@material-ui/icons/Lock";
 
 const useStyles = makeStyles((theme) => ({
   cardRoot: {
@@ -26,6 +27,11 @@ const useStyles = makeStyles((theme) => ({
   },
   cardHeader: {
     backgroundColor: "initial",
+  },
+  cardContent: {
+    [theme.breakpoints.up("md")]: {
+      padding: "3rem",
+    },
   },
   buttonImg: {
     verticalAlign: "middle",
@@ -46,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     display: "flex",
     minHeight: "1.5rem",
-    paddingLeft: "3rem",
     WebkitPrintColorAdjust: "exact",
   },
   formControlLabelLabel: {
@@ -55,6 +60,11 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     verticalAlign: "top",
     display: "inline-block",
+    color: "#8898aa",
+  },
+  footerLinks: {
+    color: "#ced4da",
+    textDecoration: "none",
   },
 }));
 
@@ -122,7 +132,7 @@ function Login() {
               </Button>
             </Box>
           </Box>
-          <CardContent>
+          <CardContent classes={{ root: classes.cardContent }}>
             <Box
               color="#8898aa"
               textAlign="center"
@@ -131,31 +141,39 @@ function Login() {
               fontSize="1rem"
             >
               <Box fontSize="80%" fontWeight="400" component="small">
-                Sign in with
+                Or sign in with credentials
               </Box>
             </Box>
-            <FormControl variant="filled">
-              <InputLabel htmlFor="login-page-card-email">Email</InputLabel>
+            <FormControl
+              variant="filled"
+              component={Box}
+              width="100%"
+              marginBottom="1rem!important"
+            >
               <FilledInput
-                id="login-page-card-email"
+                autoComplete="off"
                 type="email"
+                placeholder="Email"
                 startAdornment={
                   <InputAdornment position="start">
-                    <AccountCircle />
+                    <Email />
                   </InputAdornment>
                 }
               />
             </FormControl>
-            <FormControl variant="filled">
-              <InputLabel htmlFor="login-page-card-password">
-                Password
-              </InputLabel>
+            <FormControl
+              variant="filled"
+              component={Box}
+              width="100%"
+              marginBottom="1rem!important"
+            >
               <FilledInput
-                id="login-page-card-password"
+                autoComplete="off"
                 type="password"
+                placeholder="Password"
                 startAdornment={
                   <InputAdornment position="start">
-                    <AccountCircle />
+                    <Lock />
                   </InputAdornment>
                 }
               />
@@ -177,6 +195,26 @@ function Login() {
             </Box>
           </CardContent>
         </Card>
+        <Grid container component={Box} marginTop="1rem">
+          <Grid item xs={6} component={Box} textAlign="left">
+            <a
+              href="#admui"
+              onClick={(e) => e.preventDefault()}
+              className={classes.footerLinks}
+            >
+              Forgot password
+            </a>
+          </Grid>
+          <Grid item xs={6} component={Box} textAlign="right">
+            <a
+              href="#admui"
+              onClick={(e) => e.preventDefault()}
+              className={classes.footerLinks}
+            >
+              Create new account
+            </a>
+          </Grid>
+        </Grid>
       </Grid>
     </>
   );
