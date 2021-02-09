@@ -10,7 +10,7 @@ import Grid from "@material-ui/core/Grid";
 // core components
 import Header from "components/Headers/Header.js";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   cardRoot: {
     boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
     border: "0!important",
