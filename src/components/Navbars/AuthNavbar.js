@@ -57,12 +57,13 @@ export default function AuthNavbar() {
     <>
       <AppBar position="absolute" color="transparent" elevation={0}>
         <Toolbar>
-          <Box
+          <Container
             display="flex!important"
             justifyContent="space-between"
             alignItems="center"
-            marginTop="1rem"
-            component={Container}
+            marginTop=".75rem"
+            component={Box}
+            maxWidth="xl"
           >
             <div>
               <Hidden mdUp>
@@ -129,7 +130,7 @@ export default function AuthNavbar() {
                 Profile
               </ListItem>
             </Box>
-          </Box>
+          </Container>
         </Toolbar>
       </AppBar>
     </>
