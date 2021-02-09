@@ -29,6 +29,23 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#fff",
       boxShadow: "0 0 0 1px rgb(0 0 0 / 10%), 0 4px 16px rgb(0 0 0 / 10%)",
     },
+    "& i": {
+      fontSize: "1.5rem",
+      boxSizing: "initial",
+      verticalAlign: "middle",
+      color: "#393f49",
+    },
+    "& span": {
+      fontSize: ".875rem",
+      lineHeight: "1.5",
+      display: "inline-block",
+      overflow: "hidden",
+      marginLeft: "16px",
+      verticalAlign: "middle",
+      whiteSpace: "nowrap",
+      textOverflow: "ellipsis",
+      color: "#393f49",
+    },
   },
   containerRoot: {
     [theme.breakpoints.up("md")]: {
@@ -54,7 +71,7 @@ const Icons = () => {
         {/* Table */}
         <Grid container>
           <Grid item xs={12}>
-            <Card classes={{ root: classes.root }}>
+            <Card classes={{ root: classes.cardRoot }}>
               <Box
                 padding="1.25rem 1.5rem"
                 marginBottom="0"
