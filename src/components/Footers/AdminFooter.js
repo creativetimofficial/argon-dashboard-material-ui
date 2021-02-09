@@ -38,7 +38,7 @@ const Footer = () => {
   return (
     <Box component="footer" width="100%" padding="2.5rem 0">
       <Grid container>
-        <Grid item xl={6} component={Box} display="flex" alignItems="center">
+        <Box item xl={6} component={Grid} display="flex" alignItems="center">
           <div className={classes.copyrightWrapper}>
             © {new Date().getFullYear()}{" "}
             <a
@@ -50,7 +50,7 @@ const Footer = () => {
               Creative Tim
             </a>
           </div>
-        </Grid>
+        </Box>
 
         <Grid
           item
