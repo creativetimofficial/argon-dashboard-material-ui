@@ -155,6 +155,86 @@ const theme = createMuiTheme({
         fontSize: ".875rem",
       },
     },
+    MuiFilledInput: {
+      underline: {
+        "&:before": {
+          display: "none",
+        },
+        "&:after": {
+          borderRadius: ".375rem",
+          height: "100%",
+          border: "2px solid #5e72e4",
+        },
+      },
+      root: {
+        boxShadow: "0 1px 3px rgb(50 50 93 / 15%), 0 1px 0 rgb(0 0 0 / 2%)",
+        border: 0,
+        transition: "box-shadow .15s ease",
+        borderRadius: ".375rem",
+        position: "relative",
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        width: "100%",
+        backgroundColor: "#fff !important",
+      },
+      input: {
+        border: 0,
+        boxShadow: "none",
+        position: "relative",
+        flex: "1 1 auto",
+        width: "1%",
+        minWidth: 0,
+        marginBottom: 0,
+        padding: 0,
+        "&:not(:first-child)": {
+          borderLeft: 0,
+          paddingLeft: 0,
+          borderTopLeftRadius: 0,
+          borderBottomLeftRadius: 0,
+        },
+      },
+    },
+    MuiInputAdornment: {
+      root: {
+        transition: "all .2s cubic-bezier(.68,-.55,.265,1.55)",
+        display: "flex",
+        alignItems: "center",
+        padding: ".625rem .75rem",
+        marginBottom: "0",
+        fontSize: ".875rem",
+        fontWeight: "400",
+        lineHeight: "1.5",
+        color: "#adb5bd",
+        textAlign: "center",
+        whiteSpace: "nowrap",
+        backgroundColor: "#fff",
+        border: "1px solid #cad1d7",
+        borderRadius: ".375rem",
+        marginTop: "0!important",
+      },
+      positionStart: {
+        paddingLeft: 0,
+      },
+      filled: {
+        display: "flex",
+        "&$positionStart": {
+          marginRight: "-1px",
+          borderTopRightRadius: "0",
+          borderBottomRightRadius: "0",
+          border: "0",
+          boxShadow: "none",
+        },
+      },
+    },
+    MuiCheckbox: {
+      root: {
+        "& .MuiSvgIcon-root": {
+          width: "1.5rem",
+          height: "1.5rem",
+        },
+      },
+    },
     MuiCard: {
       root: {
         position: "relative",
