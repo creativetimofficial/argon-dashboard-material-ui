@@ -122,7 +122,7 @@ const Maps = () => {
       <Header />
       {/* Page content */}
       <Container
-        maxWidth="xl"
+        maxWidth={false}
         component={Box}
         marginTop="-6rem"
         classes={{ root: classes.containerRoot }}
