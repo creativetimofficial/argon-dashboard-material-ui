@@ -248,6 +248,17 @@ const theme = createMuiTheme({
         borderRadius: ".375rem",
       },
     },
+    MuiCardHeader: {
+      root: {
+        padding: "1.25rem 1.5rem",
+        marginBottom: "0",
+        backgroundColor: "#fff",
+        borderBottom: "1px solid rgba(0,0,0,.05)",
+        "&:first-child": {
+          borderRadius: "calc(.375rem - 1px) calc(.375rem - 1px) 0 0",
+        },
+      },
+    },
     MuiCardContent: {
       root: {
         flex: "1 1 auto",
