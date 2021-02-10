@@ -19,7 +19,7 @@ import React from "react";
 import { useLocation, Route, Switch, Redirect } from "react-router-dom";
 // material-ui components
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 // core components
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
@@ -34,11 +34,16 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "250px",
     },
   },
+  containerRoot: {
+    [theme.breakpoints.up("md")]: {
+      paddingLeft: "39px",
+      paddingRight: "39px",
+    },
+  },
 }));
 
-const Admin = (props) => {
+const Admin = () => {
   const classes = useStyles();
-  const mainContent = React.useRef(null);
   const location = useLocation();
 
   React.useEffect(() => {
@@ -63,7 +68,7 @@ const Admin = (props) => {
     });
   };
 
-  const getBrandText = (path) => {
+  const getBrandText = () => {
     for (let i = 0; i < routes.length; i++) {
       if (location.pathname.indexOf(routes[i].layout + routes[i].path) !== -1) {
         return routes[i].name;
@@ -89,14 +94,13 @@ const Admin = (props) => {
             {getRoutes(routes)}
             <Redirect from="*" to="/admin/index" />
           </Switch>
-          <Grid
-            container
+          <Container
+            maxWidth={false}
             component={Box}
-            paddingLeft="24px"
-            paddingRight="24px"
+            classes={{ root: classes.containerRoot }}
           >
             <AdminFooter />
-          </Grid>
+          </Container>
         </Box>
       </>
     </>
