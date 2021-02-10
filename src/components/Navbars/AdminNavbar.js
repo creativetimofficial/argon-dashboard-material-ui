@@ -2,9 +2,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Avatar from "@material-ui/core/Avatar";
-import Badge from "@material-ui/core/Badge";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
 import Divider from "@material-ui/core/Divider";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
@@ -14,18 +14,21 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 // material-ui icons
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles((theme) => ({
+  buttonRoot: {
+    padding: ".25rem 0 .25rem 1rem!important",
+    border: "0!important",
+  },
   buttonLabel: {
     fontSize: ".875rem",
     fontWeight: "600",
     color: "hsla(0,0%,100%,.95)",
     textTransform: "capitalize",
+    display: "flex",
+    alignItems: "center",
   },
   avatarRoot: {
     width: "36px",
@@ -71,31 +74,26 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "none",
     padding: "0",
   },
+  containerRoot: {
+    [theme.breakpoints.up("md")]: {
+      paddingLeft: "39px",
+      paddingRight: "39px",
+    },
+  },
 }));
 
 export default function PrimarySearchAppBar({ brandText }) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
   const handleMenuClose = () => {
     setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
   };
 
   const menuId = "primary-search-account-menu";
@@ -140,118 +138,85 @@ export default function PrimarySearchAppBar({ brandText }) {
     </Menu>
   );
 
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
-  );
-
   return (
     <>
       <AppBar position="absolute" color="transparent" elevation={0}>
-        <Toolbar>
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            width="100%"
-            marginTop="0.5rem"
+        <Toolbar disableGutters>
+          <Container
+            maxWidth={false}
+            component={Box}
+            classes={{ root: classes.containerRoot }}
           >
-            <div>
-              <Hidden mdUp>
-                <IconButton
-                  edge="start"
-                  color="inherit"
-                  aria-label="open drawer"
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              width="100%"
+              marginTop="0.5rem"
+            >
+              <div>
+                <Hidden mdUp>
+                  <IconButton
+                    edge="start"
+                    color="inherit"
+                    aria-label="open drawer"
+                  >
+                    <MenuIcon />
+                  </IconButton>
+                </Hidden>
+                <Typography
+                  className={classes.brandTitle}
+                  variant="h4"
+                  component="a"
                 >
-                  <MenuIcon />
-                </IconButton>
-              </Hidden>
-              <Typography
-                className={classes.brandTitle}
-                variant="h4"
-                component="a"
-              >
-                {brandText}
-              </Typography>
-            </div>
-            <Box display="flex" alignItems="center" width="auto">
-              <Box
-                display="flex"
-                alignItems="center"
-                width="auto"
-                marginRight="1rem"
-                classes={{
-                  root: classes.searchBox,
-                }}
-              >
-                <SearchIcon className={classes.searchIcon} />
-                <InputBase
-                  placeholder="Search"
+                  {brandText}
+                </Typography>
+              </div>
+              <Box display="flex" alignItems="center" width="auto">
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  width="auto"
+                  marginRight="1rem"
                   classes={{
-                    input: classes.searchInput,
+                    root: classes.searchBox,
                   }}
-                />
+                >
+                  <SearchIcon className={classes.searchIcon} />
+                  <InputBase
+                    placeholder="Search"
+                    classes={{
+                      input: classes.searchInput,
+                    }}
+                  />
+                </Box>
+                <Button
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  onClick={handleProfileMenuOpen}
+                  color="inherit"
+                  classes={{
+                    label: classes.buttonLabel,
+                    root: classes.buttonRoot,
+                  }}
+                >
+                  <Avatar
+                    alt="..."
+                    src={require("assets/img/theme/team-4-800x800.jpg").default}
+                    classes={{
+                      root: classes.avatarRoot,
+                    }}
+                  />
+                  Jessica Jones
+                </Button>
               </Box>
-              <Button
-                edge="end"
-                aria-label="account of current user"
-                aria-controls={menuId}
-                aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
-                color="inherit"
-                classes={{
-                  label: classes.buttonLabel,
-                }}
-              >
-                <Avatar
-                  alt="..."
-                  src={require("assets/img/theme/team-4-800x800.jpg").default}
-                  classes={{
-                    root: classes.avatarRoot,
-                  }}
-                />
-                Jessica Jones
-              </Button>
             </Box>
-          </Box>
+          </Container>
         </Toolbar>
       </AppBar>
+      {renderMenu}
     </>
   );
 }
