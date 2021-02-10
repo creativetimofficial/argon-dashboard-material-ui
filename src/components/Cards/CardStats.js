@@ -49,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
 
 function CardStats({ subtitle, title, footer, icon, color }) {
   const classes = useStyles();
-  console.log(typeof icon);
   return (
     <>
       <Card classes={{ root: classes.cardRoot }} elevation={0}>
