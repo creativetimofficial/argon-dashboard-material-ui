@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
@@ -78,17 +79,15 @@ const Icons = () => {
         <Grid container component={Box} marginBottom="39px">
           <Grid item xs={12}>
             <Card classes={{ root: classes.cardRoot }}>
-              <Box
-                padding="1.25rem 1.5rem"
-                marginBottom="0"
-                borderBottom="1px solid rgba(0,0,0,.05)"
-                borderRadius="calc(.375rem - 1px) calc(.375rem - 1px) 0 0"
+              <CardHeader
                 className={classes.cardHeader}
-              >
-                <Box component="h3" marginBottom="0">
-                  Nucleo Icons
-                </Box>
-              </Box>
+                title="Nucleo Icons"
+                titleTypographyProps={{
+                  component: Box,
+                  marginBottom: "0!important",
+                  variant: "h3",
+                }}
+              ></CardHeader>
               <CardContent>
                 <Grid container>
                   <Grid
@@ -4845,17 +4844,15 @@ const Icons = () => {
         <Grid container component={Box} marginBottom="39px">
           <Grid item xs={12}>
             <Card classes={{ root: classes.cardRoot }}>
-              <Box
-                padding="1.25rem 1.5rem"
-                marginBottom="0"
-                borderBottom="1px solid rgba(0,0,0,.05)"
-                borderRadius="calc(.375rem - 1px) calc(.375rem - 1px) 0 0"
+              <CardHeader
                 className={classes.cardHeader}
-              >
-                <Box component="h3" marginBottom="0">
-                  Material Icons
-                </Box>
-              </Box>
+                title="Material Icons"
+                titleTypographyProps={{
+                  component: Box,
+                  marginBottom: "0!important",
+                  variant: "h3",
+                }}
+              ></CardHeader>
               <CardContent>
                 <Hidden mdDown implementation="css">
                   <iframe
