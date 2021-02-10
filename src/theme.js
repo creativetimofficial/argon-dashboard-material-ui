@@ -322,6 +322,17 @@ const theme = createMuiTheme({
         },
       },
     },
+    MuiGrid: {
+      item: {
+        paddingRight: "15px",
+        paddingLeft: "15px",
+      },
+      container: {
+        marginRight: "-15px",
+        marginLeft: "-15px",
+        width: "unset",
+      },
+    },
     MuiSvgIcon: {
       root: {
         width: "14px",
