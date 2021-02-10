@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
 import Checkbox from "@material-ui/core/Checkbox";
 import FilledInput from "@material-ui/core/FilledInput";
 import FormControl from "@material-ui/core/FormControl";
@@ -75,64 +76,70 @@ function Register() {
     <>
       <Grid item lg={6} md={8}>
         <Card classes={{ root: classes.cardRoot }}>
-          <Box
-            padding="1.25rem 1.5rem"
-            marginBottom="0"
-            borderBottom="1px solid rgba(0,0,0,.05)"
-            paddingBottom="3rem"
-            borderRadius="calc(.375rem - 1px) calc(.375rem - 1px) 0 0"
+          <CardHeader
             className={classes.cardHeader}
-          >
-            <Box
-              color="#8898aa"
-              textAlign="center"
-              marginBottom="1rem"
-              marginTop=".5rem"
-              fontSize="1rem"
-            >
-              <Box fontSize="80%" fontWeight="400" component="small">
+            title={
+              <Box
+                fontSize="80%"
+                fontWeight="400"
+                component="small"
+                color="#8898aa"
+              >
                 Sign up with
               </Box>
-            </Box>
-            <Box textAlign="center">
-              <Box
-                component={Button}
-                variant="contained"
-                marginRight="2rem!important"
-                classes={{ root: classes.buttonRoot }}
-              >
-                <Box component="span" marginRight="4px">
-                  <Box
-                    alt="..."
-                    component="img"
-                    width="20px"
-                    className={classes.buttonImg}
-                    src={require("assets/img/icons/common/github.svg").default}
-                  ></Box>
+            }
+            titleTypographyProps={{
+              component: Box,
+              textAlign: "center",
+              marginBottom: "1rem!important",
+              marginTop: ".5rem!important",
+              fontSize: "1rem!important",
+            }}
+            subheader={
+              <Box textAlign="center">
+                <Box
+                  component={Button}
+                  variant="contained"
+                  marginRight="2rem!important"
+                  classes={{ root: classes.buttonRoot }}
+                >
+                  <Box component="span" marginRight="4px">
+                    <Box
+                      alt="..."
+                      component="img"
+                      width="20px"
+                      className={classes.buttonImg}
+                      src={
+                        require("assets/img/icons/common/github.svg").default
+                      }
+                    ></Box>
+                  </Box>
+                  <Box component="span" marginLeft=".75rem">
+                    Github
+                  </Box>
                 </Box>
-                <Box component="span" marginLeft=".75rem">
-                  Github
-                </Box>
+                <Button
+                  variant="contained"
+                  classes={{ root: classes.buttonRoot }}
+                >
+                  <Box component="span" marginRight="4px">
+                    <Box
+                      alt="..."
+                      component="img"
+                      width="20px"
+                      className={classes.buttonImg}
+                      src={
+                        require("assets/img/icons/common/google.svg").default
+                      }
+                    ></Box>
+                  </Box>
+                  <Box component="span" marginLeft=".75rem">
+                    Google
+                  </Box>
+                </Button>
               </Box>
-              <Button
-                variant="contained"
-                classes={{ root: classes.buttonRoot }}
-              >
-                <Box component="span" marginRight="4px">
-                  <Box
-                    alt="..."
-                    component="img"
-                    width="20px"
-                    className={classes.buttonImg}
-                    src={require("assets/img/icons/common/google.svg").default}
-                  ></Box>
-                </Box>
-                <Box component="span" marginLeft=".75rem">
-                  Google
-                </Box>
-              </Button>
-            </Box>
-          </Box>
+            }
+          ></CardHeader>
           <CardContent classes={{ root: classes.cardContent }}>
             <Box
               color="#8898aa"
