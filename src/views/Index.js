@@ -696,7 +696,7 @@ function Dashboard() {
                           <Box width="100%">
                             <LinearProgress
                               variant="determinate"
-                              value={60}
+                              value={70}
                               classes={{
                                 root: classes.linearProgressRoot,
                                 bar: classes.bgGradientSuccess,
@@ -731,7 +731,7 @@ function Dashboard() {
                           <Box width="100%">
                             <LinearProgress
                               variant="determinate"
-                              value={60}
+                              value={80}
                               classes={{
                                 root: classes.linearProgressRoot,
                                 bar: classes.bgGradientPrimary,
@@ -766,7 +766,7 @@ function Dashboard() {
                           <Box width="100%">
                             <LinearProgress
                               variant="determinate"
-                              value={60}
+                              value={75}
                               classes={{
                                 root: classes.linearProgressRoot,
                                 bar: classes.bgGradientInfo,
@@ -817,7 +817,7 @@ function Dashboard() {
                           <Box width="100%">
                             <LinearProgress
                               variant="determinate"
-                              value={60}
+                              value={30}
                               classes={{
                                 root: classes.linearProgressRoot,
                                 bar: classes.bgGradientWarning,
