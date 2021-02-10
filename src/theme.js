@@ -417,6 +417,25 @@ const theme = createMuiTheme({
         height: "auto",
       },
     },
+    MuiAvatar: {
+      root: {
+        color: "#fff",
+        backgroundColor: "#adb5bd",
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: "1rem",
+        borderRadius: "50%",
+        height: "48px",
+        width: "48px",
+      },
+      img: {
+        width: "100%",
+        borderRadius: "50%",
+        verticalAlign: "middle",
+        borderStyle: "none",
+      },
+    },
   },
 });
 
