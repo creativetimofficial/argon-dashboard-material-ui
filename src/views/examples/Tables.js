@@ -1182,7 +1182,7 @@ const Tables = () => {
                     align="right"
                   >
                     <Box
-                      aria-controls="simple-menu-1"
+                      aria-controls="simple-menu-6"
                       aria-haspopup="true"
                       onClick={handleClick}
                       size="small"
@@ -1202,10 +1202,10 @@ const Tables = () => {
                       />
                     </Box>
                     <Menu
-                      id="simple-menu-1"
-                      anchorEl={anchorEl1}
+                      id="simple-menu-6"
+                      anchorEl={anchorEl6}
                       keepMounted
-                      open={Boolean(anchorEl1)}
+                      open={Boolean(anchorEl6)}
                       onClose={handleClose}
                     >
                       <MenuItem onClick={handleClose}>Action</MenuItem>
@@ -1327,7 +1327,7 @@ const Tables = () => {
                     align="right"
                   >
                     <Box
-                      aria-controls="simple-menu-2"
+                      aria-controls="simple-menu-7"
                       aria-haspopup="true"
                       onClick={handleClick}
                       size="small"
@@ -1347,10 +1347,10 @@ const Tables = () => {
                       />
                     </Box>
                     <Menu
-                      id="simple-menu-2"
-                      anchorEl={anchorEl2}
+                      id="simple-menu-7"
+                      anchorEl={anchorEl7}
                       keepMounted
-                      open={Boolean(anchorEl2)}
+                      open={Boolean(anchorEl7)}
                       onClose={handleClose}
                     >
                       <MenuItem onClick={handleClose}>Action</MenuItem>
@@ -1472,7 +1472,7 @@ const Tables = () => {
                     align="right"
                   >
                     <Box
-                      aria-controls="simple-menu-3"
+                      aria-controls="simple-menu-8"
                       aria-haspopup="true"
                       onClick={handleClick}
                       size="small"
@@ -1492,10 +1492,10 @@ const Tables = () => {
                       />
                     </Box>
                     <Menu
-                      id="simple-menu-3"
-                      anchorEl={anchorEl3}
+                      id="simple-menu-8"
+                      anchorEl={anchorEl8}
                       keepMounted
-                      open={Boolean(anchorEl3)}
+                      open={Boolean(anchorEl8)}
                       onClose={handleClose}
                     >
                       <MenuItem onClick={handleClose}>Action</MenuItem>
@@ -1617,7 +1617,7 @@ const Tables = () => {
                     align="right"
                   >
                     <Box
-                      aria-controls="simple-menu-4"
+                      aria-controls="simple-menu-9"
                       aria-haspopup="true"
                       onClick={handleClick}
                       size="small"
@@ -1637,10 +1637,10 @@ const Tables = () => {
                       />
                     </Box>
                     <Menu
-                      id="simple-menu-4"
-                      anchorEl={anchorEl4}
+                      id="simple-menu-9"
+                      anchorEl={anchorEl9}
                       keepMounted
-                      open={Boolean(anchorEl4)}
+                      open={Boolean(anchorEl9)}
                       onClose={handleClose}
                     >
                       <MenuItem onClick={handleClose}>Action</MenuItem>
@@ -1770,7 +1770,7 @@ const Tables = () => {
                     align="right"
                   >
                     <Box
-                      aria-controls="simple-menu-5"
+                      aria-controls="simple-menu-10"
                       aria-haspopup="true"
                       onClick={handleClick}
                       size="small"
@@ -1790,10 +1790,10 @@ const Tables = () => {
                       />
                     </Box>
                     <Menu
-                      id="simple-menu-5"
-                      anchorEl={anchorEl5}
+                      id="simple-menu-10"
+                      anchorEl={anchorEl10}
                       keepMounted
-                      open={Boolean(anchorEl5)}
+                      open={Boolean(anchorEl10)}
                       onClose={handleClose}
                     >
                       <MenuItem onClick={handleClose}>Action</MenuItem>
