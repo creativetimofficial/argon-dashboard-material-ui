@@ -436,6 +436,17 @@ const theme = createMuiTheme({
         borderStyle: "none",
       },
     },
+    MuiAvatarGroup: {
+      avatar: {
+        position: "relative",
+        zIndex: "5!important",
+        border: "2px solid #fff",
+        marginLeft: "-.75rem",
+        "&:hover": {
+          zIndex: "6!important",
+        },
+      },
+    },
   },
 });
 
