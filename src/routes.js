@@ -5,18 +5,30 @@ import Register from "views/auth/Register.js";
 import Login from "views/auth/Login.js";
 import Tables from "views/admin/Tables.js";
 import Icons from "views/admin/Icons.js";
+// material-ui icons
+import FlashOn from "@material-ui/icons/FlashOn";
+import Tv from "@material-ui/icons/Tv";
+import Grain from "@material-ui/icons/Grain";
+import LocationOn from "@material-ui/icons/LocationOn";
+import Person from "@material-ui/icons/Person";
+import FormatListBulleted from "@material-ui/icons/FormatListBulleted";
+import VpnKey from "@material-ui/icons/VpnKey";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import Palette from "@material-ui/icons/Palette";
+import Dns from "@material-ui/icons/Dns";
 
 var routes = [
   {
     href: "#pablo",
     name: "Upgrade to pro",
-    icon: "ni ni-spaceship",
+    icon: FlashOn,
+    iconColor: "Primary",
     upgradeToPro: true,
   },
   {
     path: "/index",
     name: "Dashboard",
-    icon: "ni ni-tv-2",
+    icon: Tv,
     iconColor: "Primary",
     component: Dashboard,
     layout: "/admin",
@@ -24,7 +36,7 @@ var routes = [
   {
     path: "/icons",
     name: "Icons",
-    icon: "ni ni-planet",
+    icon: Grain,
     iconColor: "Primary",
     component: Icons,
     layout: "/admin",
@@ -32,7 +44,7 @@ var routes = [
   {
     path: "/maps",
     name: "Maps",
-    icon: "ni ni-pin-3",
+    icon: LocationOn,
     iconColor: "Warning",
     component: Maps,
     layout: "/admin",
@@ -40,7 +52,7 @@ var routes = [
   {
     path: "/user-profile",
     name: "User Profile",
-    icon: "ni ni-single-02",
+    icon: Person,
     iconColor: "WarningLight",
     component: Profile,
     layout: "/admin",
@@ -48,7 +60,7 @@ var routes = [
   {
     path: "/tables",
     name: "Tables",
-    icon: "ni ni-bullet-list-67",
+    icon: FormatListBulleted,
     iconColor: "Error",
     component: Tables,
     layout: "/admin",
@@ -56,7 +68,7 @@ var routes = [
   {
     path: "/login",
     name: "Login",
-    icon: "ni ni-key-25",
+    icon: VpnKey,
     iconColor: "Info",
     component: Login,
     layout: "/auth",
@@ -64,7 +76,7 @@ var routes = [
   {
     path: "/register",
     name: "Register",
-    icon: "ni ni-circle-08",
+    icon: AccountCircle,
     iconColor: "ErrorLight",
     component: Register,
     layout: "/auth",
@@ -79,19 +91,19 @@ var routes = [
     href:
       "https://demos.creative-tim.com/argon-dashboard-react/#/documentation/overview",
     name: "Getting started",
-    icon: "ni ni-spaceship",
+    icon: FlashOn,
   },
   {
     href:
       "https://demos.creative-tim.com/argon-dashboard-react/#/documentation/overview",
     name: "Foundation",
-    icon: "ni ni-palette",
+    icon: Palette,
   },
   {
     href:
       "https://demos.creative-tim.com/argon-dashboard-react/#/documentation/overview",
     name: "Components",
-    icon: "ni ni-ui-04",
+    icon: Dns,
   },
 ];
 export default routes;
