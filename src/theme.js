@@ -457,6 +457,36 @@ const theme = createMuiTheme({
         },
       },
     },
+    MuiPaginationItem: {
+      root: {
+        width: "36px",
+        height: "36px",
+        fontSize: ".875rem",
+        color: "#8898aa",
+        border: "1px solid #dee2e6",
+        borderRadius: "50%",
+        "&:hover": {
+          backgroundColor: "#dee2e6",
+        },
+      },
+      outlined: {
+        color: "#8898aa",
+        border: "1px solid #dee2e6",
+        "&:hover": {
+          backgroundColor: "#dee2e6",
+        },
+      },
+      outlinedPrimary: {
+        "&.Mui-selected": {
+          "&, &:hover": {
+            backgroundColor: "#5e72e4!important",
+            color: "#fff",
+            boxShadow:
+              "0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%)",
+          },
+        },
+      },
+    },
   },
 });
 
