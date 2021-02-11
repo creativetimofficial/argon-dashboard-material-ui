@@ -3,23 +3,19 @@ import { Link } from "react-router-dom";
 // material-ui components
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
-// import Badge from "@material-ui/core/Badge";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
-// import Divider from "@material-ui/core/Divider";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-// import Menu from "@material-ui/core/Menu";
-// import MenuItem from "@material-ui/core/MenuItem";
 import Toolbar from "@material-ui/core/Toolbar";
-// import Typography from "@material-ui/core/Typography";
 // material-ui icons
-// import AccountCircle from "@material-ui/icons/AccountCircle";
-// import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
-// import NotificationsIcon from "@material-ui/icons/Notifications";
+import Dashboard from "@material-ui/icons/Dashboard";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import VpnKey from "@material-ui/icons/VpnKey";
+import Person from "@material-ui/icons/Person";
 
 const useStyles = makeStyles((theme) => ({
   listItemRoot: {
@@ -96,7 +92,12 @@ export default function AuthNavbar() {
                   root: classes.listItemRoot,
                 }}
               >
-                <i className={"ni ni-planet"} />
+                <Box
+                  component={Dashboard}
+                  width="1.25rem!important"
+                  height="1.25rem!important"
+                  marginRight=".5rem!important"
+                />
                 Dashboard
               </ListItem>
               <ListItem
@@ -106,7 +107,12 @@ export default function AuthNavbar() {
                   root: classes.listItemRoot,
                 }}
               >
-                <i className={"ni ni-circle-08"} />
+                <Box
+                  component={AccountCircle}
+                  width="1.25rem!important"
+                  height="1.25rem!important"
+                  marginRight=".5rem!important"
+                />
                 Register
               </ListItem>
               <ListItem
@@ -116,7 +122,12 @@ export default function AuthNavbar() {
                   root: classes.listItemRoot,
                 }}
               >
-                <i className={"ni ni-key-25"} />
+                <Box
+                  component={VpnKey}
+                  width="1.25rem!important"
+                  height="1.25rem!important"
+                  marginRight=".5rem!important"
+                />
                 Login
               </ListItem>
               <ListItem
@@ -126,7 +137,12 @@ export default function AuthNavbar() {
                   root: classes.listItemRoot,
                 }}
               >
-                <i className={"ni ni-single-02"} />
+                <Box
+                  component={Person}
+                  width="1.25rem!important"
+                  height="1.25rem!important"
+                  marginRight=".5rem!important"
+                />
                 Profile
               </ListItem>
             </Box>
