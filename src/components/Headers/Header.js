@@ -61,7 +61,7 @@ const Header = () => {
         >
           <div>
             <Grid container>
-              <Grid item xl={3} lg={6}>
+              <Grid item xl={3} lg={6} xs={12}>
                 <CardStats
                   subtitle="Traffic"
                   title="350,897"
@@ -91,7 +91,7 @@ const Header = () => {
                   }
                 />
               </Grid>
-              <Grid item xl={3} lg={6}>
+              <Grid item xl={3} lg={6} xs={12}>
                 <CardStats
                   subtitle="New users"
                   title="2,356"
@@ -121,7 +121,7 @@ const Header = () => {
                   }
                 />
               </Grid>
-              <Grid item xl={3} lg={6}>
+              <Grid item xl={3} lg={6} xs={12}>
                 <CardStats
                   subtitle="Sales"
                   title="924"
@@ -151,7 +151,7 @@ const Header = () => {
                   }
                 />
               </Grid>
-              <Grid item xl={3} lg={6}>
+              <Grid item xl={3} lg={6} xs={12}>
                 <CardStats
                   subtitle="Performance"
                   title="49,65%"
