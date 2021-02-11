@@ -46,7 +46,7 @@ const Footer = () => {
         display="flex!important"
         alignItems="center"
       >
-        <Grid item xl={6}>
+        <Grid item xs={12} xl={6}>
           <div className={classes.copyrightWrapper}>
             © {new Date().getFullYear()}{" "}
             <a
