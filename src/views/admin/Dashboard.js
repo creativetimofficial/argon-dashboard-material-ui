@@ -131,9 +131,10 @@ function Dashboard() {
         <Grid container>
           <Grid
             item
+            xs={12}
             xl={8}
             component={Box}
-            marginBottom="3rem"
+            marginBottom="3rem!important"
             classes={{ root: classes.gridItemRoot }}
           >
             <Card
@@ -262,9 +263,10 @@ function Dashboard() {
         <Grid container component={Box} marginTop="3rem">
           <Grid
             item
+            xs={12}
             xl={8}
             component={Box}
-            marginBottom="3rem"
+            marginBottom="3rem!important"
             classes={{ root: classes.gridItemRoot }}
           >
             <Card
