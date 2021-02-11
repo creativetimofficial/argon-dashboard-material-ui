@@ -3,13 +3,19 @@ import PropTypes from "prop-types";
 import { useLocation, Link } from "react-router-dom";
 // material-ui components
 import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
+// import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import Hidden from "@material-ui/core/Hidden";
+import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ListItem from "@material-ui/core/ListItem";
+// material-ui icons
+import MenuIcon from "@material-ui/icons/Menu";
 
 // for styles applied to this component
 const useStyles = makeStyles((theme) => ({
@@ -78,11 +84,12 @@ const useStyles = makeStyles((theme) => ({
     color: "#8898aa",
   },
   logoClasses: {
+    maxHeight: "2rem",
+    maxWidth: "100%",
+    verticalAlign: "middle",
+    borderStyle: "none",
     [theme.breakpoints.up("md")]: {
       maxHeight: "2.5rem",
-      maxWidth: "100%",
-      verticalAlign: "middle",
-      borderStyle: "none",
     },
   },
   logoLinkClasses: {
@@ -125,9 +132,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Sidebar({ routes, logo }) {
+export default function Sidebar({ routes, logo, dropdown }) {
   const classes = useStyles();
   const location = useLocation();
+  const [mobileDrawerOpen, setMobileDrawerOpen] = React.useState(false);
   // creates the links that appear in the left menu / Sidebar
   const createLinks = (routes) => {
     return routes.map((prop, key) => {
@@ -214,19 +222,57 @@ export default function Sidebar({ routes, logo }) {
   let logoImage = (
     <img alt={logo.imgAlt} className={classes.logoClasses} src={logo.imgSrc} />
   );
+  let logoObject =
+    logo && logo.innerLink ? (
+      <Link to={logo.innerLink} className={classes.logoLinkClasses}>
+        {logoImage}
+      </Link>
+    ) : logo && logo.outterLink ? (
+      <a href={logo.outterLink} className={classes.logoLinkClasses}>
+        {logoImage}
+      </a>
+    ) : null;
   return (
     <>
       <Hidden smDown implementation="css">
         <Drawer variant="permanent" anchor="left" open>
-          {logo && logo.innerLink ? (
-            <Link to={logo.innerLink} className={classes.logoLinkClasses}>
-              {logoImage}
-            </Link>
-          ) : logo && logo.outterLink ? (
-            <a href={logo.outterLink} className={classes.logoLinkClasses}>
-              {logoImage}
-            </a>
-          ) : null}
+          {logoObject}
+          <List classes={{ root: classes.listRoot }}>
+            {createLinks(routes)}
+          </List>
+        </Drawer>
+      </Hidden>
+      <Hidden mdUp implementation="css">
+        <AppBar position="relative" color="white" elevation={0}>
+          <Toolbar>
+            <Container
+              display="flex!important"
+              justifyContent="space-between"
+              alignItems="center"
+              marginTop=".75rem"
+              marginBottom=".75rem"
+              component={Box}
+              maxWidth={false}
+              padding="0!important"
+            >
+              <Box
+                component={MenuIcon}
+                width="2rem!important"
+                height="2rem!important"
+                onClick={() => setMobileDrawerOpen(!mobileDrawerOpen)}
+              />
+              {logoObject}
+              {dropdown}
+            </Container>
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          variant="temporary"
+          anchor="left"
+          open={mobileDrawerOpen}
+          onClose={() => setMobileDrawerOpen(false)}
+        >
+          {logoObject}
           <List classes={{ root: classes.listRoot }}>
             {createLinks(routes)}
           </List>
@@ -241,6 +287,10 @@ Sidebar.defaultProps = {
 };
 
 Sidebar.propTypes = {
+  // this is the dropdown/component that will be rendered on responsive
+  // in our demo, it is the same with the dropdown from the AdminNavbar
+  // since the AdminNavbar will not be visible on responsive mode
+  dropdown: PropTypes.node,
   // NOTE: we recommend that your logo has the following dimensions
   // // 135x40 or 487x144 or a resize of these dimensions
   logo: PropTypes.shape({
