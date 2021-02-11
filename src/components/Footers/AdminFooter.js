@@ -31,13 +31,23 @@ const useStyles = makeStyles((theme) => ({
       color: "#233dd2",
     },
   },
+  justifyContentCenter: {
+    [theme.breakpoints.down("lg")]: {
+      justifyContent: "center!important",
+    },
+  },
+  flexDirectionColumn: {
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column!important",
+    },
+  },
 }));
 
 const Footer = () => {
   const classes = useStyles();
   return (
     <Box component="footer" width="100%" padding="2.5rem 0">
-      <Grid container>
+      <Grid container classes={{ root: classes.justifyContentCenter }}>
         <Box
           item
           xs={12}
@@ -45,6 +55,7 @@ const Footer = () => {
           component={Grid}
           display="flex"
           alignItems="center"
+          className={classes.justifyContentCenter}
         >
           <div className={classes.copyrightWrapper}>
             © {new Date().getFullYear()}{" "}
@@ -71,6 +82,7 @@ const Footer = () => {
             display="flex"
             justifyContent="center"
             alignItems="center"
+            className={classes.flexDirectionColumn}
           >
             <ListItem
               component="a"
