@@ -175,7 +175,7 @@ function Profile() {
                 </Box>
                 <div className={classes.plLg4}>
                   <Grid container>
-                    <Grid item lg={6}>
+                    <Grid item xs={12} lg={6}>
                       <FormGroup>
                         <FormLabel>Username</FormLabel>
                         <FormControl
@@ -195,7 +195,7 @@ function Profile() {
                         </FormControl>
                       </FormGroup>
                     </Grid>
-                    <Grid item lg={6}>
+                    <Grid item xs={12} lg={6}>
                       <FormGroup>
                         <FormLabel>Email</FormLabel>
                         <FormControl
@@ -217,7 +217,7 @@ function Profile() {
                     </Grid>
                   </Grid>
                   <Grid container>
-                    <Grid item lg={6}>
+                    <Grid item xs={12} lg={6}>
                       <FormGroup>
                         <FormLabel>First name</FormLabel>
                         <FormControl
@@ -237,7 +237,7 @@ function Profile() {
                         </FormControl>
                       </FormGroup>
                     </Grid>
-                    <Grid item lg={6}>
+                    <Grid item xs={12} lg={6}>
                       <FormGroup>
                         <FormLabel>Last Name</FormLabel>
                         <FormControl
@@ -301,7 +301,7 @@ function Profile() {
                     </Grid>
                   </Grid>
                   <Grid container>
-                    <Grid item lg={4}>
+                    <Grid item xs={12} lg={4}>
                       <FormGroup>
                         <FormLabel>City</FormLabel>
                         <FormControl
@@ -321,7 +321,7 @@ function Profile() {
                         </FormControl>
                       </FormGroup>
                     </Grid>
-                    <Grid item lg={4}>
+                    <Grid item xs={12} lg={4}>
                       <FormGroup>
                         <FormLabel>Country</FormLabel>
                         <FormControl
@@ -341,7 +341,7 @@ function Profile() {
                         </FormControl>
                       </FormGroup>
                     </Grid>
-                    <Grid item lg={4}>
+                    <Grid item xs={12} lg={4}>
                       <FormGroup>
                         <FormLabel>Postal code</FormLabel>
                         <FormControl
@@ -409,10 +409,10 @@ function Profile() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xl={4}>
+          <Grid item xs={12} xl={4}>
             <Card classes={{ root: classes.cardRoot }}>
               <Box component={Grid} container justifyContent="center">
-                <Grid item lg={3}>
+                <Grid item xs={12} lg={3}>
                   <Box position="relative">
                     <Box
                       component="img"
