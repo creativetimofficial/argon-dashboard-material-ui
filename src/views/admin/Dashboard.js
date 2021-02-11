@@ -222,7 +222,7 @@ function Dashboard() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xl={4}>
+          <Grid item xs={12} xl={4}>
             <Card classes={{ root: classes.cardRoot }}>
               <CardHeader
                 title={
@@ -559,7 +559,7 @@ function Dashboard() {
               </TableContainer>
             </Card>
           </Grid>
-          <Grid item xl={4}>
+          <Grid item xs={12} xl={4}>
             <Card classes={{ root: classes.cardRoot }}>
               <CardHeader
                 subheader={
