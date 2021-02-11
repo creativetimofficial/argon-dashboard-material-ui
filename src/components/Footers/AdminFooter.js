@@ -38,7 +38,14 @@ const Footer = () => {
   return (
     <Box component="footer" width="100%" padding="2.5rem 0">
       <Grid container>
-        <Box item xs={12} xl={6} component={Grid} display="flex" alignItems="center">
+        <Box
+          item
+          xs={12}
+          xl={6}
+          component={Grid}
+          display="flex"
+          alignItems="center"
+        >
           <div className={classes.copyrightWrapper}>
             © {new Date().getFullYear()}{" "}
             <a
