@@ -1,13 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useLocation, Link } from "react-router-dom";
+// material-ui components
 import { makeStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import Hidden from "@material-ui/core/Hidden";
 import Typography from "@material-ui/core/Typography";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 
 // for styles applied to this component
 const useStyles = makeStyles((theme) => ({
@@ -123,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TemporaryDrawer({ routes, logo }) {
+export default function Sidebar({ routes, logo }) {
   const classes = useStyles();
   const location = useLocation();
   // creates the links that appear in the left menu / Sidebar
@@ -145,16 +147,22 @@ export default function TemporaryDrawer({ routes, logo }) {
       }
       let textContent = (
         <>
-          <ListItemIcon
-            classes={{
-              root:
-                classes.listItemIconRoot +
-                " " +
-                classes["text" + prop.iconColor],
-            }}
-          >
-            <i className={prop.icon} />
-          </ListItemIcon>
+          <Box minWidth="2.25rem" display="flex" alignItems="center">
+            {typeof prop.icon === "string" ? (
+              <Box
+                component="i"
+                className={prop.icon + " " + classes["text" + prop.iconColor]}
+              />
+            ) : null}
+            {typeof prop.icon === "object" ? (
+              <Box
+                component={prop.icon}
+                width="1.25rem!important"
+                height="1.25rem!important"
+                className={classes["text" + prop.iconColor]}
+              />
+            ) : null}
+          </Box>
           {prop.name}
         </>
       );
@@ -227,3 +235,87 @@ export default function TemporaryDrawer({ routes, logo }) {
     </>
   );
 }
+
+Sidebar.defaultProps = {
+  routes: [],
+};
+
+Sidebar.propTypes = {
+  // NOTE: we recommend that your logo has the following dimensions
+  // // 135x40 or 487x144 or a resize of these dimensions
+  logo: PropTypes.shape({
+    // innerLink is for links that will direct the user within the app
+    // it will be rendered as <Link to="...">...</Link> tag
+    innerLink: PropTypes.string,
+    // outterLink is for links that will direct the user outside the app
+    // it will be rendered as simple <a href="...">...</a> tag
+    outterLink: PropTypes.string,
+    // the image src of the logo
+    imgSrc: PropTypes.string.isRequired,
+    // the alt for the img
+    imgAlt: PropTypes.string.isRequired,
+  }),
+  // links that will be displayed inside the component
+  routes: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      // this generates an anchor (<a href="href">..</a>) link
+      // this is a link that is sent outside the app
+      PropTypes.shape({
+        // if this is set to true, than the link will have an absolute position
+        // use wisely and with precaution
+        upgradeToPro: PropTypes.bool,
+        href: PropTypes.string,
+        name: PropTypes.string,
+        icon: PropTypes.oneOfType([
+          // this refers to icons such as ni ni-spaceship or fa fa-heart
+          PropTypes.string,
+          // this refers to icons from @material-ui/icons
+          PropTypes.object,
+        ]),
+        iconColor: PropTypes.oneOf([
+          "Primary",
+          "PrimaryLight",
+          "Error",
+          "ErrorLight",
+          "Warning",
+          "WarningLight",
+          "Info",
+          "InfoLight",
+        ]),
+      }),
+      // this generates a Link (<Link to="layout + path">..</Link>) link
+      // this is a link that is sent inside the app
+      PropTypes.shape({
+        path: PropTypes.string,
+        name: PropTypes.string,
+        layout: PropTypes.string,
+        component: PropTypes.func,
+        icon: PropTypes.oneOfType([
+          // this refers to icons such as ni ni-spaceship or fa fa-heart
+          PropTypes.string,
+          // this refers to icons from @material-ui/icons
+          PropTypes.object,
+        ]),
+        iconColor: PropTypes.oneOf([
+          "Primary",
+          "PrimaryLight",
+          "Error",
+          "ErrorLight",
+          "Warning",
+          "WarningLight",
+          "Info",
+          "InfoLight",
+        ]),
+      }),
+      // this is just a title without any action on it
+      // you can think of it as a disabled link
+      PropTypes.shape({
+        title: PropTypes.string,
+      }),
+      // this is just a divider line
+      PropTypes.shape({
+        divider: true,
+      }),
+    ])
+  ),
+};
