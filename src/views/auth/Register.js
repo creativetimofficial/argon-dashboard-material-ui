@@ -74,7 +74,7 @@ function Register() {
   const classes = useStyles();
   return (
     <>
-      <Grid item lg={6} md={8}>
+      <Grid item xs={12} lg={6} md={8}>
         <Card classes={{ root: classes.cardRoot }}>
           <CardHeader
             className={classes.cardHeader}
