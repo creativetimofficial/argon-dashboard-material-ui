@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PrimarySearchAppBar({ brandText }) {
+export default function AdminNavbar({ brandText }) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
