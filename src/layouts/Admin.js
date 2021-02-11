@@ -25,6 +25,7 @@ import Box from "@material-ui/core/Box";
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
 import AdminFooter from "components/Footers/AdminFooter.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
+import NavbarDropdown from "components/Dropdowns/NavbarDropdown.js";
 
 import routes from "routes.js";
 
@@ -87,6 +88,7 @@ const Admin = () => {
             imgSrc: require("../assets/img/brand/argon-react.png").default,
             imgAlt: "...",
           }}
+          dropdown={<NavbarDropdown />}
         />
         <Box position="relative" className={classes.mainContent}>
           <AdminNavbar brandText={getBrandText(location.pathname)} />
