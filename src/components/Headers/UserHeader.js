@@ -93,7 +93,7 @@ const UserHeader = () => {
           classes={{ root: classes.containerRoot }}
         >
           <Grid container>
-            <Grid item md={10} lg={7}>
+            <Grid item xs={12} md={10} lg={7}>
               <Typography
                 variant="h1"
                 classes={{ root: classes.typographyRootH1 }}
