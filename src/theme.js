@@ -141,6 +141,20 @@ const theme = createMuiTheme({
         },
       },
     },
+    MuiFormLabel: {
+      root: {
+        color: "#525f7f",
+        fontSize: ".875rem",
+        fontWeight: "600",
+        display: "inline-block",
+        marginBottom: ".5rem",
+      },
+    },
+    MuiFormGroup: {
+      root: {
+        marginBottom: "1.5rem",
+      },
+    },
     MuiInputBase: {
       input: {
         display: "block",
@@ -169,6 +183,9 @@ const theme = createMuiTheme({
           height: "100%",
           border: "2px solid #5e72e4",
         },
+      },
+      multiline: {
+        padding: ".625rem .75rem",
       },
       root: {
         boxShadow: "0 1px 3px rgb(50 50 93 / 15%), 0 1px 0 rgb(0 0 0 / 2%)",
