@@ -73,7 +73,7 @@ function Login() {
   const classes = useStyles();
   return (
     <>
-      <Grid item lg={5} md={7}>
+      <Grid item xs={12} lg={5} md={7}>
         <Card classes={{ root: classes.cardRoot }}>
           <CardHeader
             className={classes.cardHeader}
