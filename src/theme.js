@@ -267,6 +267,7 @@ const theme = createMuiTheme({
         backgroundClip: "initial",
         border: "1px solid rgba(0,0,0,.05)",
         borderRadius: ".375rem",
+        overflow: "unset",
       },
     },
     MuiCardHeader: {
