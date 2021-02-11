@@ -16,6 +16,11 @@ import Typography from "@material-ui/core/Typography";
 // material-ui icons
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
+import Person from "@material-ui/icons/Person";
+import Settings from "@material-ui/icons/Settings";
+import EventNote from "@material-ui/icons/EventNote";
+import LiveHelp from "@material-ui/icons/LiveHelp";
+import DirectionsRun from "@material-ui/icons/DirectionsRun";
 
 const useStyles = makeStyles((theme) => ({
   buttonRoot: {
@@ -114,27 +119,77 @@ export default function PrimarySearchAppBar({ brandText }) {
       >
         Welcome!
       </Typography>
-      <MenuItem onClick={handleMenuClose}>
-        <i className="ni ni-single-02"></i>
+      <Box
+        display="flex!important"
+        alignItems="center!important"
+        component={MenuItem}
+        onClick={handleMenuClose}
+      >
+        <Box
+          component={Person}
+          width="1.25rem!important"
+          height="1.25rem!important"
+          marginRight="1rem"
+        />
         <span>My profile</span>
-      </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-        <i className="ni ni-settings-gear-65"></i>
+      </Box>
+      <Box
+        display="flex!important"
+        alignItems="center!important"
+        component={MenuItem}
+        onClick={handleMenuClose}
+      >
+        <Box
+          component={Settings}
+          width="1.25rem!important"
+          height="1.25rem!important"
+          marginRight="1rem"
+        />
         <span>Settings</span>
-      </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-        <i className="ni ni-calendar-grid-58"></i>
+      </Box>
+      <Box
+        display="flex!important"
+        alignItems="center!important"
+        component={MenuItem}
+        onClick={handleMenuClose}
+      >
+        <Box
+          component={EventNote}
+          width="1.25rem!important"
+          height="1.25rem!important"
+          marginRight="1rem"
+        />
         <span>Activity</span>
-      </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
-        <i className="ni ni-support-16"></i>
+      </Box>
+      <Box
+        display="flex!important"
+        alignItems="center!important"
+        component={MenuItem}
+        onClick={handleMenuClose}
+      >
+        <Box
+          component={LiveHelp}
+          width="1.25rem!important"
+          height="1.25rem!important"
+          marginRight="1rem"
+        />
         <span>Support</span>
-      </MenuItem>
+      </Box>
       <Divider component="div" classes={{ root: classes.dividerRoot }} />
-      <MenuItem onClick={handleMenuClose}>
-        <i className="ni ni-user-run"></i>
+      <Box
+        display="flex!important"
+        alignItems="center!important"
+        component={MenuItem}
+        onClick={handleMenuClose}
+      >
+        <Box
+          component={DirectionsRun}
+          width="1.25rem!important"
+          height="1.25rem!important"
+          marginRight="1rem"
+        />
         <span>Logout</span>
-      </MenuItem>
+      </Box>
     </Menu>
   );
 
