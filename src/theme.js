@@ -269,6 +269,16 @@ const theme = createMuiTheme({
         padding: "1.5rem",
       },
     },
+    MuiCardActions: {
+      root: {
+        "&:last-child": {
+          borderRadius: "0 0 calc(.375rem - 1px) calc(.375rem - 1px)",
+          padding: "1.25rem 1.5rem",
+          backgroundColor: "#fff",
+          borderTop: "1px solid rgba(0,0,0,.05)",
+        },
+      },
+    },
     MuiButton: {
       root: {
         position: "relative",
