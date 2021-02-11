@@ -22,7 +22,6 @@ var routes = [
     href: "#pablo",
     name: "Upgrade to pro",
     icon: FlashOn,
-    iconColor: "Primary",
     upgradeToPro: true,
   },
   {
