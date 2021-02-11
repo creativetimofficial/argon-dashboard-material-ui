@@ -6,6 +6,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
 import CardHeader from "@material-ui/core/CardHeader";
 import Container from "@material-ui/core/Container";
 import LinearProgress from "@material-ui/core/LinearProgress";
@@ -20,6 +21,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Tooltip from "@material-ui/core/Tooltip";
 // material-ui lab components
 import AvatarGroup from "@material-ui/lab/AvatarGroup";
+import Pagination from "@material-ui/lab/Pagination";
 // material-ui icons
 import MoreVert from "@material-ui/icons/MoreVert";
 
@@ -46,6 +48,11 @@ const useStyles = makeStyles((theme) => ({
   },
   cardHeader: {
     backgroundColor: "initial",
+  },
+  cardActionsRoot: {
+    paddingBottom: "1.5rem!important",
+    paddingTop: "1.5rem!important",
+    borderTop: "0!important",
   },
   containerRoot: {
     [theme.breakpoints.up("md")]: {
@@ -999,6 +1006,13 @@ const Tables = () => {
               </TableBody>
             </Box>
           </TableContainer>
+          <Box
+            classes={{ root: classes.cardActionsRoot }}
+            component={CardActions}
+            justifyContent="flex-end"
+          >
+            <Pagination count={3} color="primary" variant="outlined" />
+          </Box>
         </Card>
         <Box
           component={Card}
