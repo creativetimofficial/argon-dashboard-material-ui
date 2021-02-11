@@ -172,7 +172,7 @@ const Header = () => {
                           width="1.5rem!important"
                           height="1.5rem!important"
                         />{" "}
-                        Since last month%
+                        10%
                       </Box>
                       <Box component="span" whiteSpace="nowrap">
                         Since last month
