@@ -5,6 +5,7 @@ import Chart from "chart.js";
 import { Line, Bar } from "react-chartjs-2";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -36,7 +37,10 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   cardRootBgGradient: {
-    background: "linear-gradient(87deg,#172b4d,#1a174d)!important",
+    background:
+      "linear-gradient(87deg," +
+      theme.palette.dark.main +
+      ",#1a174d)!important",
   },
   cardRoot: {
     boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
@@ -55,8 +59,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   buttonRootUnselected: {
-    background: "#fff!important",
-    color: "#5e72e4!important",
+    background: theme.palette.white.main + "!important",
+    color: theme.palette.primary.main + "!important",
   },
   gridItemRoot: {
     [theme.breakpoints.up("xl")]: {
@@ -73,8 +77,8 @@ const useStyles = makeStyles((theme) => ({
     borderTop: "0",
   },
   tableCellRootHead: {
-    backgroundColor: "#f6f9fc",
-    color: "#8898aa",
+    backgroundColor: theme.palette.gray[100],
+    color: theme.palette.gray[600],
   },
   tableCellRootBodyHead: {
     textTransform: "unset!important",
@@ -89,24 +93,40 @@ const useStyles = makeStyles((theme) => ({
     margin: "0!important",
   },
   bgGradientError: {
-    background: "linear-gradient(87deg,#f5365c,#f56036)!important",
+    background:
+      "linear-gradient(87deg," +
+      theme.palette.error.main +
+      ",#f56036)!important",
   },
   bgGradientSuccess: {
-    background: "linear-gradient(87deg,#2dce89,#2dcecc)!important",
+    background:
+      "linear-gradient(87deg," +
+      theme.palette.success.main +
+      ",#2dcecc)!important",
   },
   bgGradientPrimary: {
-    background: "linear-gradient(87deg,#5e72e4,#825ee4)!important",
+    background:
+      "linear-gradient(87deg," +
+      theme.palette.primary.main +
+      ",#825ee4)!important",
   },
   bgGradientInfo: {
-    background: "linear-gradient(87deg,#11cdef,#1171ef)!important",
+    background:
+      "linear-gradient(87deg," +
+      theme.palette.info.main +
+      ",#1171ef)!important",
   },
   bgGradientWarning: {
-    background: "linear-gradient(87deg,#fb6340,#fbb140)!important",
+    background:
+      "linear-gradient(87deg," +
+      theme.palette.warning.main +
+      ",#fbb140)!important",
   },
 }));
 
 function Dashboard() {
   const classes = useStyles();
+  const theme = useTheme();
   const [activeNav, setActiveNav] = React.useState(1);
   const [chartExample1Data, setChartExample1Data] = React.useState("data1");
 
@@ -158,7 +178,7 @@ function Dashboard() {
                         marginBottom=".25rem!important"
                         className={classes.textUppercase}
                       >
-                        <Box component="span" color="#ced4da">
+                        <Box component="span" color={theme.palette.gray[400]}>
                           Overview
                         </Box>
                       </Box>
@@ -167,7 +187,7 @@ function Dashboard() {
                         variant="h2"
                         marginBottom="0!important"
                       >
-                        <Box component="span" color="#fff">
+                        <Box component="span" color={theme.palette.white.main}>
                           Sales value
                         </Box>
                       </Box>
@@ -227,7 +247,7 @@ function Dashboard() {
             <Card classes={{ root: classes.cardRoot }}>
               <CardHeader
                 title={
-                  <Box component="span" color="#8898aa">
+                  <Box component="span" color={theme.palette.gray[600]}>
                     Performane
                   </Box>
                 }
@@ -391,7 +411,7 @@ function Dashboard() {
                           width="1rem!important"
                           height="1rem!important"
                           marginRight="1rem"
-                          color="#2dce89"
+                          color={theme.palette.success.main}
                         />
                         46,53%
                       </Box>
@@ -426,7 +446,7 @@ function Dashboard() {
                           width="1rem!important"
                           height="1rem!important"
                           marginRight="1rem"
-                          color="#fb6340"
+                          color={theme.palette.warning.main}
                         />
                         46,53%
                       </Box>
@@ -461,7 +481,7 @@ function Dashboard() {
                           width="1rem!important"
                           height="1rem!important"
                           marginRight="1rem"
-                          color="#fb6340"
+                          color={theme.palette.warning.main}
                         />
                         36,49%
                       </Box>
@@ -496,7 +516,7 @@ function Dashboard() {
                           width="1rem!important"
                           height="1rem!important"
                           marginRight="1rem"
-                          color="#2dce89"
+                          color={theme.palette.success.main}
                         />
                         50,87%
                       </Box>
@@ -551,7 +571,7 @@ function Dashboard() {
                           width="1rem!important"
                           height="1rem!important"
                           marginRight="1rem"
-                          color="#f5365c"
+                          color={theme.palette.error.main}
                         />
                         46,53%
                       </Box>
