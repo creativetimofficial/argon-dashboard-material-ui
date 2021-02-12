@@ -1,24 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useLocation, Link } from "react-router-dom";
-// material-ui components
+// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
-import List from "@material-ui/core/List";
 import Hidden from "@material-ui/core/Hidden";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
 import Menu from "@material-ui/core/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import ListItem from "@material-ui/core/ListItem";
-// material-ui icons
-import MenuIcon from "@material-ui/icons/Menu";
+// @material-ui/icons components
 import Clear from "@material-ui/icons/Clear";
+import MenuIcon from "@material-ui/icons/Menu";
 
-// for styles applied to this component
+// core components
+
 const useStyles = makeStyles((theme) => ({
   listRoot: {
     marginTop: "2rem",
