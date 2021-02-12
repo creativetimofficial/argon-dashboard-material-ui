@@ -1,20 +1,23 @@
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 
 // core components
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   header: {
-    background: "linear-gradient(87deg,#11cdef,#1171ef)",
+    background:
+      "linear-gradient(87deg," + theme.palette.info.main + ",#1171ef)",
   },
 }));
 
 const AuthHeader = () => {
   const classes = useStyles();
+  const theme = useTheme();
   return (
     <>
       <Box
@@ -29,13 +32,13 @@ const AuthHeader = () => {
               component={Grid}
               container
               justifyContent="center"
-              color="#fff"
+              color={theme.palette.white.main}
             >
               <Grid item lg={5} md={6} xs={12}>
                 <h1>Welcome!</h1>
                 <Box
                   component="p"
-                  color="#ced4da"
+                  color={theme.palette.gray[400]}
                   lineHeight="1.7"
                   fontSize="1rem"
                 >
@@ -73,7 +76,7 @@ const AuthHeader = () => {
           >
             <Box
               component="polygon"
-              fill="#172b4d"
+              fill={theme.palette.dark.main}
               points="2560 0 2560 100 0 100"
             />
           </Box>
