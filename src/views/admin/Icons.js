@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -24,19 +25,19 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     verticalAlign: "middle",
-    backgroundColor: "#f8f9fa",
+    backgroundColor: theme.palette.gray[200],
     outline: "none!important",
     cursor: "pointer",
     textDecoration: "none",
     "&:hover": {
-      backgroundColor: "#fff",
+      backgroundColor: theme.palette.white.main,
       boxShadow: "0 0 0 1px rgb(0 0 0 / 10%), 0 4px 16px rgb(0 0 0 / 10%)",
     },
     "& i": {
       fontSize: "1.5rem",
       boxSizing: "initial",
       verticalAlign: "middle",
-      color: "#393f49",
+      color: theme.palette.gray[800],
     },
     "& span": {
       fontSize: ".875rem",
@@ -47,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
       verticalAlign: "middle",
       whiteSpace: "nowrap",
       textOverflow: "ellipsis",
-      color: "#393f49",
+      color: theme.palette.gray[800],
     },
   },
   containerRoot: {
@@ -65,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Icons = () => {
   const classes = useStyles();
+  const theme = useTheme();
   const [copiedText, setCopiedText] = useState();
   return (
     <>
@@ -123,7 +125,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -171,7 +173,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -219,7 +221,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -267,7 +269,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -315,7 +317,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -363,7 +365,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -411,7 +413,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -459,7 +461,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -507,7 +509,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -555,7 +557,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -603,7 +605,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -651,7 +653,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -699,7 +701,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -747,7 +749,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -795,7 +797,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -843,7 +845,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -891,7 +893,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -939,7 +941,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -987,7 +989,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1035,7 +1037,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1083,7 +1085,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1131,7 +1133,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1179,7 +1181,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1227,7 +1229,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1275,7 +1277,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1323,7 +1325,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1371,7 +1373,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1419,7 +1421,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1467,7 +1469,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1515,7 +1517,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1563,7 +1565,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1611,7 +1613,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1659,7 +1661,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1707,7 +1709,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1755,7 +1757,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1803,7 +1805,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1851,7 +1853,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1899,7 +1901,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1947,7 +1949,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -1995,7 +1997,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2043,7 +2045,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2091,7 +2093,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2139,7 +2141,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2187,7 +2189,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2235,7 +2237,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2283,7 +2285,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2331,7 +2333,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2379,7 +2381,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2427,7 +2429,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2475,7 +2477,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2523,7 +2525,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2571,7 +2573,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2619,7 +2621,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2667,7 +2669,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2715,7 +2717,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2763,7 +2765,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2811,7 +2813,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2859,7 +2861,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2907,7 +2909,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -2955,7 +2957,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3003,7 +3005,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3051,7 +3053,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3099,7 +3101,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3147,7 +3149,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3195,7 +3197,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3243,7 +3245,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3291,7 +3293,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3339,7 +3341,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3387,7 +3389,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3435,7 +3437,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3483,7 +3485,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3531,7 +3533,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3579,7 +3581,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3627,7 +3629,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3675,7 +3677,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3723,7 +3725,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3771,7 +3773,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3819,7 +3821,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3867,7 +3869,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3915,7 +3917,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -3963,7 +3965,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4011,7 +4013,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4059,7 +4061,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4107,7 +4109,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4155,7 +4157,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4203,7 +4205,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4251,7 +4253,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4299,7 +4301,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4347,7 +4349,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4395,7 +4397,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4443,7 +4445,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4491,7 +4493,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4539,7 +4541,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4587,7 +4589,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4635,7 +4637,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4683,7 +4685,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4731,7 +4733,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4779,7 +4781,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4827,7 +4829,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4875,7 +4877,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
@@ -4923,7 +4925,7 @@ const Icons = () => {
                           margin=".5rem 0"
                           padding="24px"
                           textAlign="left"
-                          color="#393f49"
+                          color={theme.palette.gray[800]}
                           border="0"
                           borderRadius="4px"
                           className={classes.button}
