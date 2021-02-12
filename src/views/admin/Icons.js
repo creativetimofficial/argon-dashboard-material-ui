@@ -94,6 +94,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -141,6 +142,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -188,6 +190,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -235,6 +238,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -282,6 +286,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -329,6 +334,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -376,6 +382,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -423,6 +430,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -470,6 +478,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -517,6 +526,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -564,6 +574,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -611,6 +622,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -658,6 +670,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -705,6 +718,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -752,6 +766,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -799,6 +814,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -846,6 +862,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -893,6 +910,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -940,6 +958,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -987,6 +1006,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1034,6 +1054,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1081,6 +1102,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1128,6 +1150,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1175,6 +1198,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1222,6 +1246,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1269,6 +1294,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1316,6 +1342,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1363,6 +1390,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1410,6 +1438,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1457,6 +1486,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1504,6 +1534,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1551,6 +1582,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1598,6 +1630,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1645,6 +1678,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1692,6 +1726,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1739,6 +1774,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1786,6 +1822,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1833,6 +1870,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1880,6 +1918,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1927,6 +1966,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -1974,6 +2014,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2021,6 +2062,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2068,6 +2110,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2115,6 +2158,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2162,6 +2206,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2209,6 +2254,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2256,6 +2302,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2303,6 +2350,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2350,6 +2398,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2397,6 +2446,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2444,6 +2494,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2491,6 +2542,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2538,6 +2590,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2585,6 +2638,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2632,6 +2686,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2679,6 +2734,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2726,6 +2782,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2773,6 +2830,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2820,6 +2878,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2867,6 +2926,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2914,6 +2974,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -2961,6 +3022,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3008,6 +3070,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3055,6 +3118,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3102,6 +3166,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3149,6 +3214,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3196,6 +3262,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3243,6 +3310,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3290,6 +3358,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3337,6 +3406,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3384,6 +3454,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3431,6 +3502,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3478,6 +3550,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3525,6 +3598,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3572,6 +3646,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3619,6 +3694,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3666,6 +3742,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3713,6 +3790,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3760,6 +3838,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3807,6 +3886,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3854,6 +3934,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3901,6 +3982,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3948,6 +4030,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -3995,6 +4078,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4042,6 +4126,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4089,6 +4174,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4136,6 +4222,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4183,6 +4270,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4230,6 +4318,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4277,6 +4366,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4324,6 +4414,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4371,6 +4462,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4418,6 +4510,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4465,6 +4558,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4512,6 +4606,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4559,6 +4654,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4606,6 +4702,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4653,6 +4750,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4700,6 +4798,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4747,6 +4846,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
@@ -4794,6 +4894,7 @@ const Icons = () => {
                     item
                     lg={3}
                     md={6}
+                    xs={12}
                     component={Box}
                     paddingLeft="15px"
                     paddingRight="15px"
