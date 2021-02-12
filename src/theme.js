@@ -229,13 +229,18 @@ const theme = createMuiTheme({
         width: "1%",
         minWidth: 0,
         marginBottom: 0,
-        padding: 0,
+        padding: ".625rem .75rem",
         "&:not(:first-child)": {
           borderLeft: 0,
-          paddingLeft: 0,
           borderTopLeftRadius: 0,
           borderBottomLeftRadius: 0,
         },
+      },
+      inputAdornedStart: {
+        paddingLeft: ".75rem",
+      },
+      inputAdornedEnd: {
+        paddingRight: ".75rem",
       },
     },
     MuiInputAdornment: {
