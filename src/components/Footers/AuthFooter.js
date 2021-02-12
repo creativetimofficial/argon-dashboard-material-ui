@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme) => ({
     width: "auto",
     fontSize: "0.875rem",
     "&:hover": {
-      color: "#5e72e4",
+      color: theme.palette.primary.main,
     },
   },
   copyrightWrapper: {
-    color: "#8898aa",
+    color: theme.palette.gray[600],
     fontSize: "1rem",
     textAlign: "center",
     [theme.breakpoints.up("md")]: {
@@ -29,11 +29,11 @@ const useStyles = makeStyles((theme) => ({
   copyrightLink: {
     fontWeight: "600",
     marginLeft: ".25rem",
-    color: "#5e72e4",
+    color: theme.palette.primary.main,
     backgroundColor: "initial",
     textDecoration: "none",
     "&:hover": {
-      color: "#233dd2",
+      color: theme.palette.primary.dark,
     },
   },
   justifyContentCenter: {
