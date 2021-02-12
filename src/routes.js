@@ -5,7 +5,7 @@ import Register from "views/auth/Register.js";
 import Login from "views/auth/Login.js";
 import Tables from "views/admin/Tables.js";
 import Icons from "views/admin/Icons.js";
-// material-ui icons
+// @material-ui/icons components
 import FlashOn from "@material-ui/icons/FlashOn";
 import Tv from "@material-ui/icons/Tv";
 import Grain from "@material-ui/icons/Grain";
