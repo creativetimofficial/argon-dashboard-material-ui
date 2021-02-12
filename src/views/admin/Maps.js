@@ -2,6 +2,7 @@ import React from "react";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import Container from "@material-ui/core/Container";
@@ -25,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 const MapWrapper = () => {
   const mapRef = React.useRef(null);
+  const theme = useTheme();
   React.useEffect(() => {
     let google = window.google;
     let map = mapRef.current;
@@ -75,7 +77,10 @@ const MapWrapper = () => {
         {
           featureType: "water",
           elementType: "all",
-          stylers: [{ color: "#5e72e4" }, { visibility: "on" }],
+          stylers: [
+            { color: theme.palette.primary.main },
+            { visibility: "on" },
+          ],
         },
       ],
     };
@@ -100,7 +105,7 @@ const MapWrapper = () => {
     google.maps.event.addListener(marker, "click", function () {
       infowindow.open(map, marker);
     });
-  }, []);
+  });
   return (
     <>
       <Box
