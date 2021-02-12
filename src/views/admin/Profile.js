@@ -1,6 +1,7 @@
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   cardHeaderRoot: {
-    backgroundColor: "#fff!important",
+    backgroundColor: theme.palette.white.main + "!important",
   },
   containerRoot: {
     [theme.breakpoints.up("md")]: {
@@ -68,14 +69,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   buttonRootInfo: {
-    color: "#fff",
+    color: theme.palette.white.main,
     backgroundColor: theme.palette.info.main,
     "&:hover": {
       backgroundColor: theme.palette.info.dark,
     },
   },
   buttonRootDark: {
-    color: "#fff",
+    color: theme.palette.white.main,
     backgroundColor: theme.palette.dark.main,
     "&:hover": {
       backgroundColor: theme.palette.dark.dark,
@@ -88,12 +89,12 @@ const useStyles = makeStyles((theme) => ({
     transition: "all .15s ease",
   },
   cardProfileLink: {
-    color: "#5e72e4",
+    color: theme.palette.primary.main,
     backgroundColor: "initial",
     textDecoration: "none",
     fontSize: "1rem",
     "&:hover": {
-      color: "#233dd2",
+      color: theme.palette.primary.dark,
     },
   },
   order1: {
@@ -115,6 +116,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Profile() {
   const classes = useStyles();
+  const theme = useTheme();
   return (
     <>
       <UserHeader />
@@ -179,7 +181,7 @@ function Profile() {
                 <Box
                   component={Typography}
                   variant="h6"
-                  color="#8898aa!important"
+                  color={theme.palette.gray[600] + "!important"}
                   paddingTop=".25rem"
                   paddingBottom=".25rem"
                   fontSize=".75rem!important"
@@ -283,7 +285,7 @@ function Profile() {
                 <Box
                   component={Typography}
                   variant="h6"
-                  color="#8898aa!important"
+                  color={theme.palette.gray[600] + "!important"}
                   paddingTop=".25rem"
                   paddingBottom=".25rem"
                   fontSize=".75rem!important"
@@ -387,7 +389,7 @@ function Profile() {
                 <Box
                   component={Typography}
                   variant="h6"
-                  color="#8898aa!important"
+                  color={theme.palette.gray[600] + "!important"}
                   paddingTop=".25rem"
                   paddingBottom=".25rem"
                   fontSize=".75rem!important"
@@ -510,7 +512,7 @@ function Profile() {
                         <Box
                           component="span"
                           fontSize=".875rem"
-                          color="#adb5bd"
+                          color={theme.palette.gray[500]}
                         >
                           Friends
                         </Box>
@@ -533,7 +535,7 @@ function Profile() {
                         <Box
                           component="span"
                           fontSize=".875rem"
-                          color="#adb5bd"
+                          color={theme.palette.gray[500]}
                         >
                           Photos
                         </Box>
@@ -552,7 +554,7 @@ function Profile() {
                         <Box
                           component="span"
                           fontSize=".875rem"
-                          color="#adb5bd"
+                          color={theme.palette.gray[500]}
                         >
                           Comments
                         </Box>
