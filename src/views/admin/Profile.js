@@ -1,5 +1,5 @@
 import React from "react";
-// material-ui components
+// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
@@ -14,7 +14,7 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormLabel from "@material-ui/core/FormLabel";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-// material-ui icons
+// @material-ui/icons components
 import LocationOn from "@material-ui/icons/LocationOn";
 import School from "@material-ui/icons/School";
 
