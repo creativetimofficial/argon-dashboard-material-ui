@@ -171,6 +171,28 @@ const theme = createMuiTheme({
         boxShadow: "none",
         transition: "all .2s cubic-bezier(.68,-.55,.265,1.55)",
         fontSize: ".875rem",
+        boxSizing: "border-box",
+      },
+    },
+    MuiInputLabel: {
+      outlined: {
+        transform: "translate(14px, 15px) scale(1)",
+      },
+    },
+    MuiOutlinedInput: {
+      input: {
+        padding: ".625rem .75rem",
+        borderTop: "0",
+        borderBottom: "0",
+        borderLeft: "0",
+        "&:not(:last-child)": {
+          borderTopRightRadius: 0,
+          borderBottomRightRadius: 0,
+          paddingRight: 0,
+        },
+      },
+      root: {
+        paddingRight: "0",
       },
     },
     MuiFilledInput: {
@@ -221,7 +243,7 @@ const theme = createMuiTheme({
         transition: "all .2s cubic-bezier(.68,-.55,.265,1.55)",
         display: "flex",
         alignItems: "center",
-        padding: ".625rem .75rem",
+        padding: ".625rem 0",
         marginBottom: "0",
         fontSize: ".875rem",
         fontWeight: "400",
@@ -230,9 +252,12 @@ const theme = createMuiTheme({
         textAlign: "center",
         whiteSpace: "nowrap",
         backgroundColor: "#fff",
-        border: "1px solid #cad1d7",
-        borderRadius: ".375rem",
+        border: "0",
         marginTop: "0!important",
+        height: "calc(1.5em + 1.25rem + 2px)",
+      },
+      positionEnd: {
+        paddingLeft: 0,
       },
       positionStart: {
         paddingLeft: 0,
