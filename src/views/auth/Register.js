@@ -1,7 +1,7 @@
 import React from "react";
-
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   cardRoot: {
     boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
     border: "0!important",
-    backgroundColor: "#f7fafc",
+    backgroundColor: theme.palette.secondary.main,
   },
   cardHeader: {
     backgroundColor: "initial",
@@ -39,14 +39,14 @@ const useStyles = makeStyles((theme) => ({
     borderStyle: "none",
   },
   buttonRoot: {
-    backgroundColor: "#fff",
+    backgroundColor: theme.palette.white.main,
     color: theme.palette.primary.main,
     boxShadow: "0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%)",
-    borderColor: "#fff!important",
+    borderColor: theme.palette.white.main + "!important",
     "&:hover": {
-      color: "#212529",
-      borderColor: "#fff!important",
-      backgroundColor: "#fff",
+      color: theme.palette.gray[900],
+      borderColor: theme.palette.white.main + "!important",
+      backgroundColor: theme.palette.white.main,
     },
   },
   formControlLabelRoot: {
@@ -61,16 +61,17 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     verticalAlign: "top",
     display: "inline-block",
-    color: "#8898aa",
+    color: theme.palette.gray[600],
   },
   footerLinks: {
-    color: "#ced4da",
+    color: theme.palette.gray[400],
     textDecoration: "none",
   },
 }));
 
 function Register() {
   const classes = useStyles();
+  const theme = useTheme();
   return (
     <>
       <Grid item xs={12} lg={6} md={8}>
@@ -82,7 +83,7 @@ function Register() {
                 fontSize="80%"
                 fontWeight="400"
                 component="small"
-                color="#8898aa"
+                color={theme.palette.gray[600]}
               >
                 Sign up with
               </Box>
@@ -141,7 +142,7 @@ function Register() {
           ></CardHeader>
           <CardContent classes={{ root: classes.cardContent }}>
             <Box
-              color="#8898aa"
+              color={theme.palette.gray[600]}
               textAlign="center"
               marginBottom="1.5rem"
               marginTop=".5rem"
@@ -205,12 +206,16 @@ function Register() {
             <Box
               fontStyle="italic"
               fontSize="1rem"
-              color="#8898aa"
+              color={theme.palette.gray[600]}
               marginBottom=".5rem"
             >
               <Box component="small" fontSize="80%">
                 password strength:{" "}
-                <Box component="span" fontWeight="700" color="#2dce89">
+                <Box
+                  component="span"
+                  fontWeight="700"
+                  color={theme.palette.success.main}
+                >
                   strong
                 </Box>
               </Box>
@@ -221,7 +226,11 @@ function Register() {
               label={
                 <>
                   I agree with the{" "}
-                  <Box color="#5e72e4" component="a" textDecoration="none">
+                  <Box
+                    color={theme.palette.primary.main}
+                    component="a"
+                    textDecoration="none"
+                  >
                     Privacy Policy
                   </Box>
                 </>
