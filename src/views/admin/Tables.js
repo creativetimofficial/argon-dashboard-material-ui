@@ -2,6 +2,7 @@ import React from "react";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
@@ -33,17 +34,17 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
   },
   cardRootDark: {
-    backgroundColor: "#172b4d",
+    backgroundColor: theme.palette.dark.main,
     "& *": {
-      color: "#FFF",
+      color: theme.palette.white.main,
     },
     "& $tableCellRoot, & $tableRoot": {
-      color: "#FFF",
-      borderColor: "#1f3a68",
+      color: theme.palette.white.main,
+      borderColor: theme.palette.dark.tableBorder,
     },
     "& $tableCellRootHead": {
-      color: "#4d7bca",
-      backgroundColor: "#1c345d",
+      color: theme.palette.dark.tableHeadColor,
+      backgroundColor: theme.palette.dark.tableHeadBgColor,
     },
   },
   cardHeader: {
@@ -70,8 +71,8 @@ const useStyles = makeStyles((theme) => ({
     borderTop: "0",
   },
   tableCellRootHead: {
-    backgroundColor: "#f6f9fc",
-    color: "#8898aa",
+    backgroundColor: theme.palette.gray[100],
+    color: theme.palette.gray[600],
   },
   tableCellRootBodyHead: {
     textTransform: "unset!important",
@@ -83,19 +84,34 @@ const useStyles = makeStyles((theme) => ({
     margin: "0!important",
   },
   bgGradientError: {
-    background: "linear-gradient(87deg,#f5365c,#f56036)!important",
+    background:
+      "linear-gradient(87deg," +
+      theme.palette.error.main +
+      ",#f56036)!important",
   },
   bgGradientSuccess: {
-    background: "linear-gradient(87deg,#2dce89,#2dcecc)!important",
+    background:
+      "linear-gradient(87deg," +
+      theme.palette.success.main +
+      ",#2dcecc)!important",
   },
   bgGradientPrimary: {
-    background: "linear-gradient(87deg,#5e72e4,#825ee4)!important",
+    background:
+      "linear-gradient(87deg," +
+      theme.palette.primary.main +
+      ",#825ee4)!important",
   },
   bgGradientInfo: {
-    background: "linear-gradient(87deg,#11cdef,#1171ef)!important",
+    background:
+      "linear-gradient(87deg," +
+      theme.palette.info.main +
+      ",#1171ef)!important",
   },
   bgGradientWarning: {
-    background: "linear-gradient(87deg,#fb6340,#fbb140)!important",
+    background:
+      "linear-gradient(87deg," +
+      theme.palette.warning.main +
+      ",#fbb140)!important",
   },
   bgPrimary: {
     backgroundColor: theme.palette.primary.main,
@@ -136,6 +152,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Tables = () => {
   const classes = useStyles();
+  const theme = useTheme();
   const [anchorEl1, setAnchorEl1] = React.useState(null);
   const [anchorEl2, setAnchorEl2] = React.useState(null);
   const [anchorEl3, setAnchorEl3] = React.useState(null);
@@ -397,7 +414,7 @@ const Tables = () => {
                         height="1.25rem!important"
                         position="relative"
                         top="2px"
-                        color="#a2aeb9"
+                        color={theme.palette.gray[500]}
                       />
                     </Box>
                     <Menu
@@ -542,7 +559,7 @@ const Tables = () => {
                         height="1.25rem!important"
                         position="relative"
                         top="2px"
-                        color="#a2aeb9"
+                        color={theme.palette.gray[500]}
                       />
                     </Box>
                     <Menu
@@ -687,7 +704,7 @@ const Tables = () => {
                         height="1.25rem!important"
                         position="relative"
                         top="2px"
-                        color="#a2aeb9"
+                        color={theme.palette.gray[500]}
                       />
                     </Box>
                     <Menu
@@ -832,7 +849,7 @@ const Tables = () => {
                         height="1.25rem!important"
                         position="relative"
                         top="2px"
-                        color="#a2aeb9"
+                        color={theme.palette.gray[500]}
                       />
                     </Box>
                     <Menu
@@ -985,7 +1002,7 @@ const Tables = () => {
                         height="1.25rem!important"
                         position="relative"
                         top="2px"
-                        color="#a2aeb9"
+                        color={theme.palette.gray[500]}
                       />
                     </Box>
                     <Menu
@@ -1212,7 +1229,7 @@ const Tables = () => {
                         height="1.25rem!important"
                         position="relative"
                         top="2px"
-                        color="#a2aeb9"
+                        color={theme.palette.gray[500]}
                       />
                     </Box>
                     <Menu
@@ -1357,7 +1374,7 @@ const Tables = () => {
                         height="1.25rem!important"
                         position="relative"
                         top="2px"
-                        color="#a2aeb9"
+                        color={theme.palette.gray[500]}
                       />
                     </Box>
                     <Menu
@@ -1502,7 +1519,7 @@ const Tables = () => {
                         height="1.25rem!important"
                         position="relative"
                         top="2px"
-                        color="#a2aeb9"
+                        color={theme.palette.gray[500]}
                       />
                     </Box>
                     <Menu
@@ -1647,7 +1664,7 @@ const Tables = () => {
                         height="1.25rem!important"
                         position="relative"
                         top="2px"
-                        color="#a2aeb9"
+                        color={theme.palette.gray[500]}
                       />
                     </Box>
                     <Menu
@@ -1800,7 +1817,7 @@ const Tables = () => {
                         height="1.25rem!important"
                         position="relative"
                         top="2px"
-                        color="#a2aeb9"
+                        color={theme.palette.gray[500]}
                       />
                     </Box>
                     <Menu
