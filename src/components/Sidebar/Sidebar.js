@@ -28,10 +28,10 @@ const useStyles = makeStyles((theme) => ({
   listItemRoot: {
     display: "flex",
     fontSize: ".9rem",
-    color: "rgba(0,0,0,.5)",
+    color: theme.palette.sidebarLinks.main,
     padding: ".65rem 1.5rem !important",
     "&:hover": {
-      color: "rgba(0,0,0,.9)",
+      color: theme.palette.sidebarLinks.dark,
     },
   },
   listItemRootUpgradeToPro: {
@@ -40,14 +40,14 @@ const useStyles = makeStyles((theme) => ({
       bottom: "10px",
     },
     "&,&:hover": {
-      background: "#f6f9fc !important",
+      background: theme.palette.gray[100] + "!important",
     },
     "&:before": {
       display: "none",
     },
   },
   listItemSelected: {
-    color: "rgba(0,0,0,.9)",
+    color: theme.palette.sidebarLinks.dark,
     "&$listItemRoot,&$listItemRoot:hover": {
       backgroundColor: "unset",
     },
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
       bottom: ".25rem",
       left: 0,
       right: "auto",
-      borderLeft: "2px solid #5e72e4",
+      borderLeft: "2px solid " + theme.palette.primary.main,
       borderBottom: 0,
       content: '""',
       position: "absolute",
@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: ".04em",
     paddingLeft: "1.5rem",
     paddingRight: "1.5rem",
-    color: "#8898aa",
+    color: theme.palette.gray[600],
   },
   logoClasses: {
     maxHeight: "2rem",
