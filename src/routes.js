@@ -1,3 +1,4 @@
+// core components
 import Dashboard from "views/admin/Dashboard.js";
 import Icons from "views/admin/Icons.js";
 import Login from "views/auth/Login.js";
