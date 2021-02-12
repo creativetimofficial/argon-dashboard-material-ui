@@ -27,11 +27,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     fontSize: ".9rem",
     color: "rgba(0,0,0,.5)",
+    padding: ".65rem 1.5rem !important",
     "&:hover": {
       color: "rgba(0,0,0,.9)",
-    },
-    [theme.breakpoints.up("md")]: {
-      padding: ".65rem 1.5rem !important",
     },
   },
   listItemRootUpgradeToPro: {
@@ -93,18 +91,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logoLinkClasses: {
-    marginRight: "0",
-    display: "inline-block",
-    paddingBottom: ".0625rem",
     fontSize: "1.25rem",
     lineHeight: "inherit",
     whiteSpace: "nowrap",
     textDecoration: "none",
-    [theme.breakpoints.up("md")]: {
-      display: "block",
-      textAlign: "center",
-      paddingBottom: "1rem",
-    },
+    display: "block",
+    textAlign: "center",
   },
   textPrimary: {
     color: theme.palette.primary.main,
@@ -236,7 +228,7 @@ export default function Sidebar({ routes, logo, dropdown }) {
     <>
       <Hidden smDown implementation="css">
         <Drawer variant="permanent" anchor="left" open>
-          {logoObject}
+          <Box paddingBottom="1rem">{logoObject}</Box>
           <List classes={{ root: classes.listRoot }}>
             {createLinks(routes)}
           </List>
@@ -272,7 +264,7 @@ export default function Sidebar({ routes, logo, dropdown }) {
           open={mobileDrawerOpen}
           onClose={() => setMobileDrawerOpen(false)}
         >
-          {logoObject}
+          <Box paddingBottom="1rem">{logoObject}</Box>
           <List classes={{ root: classes.listRoot }}>
             {createLinks(routes)}
           </List>
