@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
@@ -40,10 +41,10 @@ const useStyles = makeStyles((theme) => ({
       marginRight: ".5rem",
       paddingLeft: ".5rem",
       paddingRight: ".5rem",
-      color: "hsla(0,0%,100%,.95)",
+      color: theme.palette.authNavbarLink.dark,
       justifyContent: "center",
       "&:hover": {
-        color: "hsla(0,0%,100%,.65)",
+        color: theme.palette.authNavbarLink.main,
       },
     },
   },
@@ -66,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AuthNavbar() {
   const classes = useStyles();
+  const theme = useTheme();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
@@ -182,7 +184,7 @@ export default function AuthNavbar() {
               >
                 <Box
                   component={MenuIcon}
-                  color="#fff"
+                  color={theme.palette.white.main}
                   width="2rem!important"
                   height="2rem!important"
                 />
