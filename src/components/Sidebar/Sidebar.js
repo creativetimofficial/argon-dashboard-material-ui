@@ -7,15 +7,17 @@ import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
 // import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
+import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 import Hidden from "@material-ui/core/Hidden";
+import Menu from "@material-ui/core/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ListItem from "@material-ui/core/ListItem";
 // material-ui icons
 import MenuIcon from "@material-ui/icons/Menu";
+import Clear from "@material-ui/icons/Clear";
 
 // for styles applied to this component
 const useStyles = makeStyles((theme) => ({
@@ -33,8 +35,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   listItemRootUpgradeToPro: {
-    position: "absolute",
-    bottom: "10px",
+    [theme.breakpoints.up("md")]: {
+      position: "absolute",
+      bottom: "10px",
+    },
     "&,&:hover": {
       background: "#f6f9fc !important",
     },
@@ -122,12 +126,30 @@ const useStyles = makeStyles((theme) => ({
   textInfoLight: {
     color: theme.palette.info.light,
   },
+  menuPaper: {
+    width: "calc(100% - 2rem)",
+  },
+  outlineNone: {
+    outline: "none!important",
+  },
 }));
 
-export default function Sidebar({ routes, logo, dropdown }) {
+export default function Sidebar({ routes, logo, dropdown, input }) {
   const classes = useStyles();
   const location = useLocation();
-  const [mobileDrawerOpen, setMobileDrawerOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const isMenuOpen = Boolean(anchorEl);
+
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const menuId = "responsive-menu-id";
   // creates the links that appear in the left menu / Sidebar
   const createLinks = (routes) => {
     return routes.map((prop, key) => {
@@ -235,7 +257,7 @@ export default function Sidebar({ routes, logo, dropdown }) {
         </Drawer>
       </Hidden>
       <Hidden mdUp implementation="css">
-        <AppBar position="relative" color="white" elevation={0}>
+        <AppBar position="relative" color="default" elevation={0}>
           <Toolbar>
             <Container
               display="flex!important"
@@ -251,24 +273,57 @@ export default function Sidebar({ routes, logo, dropdown }) {
                 component={MenuIcon}
                 width="2rem!important"
                 height="2rem!important"
-                onClick={() => setMobileDrawerOpen(!mobileDrawerOpen)}
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleMenuOpen}
               />
               {logoObject}
               {dropdown}
             </Container>
           </Toolbar>
         </AppBar>
-        <Drawer
-          variant="temporary"
-          anchor="left"
-          open={mobileDrawerOpen}
-          onClose={() => setMobileDrawerOpen(false)}
+        <Menu
+          anchorEl={anchorEl}
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+          id={menuId}
+          keepMounted
+          transformOrigin={{ vertical: "top", horizontal: "right" }}
+          open={isMenuOpen}
+          onClose={handleMenuClose}
+          classes={{ paper: classes.menuPaper }}
         >
-          <Box paddingBottom="1rem">{logoObject}</Box>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            paddingLeft="1.25rem"
+            paddingRight="1.25rem"
+            paddingBottom="1rem"
+            className={classes.outlineNone}
+          >
+            {logoObject}
+            <Box
+              component={Clear}
+              width="2rem!important"
+              height="2rem!important"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleMenuClose}
+            />
+          </Box>
+          <Box
+            component={Divider}
+            marginBottom="1rem!important"
+            marginLeft="1.25rem!important"
+            marginRight="1.25rem!important"
+          />
+          <Box paddingLeft="1.25rem" paddingRight="1.25rem">
+            {input}
+          </Box>
           <List classes={{ root: classes.listRoot }}>
             {createLinks(routes)}
           </List>
-        </Drawer>
+        </Menu>
       </Hidden>
     </>
   );
@@ -279,6 +334,10 @@ Sidebar.defaultProps = {
 };
 
 Sidebar.propTypes = {
+  // this is the input/component that will be rendered on responsive
+  // in our demo, we add this input component since the AdminNavbar
+  // will not be visible on responsive mode
+  input: PropTypes.node,
   // this is the dropdown/component that will be rendered on responsive
   // in our demo, it is the same with the dropdown from the AdminNavbar
   // since the AdminNavbar will not be visible on responsive mode
