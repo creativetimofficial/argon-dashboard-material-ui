@@ -1,4 +1,5 @@
 const Chart = require("chart.js");
+const themeColors = require("assets/theme/colors.js").default;
 //
 // Chart extension for making the bars rounded
 // Code from: https://codepen.io/jedtrow/full/ygRYgo
@@ -137,29 +138,19 @@ var fonts = {
 
 // Colors
 var colors = {
-  gray: {
-    100: "#f6f9fc",
-    200: "#e9ecef",
-    300: "#dee2e6",
-    400: "#ced4da",
-    500: "#adb5bd",
-    600: "#8898aa",
-    700: "#525f7f",
-    800: "#32325d",
-    900: "#212529",
-  },
+  gray: themeColors.gray,
   theme: {
-    default: "#172b4d",
-    primary: "#5e72e4",
+    default: themeColors.dark.main,
+    primary: themeColors.primary.main,
     secondary: "#f4f5f7",
-    info: "#11cdef",
-    success: "#2dce89",
-    danger: "#f5365c",
-    warning: "#fb6340",
+    info: themeColors.info.main,
+    success: themeColors.success.main,
+    danger: themeColors.error.main,
+    warning: themeColors.warning.main,
   },
-  black: "#12263F",
-  white: "#FFFFFF",
-  transparent: "transparent",
+  black: themeColors.black.light,
+  white: themeColors.white.main,
+  transparent: themeColors.transparent.main,
 };
 
 // Methods
