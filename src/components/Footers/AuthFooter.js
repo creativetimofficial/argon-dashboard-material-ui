@@ -62,7 +62,7 @@ const Footer = () => {
             classes.justifyContentCenter + " " + classes.flexDirectionColumn,
         }}
       >
-        <Grid item xs={12} xl={6} wrap="wrap">
+        <Grid item xs={12} xl={6}>
           <div className={classes.copyrightWrapper}>
             © {new Date().getFullYear()}{" "}
             <a
