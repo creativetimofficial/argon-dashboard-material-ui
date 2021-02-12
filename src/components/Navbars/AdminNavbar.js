@@ -22,13 +22,13 @@ const useStyles = makeStyles((theme) => ({
   brandTitle: {
     textTransform: "uppercase",
     margin: "0",
-    color: "#fff",
+    color: theme.palette.white.main,
     [theme.breakpoints.down("md")]: {
       display: "none",
     },
   },
   searchBox: {
-    borderColor: "hsla(0,0%,100%,.6)",
+    borderColor: theme.palette.adminNavbarSearch.main,
     borderRadius: "2rem",
     border: "2px solid",
     backgroundColor: "initial",
@@ -36,12 +36,12 @@ const useStyles = makeStyles((theme) => ({
     transition: "box-shadow .15s ease",
   },
   searchIcon: {
-    color: "hsla(0,0%,100%,.6)",
+    color: theme.palette.adminNavbarSearch.main,
     marginRight: "0.5rem",
     marginLeft: "1rem",
   },
   searchInput: {
-    color: "hsla(0,0%,100%,.6)",
+    color: theme.palette.adminNavbarSearch.main,
     width: "270px",
     backgroundColor: "initial",
     border: 0,
