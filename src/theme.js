@@ -1,11 +1,49 @@
+// @material-ui/core components
 import { createMuiTheme } from "@material-ui/core/styles";
+// core components
+import themeColors from "assets/theme/colors.js";
 
+// ##############################
+// // // Function that converts from hex color to rgb color
+// // // Example: input = #9c27b0 => output = 156, 39, 176
+// // // Example: input = 9c27b0 => output = 156, 39, 176
+// // // Example: input = #999 => output = 153, 153, 153
+// // // Example: input = 999 => output = 153, 153, 153
+// #############################
+const hexToRgb = (input) => {
+  input = input + "";
+  input = input.replace("#", "");
+  let hexRegex = /[0-9A-Fa-f]/g;
+  if (!hexRegex.test(input) || (input.length !== 3 && input.length !== 6)) {
+    throw new Error("input is not a valid hex color.");
+  }
+  if (input.length === 3) {
+    let first = input[0];
+    let second = input[1];
+    let last = input[2];
+    input = first + first + second + second + last + last;
+  }
+  input = input.toUpperCase();
+  let first = input[0] + input[1];
+  let second = input[2] + input[3];
+  let last = input[4] + input[5];
+  return (
+    parseInt(first, 16) +
+    ", " +
+    parseInt(second, 16) +
+    ", " +
+    parseInt(last, 16)
+  );
+};
+
+// these are the default styles that go on all headings (h1,h2,h3,h4,h5,h6)
+// the difference only consists in the font size and text transform
 const defaultHeaderStyles = {
   marginBottom: ".5rem",
   fontFamily: "inherit",
   fontWeight: 600,
   lineHeight: 1.5,
-  color: "#32325d",
+  color: themeColors.gray[800],
 };
 
 // A custom theme for this app
@@ -20,35 +58,20 @@ const theme = createMuiTheme({
     },
   },
   palette: {
-    primary: {
-      main: "#5e72e4",
+    ...themeColors,
+    buttonLightLabel: {
+      main: "rgba(" + hexToRgb(themeColors.white.main) + ", 0.95)",
     },
-    secondary: {
-      main: "#f7fafc",
+    sidebarLinks: {
+      main: "rgba(" + hexToRgb(themeColors.black.main) + ", 0.5)",
+      dark: "rgba(" + hexToRgb(themeColors.black.main) + ", 0.9)",
     },
-    warning: {
-      light: "#ffd600",
-      main: "#fb6340",
+    adminNavbarSearch: {
+      main: "rgba(" + hexToRgb(themeColors.white.main) + ", 0.6)",
     },
-    error: {
-      light: "#f3a4b5",
-      main: "#f5365c",
-    },
-    info: {
-      main: "#11cdef",
-    },
-    background: {
-      default: "#f8f9fe",
-    },
-    text: {
-      primary: "#525f7f",
-    },
-    dark: {
-      main: "#172b4d",
-      dark: "#0b1526",
-    },
-    success: {
-      main: "#2dce89",
+    authNavbarLink: {
+      main: "rgba(" + hexToRgb(themeColors.white.main) + ", 0.65)",
+      dark: "rgba(" + hexToRgb(themeColors.white.main) + ", 0.95)",
     },
   },
   typography: {
@@ -98,7 +121,7 @@ const theme = createMuiTheme({
         display: "block",
         paddingTop: ".25rem",
         paddingBottom: ".25rem",
-        color: "#525f7f",
+        color: themeColors.gray[700],
       },
       gutters: {
         paddingLeft: ".75rem",
@@ -109,10 +132,10 @@ const theme = createMuiTheme({
       paper: {
         minWidth: "12rem",
         fontSize: "1rem",
-        color: "#525f7f",
+        color: themeColors.gray[700],
         textAlign: "left",
         listStyle: "none",
-        backgroundColor: "#fff",
+        backgroundColor: themeColors.white.main,
         backgroundClip: "padding-box",
         border: "0 solid rgba(0,0,0,.15)",
         borderRadius: ".4375rem",
@@ -129,7 +152,7 @@ const theme = createMuiTheme({
         width: "100%",
         clear: "both",
         fontWeight: 400,
-        color: "#212529",
+        color: themeColors.gray[900],
         textAlign: "inherit",
         whiteSpace: "nowrap",
         backgroundColor: "initial",
@@ -143,7 +166,7 @@ const theme = createMuiTheme({
     },
     MuiFormLabel: {
       root: {
-        color: "#525f7f",
+        color: themeColors.gray[700],
         fontSize: ".875rem",
         fontWeight: "600",
         display: "inline-block",
@@ -163,8 +186,8 @@ const theme = createMuiTheme({
         padding: ".625rem .75rem",
         fontWeight: 400,
         lineHeight: 1.5,
-        color: "#8898aa",
-        backgroundColor: "#fff",
+        color: themeColors.gray[600],
+        backgroundColor: themeColors.white.main,
         backgroundClip: "padding-box",
         border: "1px solid #cad1d7",
         borderRadius: ".375rem",
@@ -203,7 +226,7 @@ const theme = createMuiTheme({
         "&:after": {
           borderRadius: ".375rem",
           height: "100%",
-          border: "2px solid #5e72e4",
+          border: "2px solid " + themeColors.primary.main,
         },
       },
       multiline: {
@@ -219,7 +242,7 @@ const theme = createMuiTheme({
         flexWrap: "wrap",
         alignItems: "center",
         width: "100%",
-        backgroundColor: "#fff !important",
+        backgroundColor: themeColors.white.main + "!important",
       },
       input: {
         border: 0,
@@ -253,10 +276,10 @@ const theme = createMuiTheme({
         fontSize: ".875rem",
         fontWeight: "400",
         lineHeight: "1.5",
-        color: "#adb5bd",
+        color: themeColors.gray[500],
         textAlign: "center",
         whiteSpace: "nowrap",
-        backgroundColor: "#fff",
+        backgroundColor: themeColors.white.main,
         border: "0",
         marginTop: "0!important",
         height: "calc(1.5em + 1.25rem + 2px)",
@@ -293,7 +316,7 @@ const theme = createMuiTheme({
         flexDirection: "column",
         minWidth: 0,
         wordWrap: "break-word",
-        backgroundColor: "#fff",
+        backgroundColor: themeColors.white.main,
         backgroundClip: "initial",
         border: "1px solid rgba(0,0,0,.05)",
         borderRadius: ".375rem",
@@ -304,7 +327,7 @@ const theme = createMuiTheme({
       root: {
         padding: "1.25rem 1.5rem",
         marginBottom: "0",
-        backgroundColor: "#fff",
+        backgroundColor: themeColors.white.main,
         borderBottom: "1px solid rgba(0,0,0,.05)",
         "&:first-child": {
           borderRadius: "calc(.375rem - 1px) calc(.375rem - 1px) 0 0",
@@ -323,7 +346,7 @@ const theme = createMuiTheme({
         "&:last-child": {
           borderRadius: "0 0 calc(.375rem - 1px) calc(.375rem - 1px)",
           padding: "1.25rem 1.5rem",
-          backgroundColor: "#fff",
+          backgroundColor: themeColors.white.main,
           borderTop: "1px solid rgba(0,0,0,.05)",
         },
       },
@@ -422,8 +445,8 @@ const theme = createMuiTheme({
       root: {
         width: "100%",
         marginBottom: "1rem",
-        color: "#525f7f",
-        backgroundColor: "transparent",
+        color: themeColors.gray[700],
+        backgroundColor: themeColors.transparent.main,
         borderCollapse: "collapse",
       },
     },
@@ -433,12 +456,12 @@ const theme = createMuiTheme({
         whiteSpace: "nowrap",
         padding: "1rem",
         verticalAlign: "top",
-        borderTop: "1px solid #e9ecef",
-        borderBottom: "1px solid #e9ecef",
+        borderTop: "1px solid " + themeColors.gray[200],
+        borderBottom: "1px solid " + themeColors.gray[200],
       },
       head: {
         padding: "1rem",
-        borderTop: "1px solid #e9ecef",
+        borderTop: "1px solid " + themeColors.gray[200],
         fontWeight: "600",
         whiteSpace: "nowrap",
         verticalAlign: "bottom",
@@ -447,7 +470,7 @@ const theme = createMuiTheme({
         fontSize: ".65rem",
         textTransform: "uppercase",
         letterSpacing: "1px",
-        borderBottom: "1px solid #e9ecef",
+        borderBottom: "1px solid " + themeColors.gray[200],
       },
     },
     MuiLinearProgress: {
@@ -456,7 +479,7 @@ const theme = createMuiTheme({
         marginBottom: "1rem",
         overflow: "hidden",
         borderRadius: ".25rem",
-        backgroundColor: "#e9ecef!important",
+        backgroundColor: themeColors.gray[200] + "!important",
         boxShadow: "inset 0 1px 2px rgb(0 0 0 / 10%)",
         display: "flex",
         lineHeight: "0",
@@ -467,7 +490,7 @@ const theme = createMuiTheme({
         flexDirection: "column",
         justifyContent: "center",
         overflow: "hidden",
-        color: "#fff",
+        color: themeColors.white.main,
         textAlign: "center",
         whiteSpace: "nowrap",
         transition: "width .6s ease",
@@ -478,8 +501,8 @@ const theme = createMuiTheme({
     },
     MuiAvatar: {
       root: {
-        color: "#fff",
-        backgroundColor: "#adb5bd",
+        color: themeColors.white.main,
+        backgroundColor: themeColors.gray[500],
         display: "inline-flex",
         alignItems: "center",
         justifyContent: "center",
@@ -499,7 +522,7 @@ const theme = createMuiTheme({
       avatar: {
         position: "relative",
         zIndex: "5!important",
-        border: "2px solid #fff",
+        border: "2px solid " + themeColors.white.main,
         marginLeft: "-.75rem",
         "&:hover": {
           zIndex: "6!important",
@@ -511,25 +534,25 @@ const theme = createMuiTheme({
         width: "36px",
         height: "36px",
         fontSize: ".875rem",
-        color: "#8898aa",
-        border: "1px solid #dee2e6",
+        color: themeColors.gray[600],
+        border: "1px solid " + themeColors.gray[300],
         borderRadius: "50%",
         "&:hover": {
-          backgroundColor: "#dee2e6",
+          backgroundColor: themeColors.gray[300],
         },
       },
       outlined: {
-        color: "#8898aa",
-        border: "1px solid #dee2e6",
+        color: themeColors.gray[600],
+        border: "1px solid " + themeColors.gray[300],
         "&:hover": {
-          backgroundColor: "#dee2e6",
+          backgroundColor: themeColors.gray[300],
         },
       },
       outlinedPrimary: {
         "&.Mui-selected": {
           "&, &:hover": {
-            backgroundColor: "#5e72e4!important",
-            color: "#fff",
+            backgroundColor: themeColors.primary.main + "!important",
+            color: themeColors.white.main,
             boxShadow:
               "0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%)",
           },
@@ -538,7 +561,7 @@ const theme = createMuiTheme({
     },
     MuiDivider: {
       root: {
-        backgroundColor: "rgba(0, 0, 0, 0.1)",
+        backgroundColor: "rgba(" + hexToRgb(themeColors.black.main) + ", 0.1)",
       },
     },
   },
