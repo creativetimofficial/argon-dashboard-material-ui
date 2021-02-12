@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -51,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
 
 function CardStats({ subtitle, title, footer, icon, color }) {
   const classes = useStyles();
+  const theme = useTheme();
   return (
     <>
       <Card classes={{ root: classes.cardRoot }} elevation={0}>
@@ -60,7 +62,7 @@ function CardStats({ subtitle, title, footer, icon, color }) {
               <Box
                 component={Typography}
                 variant="h5"
-                color="#8898aa!important"
+                color={theme.palette.gray[600] + "!important"}
                 marginBottom="0!important"
                 marginTop="0!important"
                 className={classes.textUppercase}
@@ -88,7 +90,7 @@ function CardStats({ subtitle, title, footer, icon, color }) {
                 justifyContent="center"
                 borderRadius="50%"
                 boxShadow="0 0 2rem 0 rgba(136,152,170,.15)"
-                color="#fff"
+                color={theme.palette.white.main}
                 className={classes[color]}
               >
                 {icon && typeof icon === "object" ? (
@@ -108,7 +110,7 @@ function CardStats({ subtitle, title, footer, icon, color }) {
             <Box
               component="p"
               fontSize=".875rem"
-              color="#8898aa"
+              color={theme.palette.gray[600]}
               marginTop="1rem"
               marginBottom="0"
               display="flex"
