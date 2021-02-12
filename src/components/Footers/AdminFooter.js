@@ -12,11 +12,11 @@ import ListItem from "@material-ui/core/ListItem";
 const useStyles = makeStyles((theme) => ({
   listItemRoot: {
     width: "auto",
-    color: "#8898aa",
+    color: theme.palette.gray[600],
     fontSize: ".875rem",
   },
   copyrightWrapper: {
-    color: "#8898aa",
+    color: theme.palette.gray[600],
     fontSize: ".875rem",
     textAlign: "center",
     [theme.breakpoints.up("md")]: {
@@ -26,11 +26,11 @@ const useStyles = makeStyles((theme) => ({
   copyrightLink: {
     fontWeight: "600",
     marginLeft: ".25rem",
-    color: "#5e72e4",
+    color: theme.palette.primary.main,
     backgroundColor: "initial",
     textDecoration: "none",
     "&:hover": {
-      color: "#233dd2",
+      color: theme.palette.primary.dark,
     },
   },
   justifyContentCenter: {
