@@ -1,6 +1,7 @@
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -18,7 +19,8 @@ import CardStats from "components/Cards/CardStats.js";
 const useStyles = makeStyles((theme) => ({
   header: {
     position: "relative",
-    background: "linear-gradient(87deg,#11cdef,#1171ef)",
+    background:
+      "linear-gradient(87deg," + theme.palette.info.main + ",#1171ef)",
     paddingBottom: "8rem",
     paddingTop: "3rem",
     [theme.breakpoints.up("md")]: {
@@ -35,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles();
+  const theme = useTheme();
   return (
     <>
       <div className={classes.header}>
@@ -56,7 +59,7 @@ const Header = () => {
                       <Box
                         component="span"
                         fontSize=".875rem"
-                        color="#2dce89"
+                        color={theme.palette.success.main}
                         marginRight=".5rem"
                         display="flex"
                         alignItems="center"
@@ -86,7 +89,7 @@ const Header = () => {
                       <Box
                         component="span"
                         fontSize=".875rem"
-                        color="#f5365c"
+                        color={theme.palette.error.main}
                         marginRight=".5rem"
                         display="flex"
                         alignItems="center"
@@ -116,7 +119,7 @@ const Header = () => {
                       <Box
                         component="span"
                         fontSize=".875rem"
-                        color="#fb6340"
+                        color={theme.palette.warning.main}
                         marginRight=".5rem"
                         display="flex"
                         alignItems="center"
@@ -146,7 +149,7 @@ const Header = () => {
                       <Box
                         component="span"
                         fontSize=".875rem"
-                        color="#2dce89"
+                        color={theme.palette.success.main}
                         marginRight=".5rem"
                         display="flex"
                         alignItems="center"
