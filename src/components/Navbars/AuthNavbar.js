@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// material-ui components
+// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
@@ -10,15 +10,17 @@ import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Toolbar from "@material-ui/core/Toolbar";
 import Menu from "@material-ui/core/Menu";
-// material-ui icons
-import MenuIcon from "@material-ui/icons/Menu";
-import Dashboard from "@material-ui/icons/Dashboard";
+import Toolbar from "@material-ui/core/Toolbar";
+// @material-ui/icons components
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import Clear from "@material-ui/icons/Clear";
-import VpnKey from "@material-ui/icons/VpnKey";
+import Dashboard from "@material-ui/icons/Dashboard";
+import MenuIcon from "@material-ui/icons/Menu";
 import Person from "@material-ui/icons/Person";
+import VpnKey from "@material-ui/icons/VpnKey";
+
+// core components
 
 const useStyles = makeStyles((theme) => ({
   listItemRoot: {
