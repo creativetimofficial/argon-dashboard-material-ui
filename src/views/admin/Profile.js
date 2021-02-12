@@ -96,6 +96,21 @@ const useStyles = makeStyles((theme) => ({
       color: "#233dd2",
     },
   },
+  order1: {
+    [theme.breakpoints.down("lg")]: {
+      order: "1!important",
+    },
+  },
+  order2: {
+    [theme.breakpoints.down("lg")]: {
+      order: "2!important",
+    },
+  },
+  marginBottomXl0: {
+    [theme.breakpoints.up("lg")]: {
+      marginBottom: "0!important",
+    },
+  },
 }));
 
 function Profile() {
@@ -113,10 +128,11 @@ function Profile() {
         <Grid container>
           <Grid
             item
+            xs={12}
             xl={8}
             component={Box}
             marginBottom="3rem"
-            classes={{ root: classes.gridItemRoot }}
+            classes={{ root: classes.gridItemRoot + " " + classes.order2 }}
           >
             <Card
               classes={{
@@ -409,7 +425,14 @@ function Profile() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12} xl={4}>
+          <Grid
+            item
+            xs={12}
+            xl={4}
+            component={Box}
+            marginBottom="3rem!important"
+            classes={{ root: classes.order1 + " " + classes.marginBottomXl0 }}
+          >
             <Card classes={{ root: classes.cardRoot }}>
               <Box component={Grid} container justifyContent="center">
                 <Grid item xs={12} lg={3}>
