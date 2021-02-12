@@ -1,9 +1,11 @@
 import React from "react";
-// material-ui components
+// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+
+// core components
 
 const useStyles = makeStyles(() => ({
   header: {
