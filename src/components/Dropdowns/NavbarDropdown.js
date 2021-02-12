@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   buttonLabel: {
     fontSize: ".875rem",
     fontWeight: "600",
-    color: "hsla(0,0%,100%,.95)",
+    color: theme.palette.buttonLightLabel.main,
     textTransform: "capitalize",
     display: "flex",
     alignItems: "center",
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     height: "0",
     margin: ".5rem 0",
     overflow: "hidden",
-    borderTop: "1px solid #e9ecef",
+    borderTop: "1px solid " + theme.palette.gray[200],
   },
   menuTitle: {
     margin: "0!important",
