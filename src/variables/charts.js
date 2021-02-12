@@ -326,7 +326,7 @@ let chartExample1 = {
       },
     },
   },
-  data1: (canvas) => {
+  data1: () => {
     return {
       labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
       datasets: [
@@ -337,7 +337,7 @@ let chartExample1 = {
       ],
     };
   },
-  data2: (canvas) => {
+  data2: () => {
     return {
       labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
       datasets: [
