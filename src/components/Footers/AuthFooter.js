@@ -34,6 +34,16 @@ const useStyles = makeStyles((theme) => ({
       color: "#233dd2",
     },
   },
+  justifyContentCenter: {
+    [theme.breakpoints.down("lg")]: {
+      justifyContent: "center!important",
+    },
+  },
+  flexDirectionColumn: {
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column!important",
+    },
+  },
 }));
 
 const Footer = () => {
@@ -45,8 +55,12 @@ const Footer = () => {
         maxWidth="xl"
         display="flex!important"
         alignItems="center"
+        classes={{
+          root:
+            classes.justifyContentCenter + " " + classes.flexDirectionColumn,
+        }}
       >
-        <Grid item xs={12} xl={6}>
+        <Grid item xs={12} xl={6} wrap="wrap">
           <div className={classes.copyrightWrapper}>
             © {new Date().getFullYear()}{" "}
             <a
@@ -62,16 +76,27 @@ const Footer = () => {
 
         <Grid
           item
+          xs={12}
           xl={6}
           component={Box}
           display="flex"
           justifyContent="flex-end"
+          classes={{
+            root:
+              classes.justifyContentCenter + " " + classes.flexDirectionColumn,
+          }}
         >
           <Box
             component={List}
             display="flex"
             justifyContent="center"
             alignItems="center"
+            classes={{
+              root:
+                classes.justifyContentCenter +
+                " " +
+                classes.flexDirectionColumn,
+            }}
           >
             <ListItem
               component="a"
