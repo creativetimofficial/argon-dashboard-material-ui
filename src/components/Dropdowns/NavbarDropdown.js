@@ -1,4 +1,5 @@
 import React from "react";
+// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
@@ -8,12 +9,14 @@ import Hidden from "@material-ui/core/Hidden";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Typography from "@material-ui/core/Typography";
-// material-ui icons
-import Person from "@material-ui/icons/Person";
-import Settings from "@material-ui/icons/Settings";
+// @material-ui/icons components
+import DirectionsRun from "@material-ui/icons/DirectionsRun";
 import EventNote from "@material-ui/icons/EventNote";
 import LiveHelp from "@material-ui/icons/LiveHelp";
-import DirectionsRun from "@material-ui/icons/DirectionsRun";
+import Person from "@material-ui/icons/Person";
+import Settings from "@material-ui/icons/Settings";
+
+// core components
 
 const useStyles = makeStyles((theme) => ({
   buttonRoot: {
