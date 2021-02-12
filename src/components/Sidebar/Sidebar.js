@@ -5,7 +5,6 @@ import { useLocation, Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
-// import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
@@ -194,6 +193,7 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
             key={key}
             component={"a"}
             href={prop.href}
+            onClick={handleMenuClose}
             classes={{
               root:
                 classes.listItemRoot +
@@ -213,6 +213,7 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
           <ListItem
             key={key}
             component={Link}
+            onClick={handleMenuClose}
             to={prop.layout + prop.path}
             classes={{
               root:
