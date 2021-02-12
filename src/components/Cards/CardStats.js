@@ -111,6 +111,7 @@ function CardStats({ subtitle, title, footer, icon, color }) {
               marginBottom="0"
               display="flex"
               alignItems="center"
+              flexWrap="wrap"
             >
               {footer}
             </Box>
