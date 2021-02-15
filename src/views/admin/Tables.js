@@ -29,9 +29,11 @@ import MoreVert from "@material-ui/icons/MoreVert";
 // core components
 import Header from "components/Headers/Header.js";
 
+import boxShadows from "assets/theme/box-shadow.js";
+
 const useStyles = makeStyles((theme) => ({
   cardRoot: {
-    boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
+    boxShadow: boxShadows.boxShadow + "!important",
   },
   cardRootDark: {
     backgroundColor: theme.palette.dark.main,
