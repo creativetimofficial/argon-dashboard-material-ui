@@ -1,40 +1,9 @@
 // @material-ui/core components
 import { createMuiTheme } from "@material-ui/core/styles";
 // core components
+import boxShadows from "assets/theme/box-shadow.js";
+import hexToRgb from "assets/theme/hex-to-rgb.js";
 import themeColors from "assets/theme/colors.js";
-
-// ##############################
-// // // Function that converts from hex color to rgb color
-// // // Example: input = #9c27b0 => output = 156, 39, 176
-// // // Example: input = 9c27b0 => output = 156, 39, 176
-// // // Example: input = #999 => output = 153, 153, 153
-// // // Example: input = 999 => output = 153, 153, 153
-// #############################
-const hexToRgb = (input) => {
-  input = input + "";
-  input = input.replace("#", "");
-  let hexRegex = /[0-9A-Fa-f]/g;
-  if (!hexRegex.test(input) || (input.length !== 3 && input.length !== 6)) {
-    throw new Error("input is not a valid hex color.");
-  }
-  if (input.length === 3) {
-    let first = input[0];
-    let second = input[1];
-    let last = input[2];
-    input = first + first + second + second + last + last;
-  }
-  input = input.toUpperCase();
-  let first = input[0] + input[1];
-  let second = input[2] + input[3];
-  let last = input[4] + input[5];
-  return (
-    parseInt(first, 16) +
-    ", " +
-    parseInt(second, 16) +
-    ", " +
-    parseInt(last, 16)
-  );
-};
 
 // these are the default styles that go on all headings (h1,h2,h3,h4,h5,h6)
 // the difference only consists in the font size and text transform
@@ -110,7 +79,7 @@ const theme = createMuiTheme({
       },
       paperAnchorDockedLeft: {
         borderRight: "none",
-        boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
+        boxShadow: boxShadows.boxShadow + "!important",
       },
       docked: {
         width: "250px",
@@ -137,10 +106,9 @@ const theme = createMuiTheme({
         listStyle: "none",
         backgroundColor: themeColors.white.main,
         backgroundClip: "padding-box",
-        border: "0 solid rgba(0,0,0,.15)",
+        border: "0 solid rgba(" + hexToRgb(themeColors.black.main) + ",.15)",
         borderRadius: ".4375rem",
-        boxShadow:
-          "0 50px 100px rgb(50 50 93 / 10%), 0 15px 35px rgb(50 50 93 / 15%), 0 5px 15px rgb(0 0 0 / 10%)",
+        boxShadow: boxShadows.menuBoxShadow,
         padding: ".5rem 0",
       },
     },
@@ -233,7 +201,7 @@ const theme = createMuiTheme({
         padding: ".625rem .75rem",
       },
       root: {
-        boxShadow: "0 1px 3px rgb(50 50 93 / 15%), 0 1px 0 rgb(0 0 0 / 2%)",
+        boxShadow: boxShadows.inputBoxShadow,
         border: 0,
         transition: "box-shadow .15s ease",
         borderRadius: ".375rem",
@@ -318,7 +286,7 @@ const theme = createMuiTheme({
         wordWrap: "break-word",
         backgroundColor: themeColors.white.main,
         backgroundClip: "initial",
-        border: "1px solid rgba(0,0,0,.05)",
+        border: "1px solid rgba(" + hexToRgb(themeColors.black.main) + ",.05)",
         borderRadius: ".375rem",
         overflow: "unset",
       },
@@ -328,7 +296,8 @@ const theme = createMuiTheme({
         padding: "1.25rem 1.5rem",
         marginBottom: "0",
         backgroundColor: themeColors.white.main,
-        borderBottom: "1px solid rgba(0,0,0,.05)",
+        borderBottom:
+          "1px solid rgba(" + hexToRgb(themeColors.black.main) + ",.05)",
         "&:first-child": {
           borderRadius: "calc(.375rem - 1px) calc(.375rem - 1px) 0 0",
         },
@@ -347,7 +316,8 @@ const theme = createMuiTheme({
           borderRadius: "0 0 calc(.375rem - 1px) calc(.375rem - 1px)",
           padding: "1.25rem 1.5rem",
           backgroundColor: themeColors.white.main,
-          borderTop: "1px solid rgba(0,0,0,.05)",
+          borderTop:
+            "1px solid rgba(" + hexToRgb(themeColors.black.main) + ",.05)",
         },
       },
     },
@@ -369,8 +339,7 @@ const theme = createMuiTheme({
         textAlign: "center",
         verticalAlign: "middle",
         "&:hover": {
-          boxShadow:
-            "0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%)",
+          boxShadow: boxShadows.buttonBoxShadow,
           transform: "translateY(-1px)",
         },
       },
@@ -379,8 +348,7 @@ const theme = createMuiTheme({
       },
       contained: {
         "&:hover": {
-          boxShadow:
-            "0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%)",
+          boxShadow: boxShadows.buttonBoxShadow,
         },
       },
       containedSizeSmall: {
@@ -480,7 +448,7 @@ const theme = createMuiTheme({
         overflow: "hidden",
         borderRadius: ".25rem",
         backgroundColor: themeColors.gray[200] + "!important",
-        boxShadow: "inset 0 1px 2px rgb(0 0 0 / 10%)",
+        boxShadow: boxShadows.linearProgressBoxShadow,
         display: "flex",
         lineHeight: "0",
         fontSize: ".75rem",
@@ -553,8 +521,7 @@ const theme = createMuiTheme({
           "&, &:hover": {
             backgroundColor: themeColors.primary.main + "!important",
             color: themeColors.white.main,
-            boxShadow:
-              "0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%)",
+            boxShadow: boxShadows.buttonBoxShadow,
           },
         },
       },
