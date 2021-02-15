@@ -11,20 +11,9 @@ import Grid from "@material-ui/core/Grid";
 // core components
 import Header from "components/Headers/Header.js";
 
-import boxShadows from "assets/theme/box-shadow.js";
+import componentStyles from "assets/theme/views/admin/maps.js";
 
-const useStyles = makeStyles((theme) => ({
-  cardRoot: {
-    boxShadow: boxShadows.boxShadow + "!important",
-    border: "0!important",
-  },
-  containerRoot: {
-    [theme.breakpoints.up("md")]: {
-      paddingLeft: "39px",
-      paddingRight: "39px",
-    },
-  },
-}));
+const useStyles = makeStyles(componentStyles);
 
 const MapWrapper = () => {
   const mapRef = React.useRef(null);
