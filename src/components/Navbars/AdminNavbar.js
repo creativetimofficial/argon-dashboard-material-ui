@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "2rem",
     border: "2px solid",
     backgroundColor: "initial",
-    boxShadow: " 0 1px 3px rgb(50 50 93 / 15%), 0 1px 0 rgb(0 0 0 / 2%)",
+    boxShadow: "0 1px 3px rgb(50 50 93 / 15%), 0 1px 0 rgb(0 0 0 / 2%)",
     transition: "box-shadow .15s ease",
   },
   searchIcon: {
