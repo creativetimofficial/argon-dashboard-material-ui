@@ -22,9 +22,11 @@ import School from "@material-ui/icons/School";
 // core components
 import UserHeader from "components/Headers/UserHeader.js";
 
+import boxShadows from "assets/theme/box-shadow.js";
+
 const useStyles = makeStyles((theme) => ({
   cardRoot: {
-    boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
+    boxShadow: boxShadows.boxShadow + "!important",
     border: "0!important",
   },
   cardRootSecondary: {
@@ -449,7 +451,7 @@ function Profile() {
                       borderRadius="50%"
                       position="absolute"
                       left="50%"
-                      boxShadow="0 0 2rem 0 rgba(136,152,170,.15)!important"
+                      boxShadow={boxShadows.boxShadow + "!important"}
                       className={classes.profileImage}
                     />
                   </Box>
