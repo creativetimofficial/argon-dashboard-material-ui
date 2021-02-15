@@ -7,13 +7,9 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 
 // core components
+import componentStyles from "assets/theme/components/auth-header.js";
 
-const useStyles = makeStyles((theme) => ({
-  header: {
-    background:
-      "linear-gradient(87deg," + theme.palette.info.main + ",#1171ef)",
-  },
-}));
+const useStyles = makeStyles(componentStyles);
 
 const AuthHeader = () => {
   const classes = useStyles();
