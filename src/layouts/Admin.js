@@ -19,19 +19,9 @@ import NavbarDropdown from "components/Dropdowns/NavbarDropdown.js";
 
 import routes from "routes.js";
 
-const useStyles = makeStyles((theme) => ({
-  mainContent: {
-    [theme.breakpoints.up("md")]: {
-      marginLeft: "250px",
-    },
-  },
-  containerRoot: {
-    [theme.breakpoints.up("md")]: {
-      paddingLeft: "39px",
-      paddingRight: "39px",
-    },
-  },
-}));
+import componentStyles from "assets/theme/layouts/admin.js";
+
+const useStyles = makeStyles(componentStyles);
 
 const Admin = () => {
   const classes = useStyles();
