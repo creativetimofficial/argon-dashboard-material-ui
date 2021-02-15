@@ -19,10 +19,11 @@ import Lock from "@material-ui/icons/Lock";
 import School from "@material-ui/icons/School";
 
 // core components
+import boxShadows from "assets/theme/box-shadow.js";
 
 const useStyles = makeStyles((theme) => ({
   cardRoot: {
-    boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
+    boxShadow: boxShadows.boxShadow + "!important",
     border: "0!important",
     backgroundColor: theme.palette.secondary.main,
   },
@@ -41,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   buttonRoot: {
     backgroundColor: theme.palette.white.main,
     color: theme.palette.primary.main,
-    boxShadow: "0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%)",
+    boxShadow: boxShadows.buttonBoxShadowNeutral,
     borderColor: theme.palette.white.main + "!important",
     "&:hover": {
       color: theme.palette.gray[900],
