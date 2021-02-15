@@ -28,6 +28,8 @@ import ArrowUpward from "@material-ui/icons/ArrowUpward";
 // core components
 import Header from "components/Headers/Header.js";
 
+import boxShadows from "assets/theme/box-shadow.js";
+
 import {
   chartOptions,
   parseOptions,
@@ -43,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
       ",#1a174d)!important",
   },
   cardRoot: {
-    boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
+    boxShadow: boxShadows.boxShadow + "!important",
     border: "0!important",
   },
   cardHeaderRoot: {
