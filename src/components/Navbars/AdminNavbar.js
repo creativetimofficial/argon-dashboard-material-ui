@@ -13,6 +13,8 @@ import SearchIcon from "@material-ui/icons/Search";
 // core components
 import NavbarDropdown from "components/Dropdowns/NavbarDropdown.js";
 
+import boxShadows from "assets/theme/box-shadow.js";
+
 const useStyles = makeStyles((theme) => ({
   appBarRoot: {
     [theme.breakpoints.down("sm")]: {
@@ -32,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "2rem",
     border: "2px solid",
     backgroundColor: "initial",
-    boxShadow: "0 1px 3px rgb(50 50 93 / 15%), 0 1px 0 rgb(0 0 0 / 2%)",
+    boxShadow: boxShadows.inputBoxShadow,
     transition: "box-shadow .15s ease",
   },
   searchIcon: {
