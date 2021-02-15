@@ -10,6 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 // core components
+import boxShadows from "assets/theme/box-shadow.js";
 
 const useStyles = makeStyles((theme) => ({
   cardRoot: {
@@ -89,7 +90,7 @@ function CardStats({ subtitle, title, footer, icon, color }) {
                 alignItems="center"
                 justifyContent="center"
                 borderRadius="50%"
-                boxShadow="0 0 2rem 0 rgba(136,152,170,.15)"
+                boxShadow={boxShadows.boxShadow}
                 color={theme.palette.white.main}
                 className={classes[color]}
               >
