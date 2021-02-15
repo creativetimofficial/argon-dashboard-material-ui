@@ -13,11 +13,9 @@ import AuthFooter from "components/Footers/AuthFooter.js";
 
 import routes from "routes.js";
 
-const useStyles = makeStyles((theme) => ({
-  bgDefault: {
-    backgroundColor: theme.palette.dark.main,
-  },
-}));
+import componentStyles from "assets/theme/layouts/auth.js";
+
+const useStyles = makeStyles(componentStyles);
 
 const Auth = () => {
   const classes = useStyles();
