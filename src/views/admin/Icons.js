@@ -16,9 +16,11 @@ import Tooltip from "@material-ui/core/Tooltip";
 // core components
 import Header from "components/Headers/Header.js";
 
+import boxShadows from "assets/theme/box-shadow.js";
+
 const useStyles = makeStyles((theme) => ({
   cardRoot: {
-    boxShadow: "0 0 2rem 0 rgba(136,152,170,.15)!important",
+    boxShadow: boxShadows.boxShadow + "!important",
   },
   cardHeader: {
     backgroundColor: "initial",
@@ -31,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     "&:hover": {
       backgroundColor: theme.palette.white.main,
-      boxShadow: "0 0 0 1px rgb(0 0 0 / 10%), 0 4px 16px rgb(0 0 0 / 10%)",
+      boxShadow: boxShadows.iconsPageButtonBoxShadow,
     },
     "& i": {
       fontSize: "1.5rem",
