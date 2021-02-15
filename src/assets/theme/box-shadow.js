@@ -1,5 +1,5 @@
 import colors from "assets/theme/colors.js";
-import hexToRgb from "assets/theme/colors.js";
+import hexToRgb from "assets/theme/hex-to-rgb.js";
 
 const boxShadows = {
   boxShadow: "0 0 2rem 0 rgba(" + hexToRgb(colors.gray[600]) + ",.15)",
