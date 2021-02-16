@@ -531,6 +531,27 @@ const theme = createMuiTheme({
         backgroundColor: "rgba(" + hexToRgb(themeColors.black.main) + ", 0.1)",
       },
     },
+    MuiSlider: {
+      root: {
+        height: "5px",
+        borderRadius: "5px",
+        padding: "15px 0",
+      },
+      rail: {
+        height: "5px",
+        borderRadius: "5px",
+        backgroundColor: themeColors.gray[300],
+        boxShadow: boxShadows.sliderBoxShadow,
+      },
+      track: {
+        height: "5px",
+        borderRadius: "5px",
+      },
+      thumb: {
+        width: "15px",
+        height: "15px",
+      },
+    },
   },
 });
 
