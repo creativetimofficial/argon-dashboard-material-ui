@@ -32,6 +32,8 @@ const themeColors = {
     main: "#f7fafc",
     snackbar: "#f8fbfc",
     badgeBgHover: "#cadeeb",
+    btnOutline: "#4385b1",
+    btnActive: "#d2e3ee",
   },
   warning: {
     light: "#ffd600",
