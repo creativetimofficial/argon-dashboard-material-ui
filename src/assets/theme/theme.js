@@ -552,6 +552,19 @@ const theme = createMuiTheme({
         height: "15px",
       },
     },
+    MuiSnackbarContent: {
+      root: {
+        fontSize: ".875rem",
+        position: "relative",
+        marginBottom: "1rem",
+        padding: "1rem 1.5rem",
+        border: "1px solid transparent",
+        borderRadius: ".375rem",
+      },
+      message: {
+        padding: "0",
+      },
+    },
   },
 });
 
