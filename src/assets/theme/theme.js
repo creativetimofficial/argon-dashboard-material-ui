@@ -338,22 +338,22 @@ const theme = createMuiTheme({
         fontWeight: "600",
         textAlign: "center",
         verticalAlign: "middle",
-        color: themeColors.white.main,
-        borderColor: themeColors.dark.main,
-        backgroundColor: themeColors.dark.main,
         boxShadow: "0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%)",
         "&:hover": {
           boxShadow: boxShadows.buttonBoxShadow,
           transform: "translateY(-1px)",
-          backgroundColor: themeColors.dark.dark,
         },
       },
       text: {
         padding: ".625rem 1.25rem",
       },
       contained: {
+        color: themeColors.white.main,
+        borderColor: themeColors.dark.main,
+        backgroundColor: themeColors.dark.main,
         "&:hover": {
           boxShadow: boxShadows.buttonBoxShadow,
+          backgroundColor: themeColors.dark.dark,
         },
       },
       containedSizeSmall: {
@@ -362,8 +362,61 @@ const theme = createMuiTheme({
         lineHeight: "1.5",
         borderRadius: ".375rem",
       },
+      containedSizeLarge: {
+        fontSize: ".875rem",
+        lineHeight: 1.5,
+        padding: ".875rem 1rem",
+        borderRadius: ".4375rem",
+      },
       containedPrimary: {
         borderColor: themeColors.primary.main,
+      },
+      containedSecondary: {
+        borderColor: themeColors.secondary.main,
+        "&:hover": {
+          borderColor: themeColors.gray[200],
+          backgroundColor: themeColors.gray[200],
+        },
+      },
+      outlined: {
+        padding: ".625rem 1.25rem",
+        color: themeColors.dark.main,
+        borderColor: themeColors.dark.main,
+        boxShadow: "none",
+        "&:hover": {
+          boxShadow: "none",
+          backgroundColor: themeColors.dark.main,
+          color: themeColors.white.main,
+        },
+      },
+      outlinedSizeSmall: {
+        fontSize: ".75rem",
+        padding: ".25rem .5rem",
+        lineHeight: "1.5",
+        borderRadius: ".375rem",
+      },
+      outlinedSizeLarge: {
+        fontSize: ".875rem",
+        lineHeight: 1.5,
+        padding: ".875rem 1rem",
+        borderRadius: ".4375rem",
+      },
+      outlinedPrimary: {
+        color: themeColors.primary.main,
+        borderColor: themeColors.primary.main,
+        "&:hover": {
+          backgroundColor: themeColors.primary.main,
+        },
+      },
+      outlinedSecondary: {
+        color: themeColors.secondary.btnOutline,
+        borderColor: themeColors.secondary.main,
+        backgroundColor: themeColors.transparent.main,
+        "&:hover": {
+          borderColor: themeColors.secondary.main,
+          backgroundColor: themeColors.secondary.main,
+          color: themeColors.gray[900],
+        },
       },
     },
     MuiContainer: {
