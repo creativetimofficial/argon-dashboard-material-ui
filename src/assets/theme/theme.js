@@ -338,9 +338,14 @@ const theme = createMuiTheme({
         fontWeight: "600",
         textAlign: "center",
         verticalAlign: "middle",
+        color: themeColors.white.main,
+        borderColor: themeColors.dark.main,
+        backgroundColor: themeColors.dark.main,
+        boxShadow: "0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%)",
         "&:hover": {
           boxShadow: boxShadows.buttonBoxShadow,
           transform: "translateY(-1px)",
+          backgroundColor: themeColors.dark.dark,
         },
       },
       text: {
@@ -356,6 +361,9 @@ const theme = createMuiTheme({
         padding: ".25rem .5rem",
         lineHeight: "1.5",
         borderRadius: ".375rem",
+      },
+      containedPrimary: {
+        borderColor: themeColors.primary.main,
       },
     },
     MuiContainer: {
@@ -563,6 +571,56 @@ const theme = createMuiTheme({
       },
       message: {
         padding: "0",
+        display: "flex",
+      },
+    },
+    MuiBadge: {
+      root: {
+        textDecoration: "none",
+        "&[href] $badge:hover": {
+          color: themeColors.white.main,
+          backgroundColor: themeColors.dark.badgeBgHover,
+        },
+        "&[href] $colorPrimary:hover": {
+          backgroundColor: themeColors.primary.badgeBgHover,
+        },
+        "&[href] $colorSecondary:hover": {
+          color: themeColors.gray[900],
+          backgroundColor: themeColors.secondary.badgeBgHover,
+        },
+        "&[href] $colorError:hover": {
+          backgroundColor: themeColors.error.badgeBgHover,
+        },
+      },
+      badge: {
+        height: "unset",
+        fontSize: "66%",
+        fontWeight: "600",
+        lineHeight: "1",
+        display: "inline-block",
+        padding: ".35rem .375rem",
+        transition:
+          "color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out",
+        textAlign: "center",
+        verticalAlign: "baseline",
+        whiteSpace: "nowrap",
+        borderRadius: ".375rem",
+        textTransform: "uppercase",
+        border: "3px solid",
+        color: themeColors.white.main,
+        backgroundColor: themeColors.dark.badgeBg,
+      },
+      colorPrimary: {
+        color: themeColors.primary.badge,
+        backgroundColor: themeColors.primary.badgeBg,
+      },
+      colorSecondary: {
+        color: themeColors.gray[900],
+        backgroundColor: themeColors.secondary.main,
+      },
+      colorError: {
+        color: themeColors.error.badge,
+        backgroundColor: themeColors.error.badgeBg,
       },
     },
   },
