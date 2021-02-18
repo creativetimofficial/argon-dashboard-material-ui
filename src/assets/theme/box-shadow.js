@@ -39,6 +39,8 @@ const boxShadows = {
     ", 0.1)",
   sliderBoxShadow:
     "inset 0 1px 2px rgba(" + hexToRgb(colors.gray[800]) + ", 0.1)",
+  popoverBoxShadow:
+    "0px 0.5rem 2rem 0px rgba(" + hexToRgb(colors.black.main) + ", 0.2)",
 };
 
 export default boxShadows;
