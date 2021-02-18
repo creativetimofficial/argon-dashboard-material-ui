@@ -293,7 +293,7 @@ const theme = createMuiTheme({
         wordWrap: "break-word",
         backgroundColor: themeColors.white.main,
         backgroundClip: "initial",
-        border: "1px solid rgba(" + hexToRgb(themeColors.black.main) + ",.05)",
+        border: "0",
         borderRadius: ".375rem",
         overflow: "unset",
       },
