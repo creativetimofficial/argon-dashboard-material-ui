@@ -725,6 +725,21 @@ const theme = createMuiTheme({
         backgroundColor: themeColors.error.badgeBg,
       },
     },
+    MuiTooltip: {
+      tooltip: {
+        backgroundColor: themeColors.black.main,
+        maxWidth: "200px",
+        padding: "0.25rem 0.5rem",
+        textAlign: "center",
+        borderRadius: "0.375rem",
+        fontWeight: 400,
+        lineHeight: 1.5,
+        fontSize: "0.875rem",
+      },
+      arrow: {
+        color: themeColors.black.main,
+      },
+    },
   },
 });
 
