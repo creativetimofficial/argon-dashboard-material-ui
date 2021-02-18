@@ -740,6 +740,13 @@ const theme = createMuiTheme({
         color: themeColors.black.main,
       },
     },
+    MuiPopover: {
+      paper: {
+        padding: "0.5rem 0.95rem",
+        color: themeColors.gray[700],
+        boxShadow: boxShadows.popoverBoxShadow,
+      },
+    },
   },
 });
 
