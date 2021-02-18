@@ -284,6 +284,48 @@ const theme = createMuiTheme({
         },
       },
     },
+    MuiRadio: {
+      root: {
+        "& .MuiSvgIcon-root": {
+          width: "1.5rem",
+          height: "1.5rem",
+        },
+      },
+    },
+    MuiSwitch: {
+      root: {
+        width: "3.25rem",
+        height: "1.5rem",
+        padding: 0,
+      },
+      switchBase: {
+        padding: "3px",
+        "&$checked": {
+          transform: "translateX(28px)",
+          "& + $track": {
+            backgroundColor: themeColors.transparent.main + "!important",
+            borderColor: themeColors.primary.main,
+            opacity: 1,
+          },
+          "& $thumb": {
+            backgroundColor: themeColors.primary.main,
+          },
+        },
+      },
+      checked: {},
+      thumb: {
+        width: "18px",
+        height: "18px",
+        boxShadow: "none",
+        backgroundColor: themeColors.gray[200],
+      },
+      track: {
+        backgroundColor: themeColors.transparent.main,
+        border: "1px solid " + themeColors.gray[400],
+        opacity: 1,
+        borderRadius: "34px",
+      },
+    },
     MuiCard: {
       root: {
         position: "relative",
