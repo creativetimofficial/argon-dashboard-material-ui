@@ -635,6 +635,18 @@ const theme = createMuiTheme({
           },
         },
       },
+      sizeLarge: {
+        lineHeight: "46px",
+        width: "46px",
+        height: "46px",
+        borderRadius: "50%",
+      },
+      sizeSmall: {
+        lineHeight: "30px",
+        width: "30px",
+        height: "30px",
+        borderRadius: "50%",
+      },
     },
     MuiDivider: {
       root: {
