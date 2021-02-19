@@ -759,6 +759,53 @@ const theme = createMuiTheme({
         boxShadow: boxShadows.popoverBoxShadow,
       },
     },
+    MuiTabs: {
+      indicator: {
+        display: "none",
+      },
+      scroller: {
+        padding: ".5rem",
+      },
+    },
+    MuiTab: {
+      root: {
+        fontSize: ".875rem",
+        fontWeight: 500,
+        padding: ".75rem 1rem",
+        transition: "all .15s ease",
+        boxShadow: "0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%)",
+        borderRadius: ".375rem",
+        display: "block",
+        textAlign: "center",
+        flex: "1 1 auto",
+        maxWidth: "unset",
+        "&$selected": {
+          color: themeColors.white.main + "!important",
+          backgroundColor: themeColors.primary.main + "!important",
+        },
+        "&:not(:last-child)": {
+          marginRight: "1rem",
+        },
+        "& svg": {
+          width: "1rem!important",
+          height: "1rem!important",
+          position: "relative",
+          top: "2px",
+        },
+      },
+      wrapper: {
+        flexDirection: "row",
+      },
+      labelIcon: {
+        minHeight: "unset",
+        paddingTop: ".75rem",
+      },
+    },
+    MuiTabPanel: {
+      root: {
+        padding: "0",
+      },
+    },
   },
 });
 
