@@ -69,13 +69,6 @@ const theme = createMuiTheme({
       fontSize: ".625rem",
       ...defaultHeaderStyles,
     },
-    body2: {
-      fontSize: "1rem",
-      fontWeight: 300,
-      lineHeight: 1.7,
-      marginTop: 0,
-      marginBottom: "1rem",
-    },
   },
   overrides: {
     MuiDrawer: {
