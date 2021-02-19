@@ -71,7 +71,6 @@ If you want to get inspiration or just show something directly to your clients, 
 - `npm i argon-dashboard-material-ui`
 - [Download from Github](https://github.com/creativetimofficial/argon-dashboard-material-ui/archive/main.zip).
 - [Download from Creative Tim](https://www.creative-tim.com/product/argon-dashboard-material-ui?ref=admui-github-readme).
-- Install with [Bower](https://bower.io/?ref=creativetim): ```bower install argon-dashboard-material-ui```.
 - Clone the repo: `git clone https://github.com/creativetimofficial/argon-dashboard-material-ui.git`.
 
 
