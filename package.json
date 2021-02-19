@@ -1,9 +1,10 @@
 {
-  "name": "create-react-app",
+  "name": "argon-dashboard-material-ui",
   "version": "1.0.0",
   "author": "Creative Tim",
   "license": "MIT",
   "description": "Material UI version of Argon Dashboard React by Creative Tim",
+  "homepage": "https://demos.creative-tim.com/argon-dashboard-material-ui/#/admin/dashboard",
   "bugs": {
     "url": "https://github.com/creativetimofficial/argon-dashboard-material-ui/issues"
   },
@@ -75,6 +76,8 @@
   },
   "devDependencies": {
     "eslint": "7.20.0",
-    "eslint-plugin-unused-imports": "1.1.0"
+    "eslint-plugin-unused-imports": "1.1.0",
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.8"
   }
 }
