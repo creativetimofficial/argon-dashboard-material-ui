@@ -78,6 +78,8 @@
   },
   "devDependencies": {
     "eslint": "7.20.0",
-    "eslint-plugin-unused-imports": "1.1.0"
+    "eslint-plugin-unused-imports": "1.1.0",
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.8"
   }
 }
