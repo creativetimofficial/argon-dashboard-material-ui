@@ -2,6 +2,7 @@ const componentStyles = (theme) => ({
   buttonRoot: {
     padding: ".25rem 0 .25rem 1rem!important",
     border: "0!important",
+    boxShadow: "none!important",
     [theme.breakpoints.down("md")]: {
       padding: "0!important",
       minWidth: "unset!important",
