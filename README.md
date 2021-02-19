@@ -6,17 +6,17 @@
 
 ![Product Image](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/nextjs-argon-dashboard/nextjs-argon-dashboard.jpg)
 
-Start your development with a Dashboard for [NextJS](https://nextjs.org/?ref=creativetim), [Bootstrap 4](https://getbootstrap.com/?ref=creativetim), [React](https://reactjs.org/?ref=creativetim) and [Reactstrap](https://reactstrap.github.io/?ref=creativetim). It is open source, free and it features many components that can help you create amazing websites.
+Start your development with a Dashboard for [React](https://reactjs.org/?ref=creativetim), [React Hooks](https://reactjs.org/docs/hooks-intro.html?ref=creativetim), [Create React App](https://create-react-app.dev/docs/getting-started/?ref=creativetim), and [Material-UI](https://material-ui.com/?ref=creativetim). It is open-source, free and it features many components that can help you create amazing websites.
 
 **Fully Coded Components**
 
-NextJS Argon Dashboard is built with over 100 individual components, giving you the freedom of choosing and combining. All components can take variations in color, that you can easily modify using SASS files.
+Argon Dashboard Material-UI is built with over 100 individual components, giving you the freedom of choosing and combining. All components can take variations in color, that you can easily modify using JSS files.
 You will save a lot of time going from prototyping to full-functional code, because all elements are implemented. This Dashboard is coming with pre-built examples, so the development process is seamless, switching from our pages to the real website is very easy to be done.
 Every element has multiple states for colors, styles, hover, focus, that you can easily access and use.
 
 **Complex Documentation**
 
-Each element is well presented in a very complex documentation. You can read more about the idea behind this [dashboard here](https://www.creative-tim.com/learning-lab/nextjs/overview/argon-dashboard?ref=creativetim). You can check the [components here](https://www.creative-tim.com/learning-lab/nextjs/alerts/argon-dashboard?ref=creativetim) and the [foundation here](https://www.creative-tim.com/learning-lab/nextjs/colors/argon-dashboard?ref=creativetim).
+Each element is well presented in a very complex documentation. You can read more about the idea behind this [dashboard here](https://www.creative-tim.com/learning-lab/material-ui/overview/argon-dashboard?ref=creativetim). You can check the [components here](https://www.creative-tim.com/learning-lab/material-ui/alerts/argon-dashboard?ref=creativetim) and the [foundation here](https://www.creative-tim.com/learning-lab/material-ui/colors/argon-dashboard?ref=creativetim).
 
 **Example Pages**
 
