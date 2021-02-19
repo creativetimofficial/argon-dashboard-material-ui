@@ -806,6 +806,29 @@ const theme = createMuiTheme({
         padding: "0",
       },
     },
+    MuiDialog: {
+      paper: {
+        width: "100%",
+      },
+    },
+    MuiDialogContent: {
+      root: {
+        position: "relative",
+        padding: "1.5rem",
+        flex: "1 1 auto",
+      },
+    },
+    MuiDialogActions: {
+      root: {
+        display: "flex",
+        padding: "1.25rem",
+        borderBottomRightRadius: ".4375rem",
+        borderBottomLeftRadius: ".4375rem",
+        flexWrap: "wrap",
+        alignItems: "center",
+        justifyContent: "flex-end",
+      },
+    },
   },
 });
 
