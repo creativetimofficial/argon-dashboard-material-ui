@@ -1,9 +1,10 @@
 {
-  "name": "create-react-app",
+  "name": "Argon Dashboard Material-UI",
   "version": "1.0.0",
   "author": "Creative Tim",
   "license": "MIT",
   "description": "Material UI version of Argon Dashboard React by Creative Tim",
+  "homepage": "https://demos.creative-tim.com/argon-dashboard-material-ui",
   "bugs": {
     "url": "https://github.com/creativetimofficial/argon-dashboard-material-ui/issues"
   },
