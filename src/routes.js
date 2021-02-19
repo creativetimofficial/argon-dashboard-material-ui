@@ -89,19 +89,19 @@ var routes = [
   },
   {
     href:
-      "https://demos.creative-tim.com/argon-dashboard-react/#/documentation/overview",
+      "https://www.creative-tim.com/learning-lab/material-ui/overview/argon-dashboard?ref=admui-admin-sidebar",
     name: "Getting started",
     icon: FlashOn,
   },
   {
     href:
-      "https://demos.creative-tim.com/argon-dashboard-react/#/documentation/overview",
+      "https://www.creative-tim.com/learning-lab/material-ui/colors/argon-dashboard?ref=admui-admin-sidebar",
     name: "Foundation",
     icon: Palette,
   },
   {
     href:
-      "https://demos.creative-tim.com/argon-dashboard-react/#/documentation/overview",
+      "https://www.creative-tim.com/learning-lab/material-ui/alerts/argon-dashboard?ref=admui-admin-sidebar",
     name: "Components",
     icon: Dns,
   },
