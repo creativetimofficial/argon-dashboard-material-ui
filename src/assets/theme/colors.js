@@ -50,6 +50,7 @@ const themeColors = {
     badgeBg: "#fdd1da",
     badgeBgHover: "#e30b36",
     badge: "#f80031",
+    dialogNotification: "#f56036",
   },
   info: {
     main: "#11cdef",
