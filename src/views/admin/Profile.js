@@ -61,6 +61,7 @@ function Profile() {
                 boxShadow: boxShadows.boxShadow + "!important",
                 border: "0!important",
                 backgroundColor: theme.palette.secondary.main,
+                marginBottom: "0!important",
               }}
             >
               <CardHeader
@@ -381,7 +382,7 @@ function Profile() {
                             component={FilledInput}
                             autoComplete="off"
                             multiline
-                            defaultValue="A beautiful Dashboard for Bootstrap 4. It is Free and Open Source."
+                            defaultValue="A beautiful Dashboard for Material-UI v5. It is Free and Open Source."
                             rows="4"
                           />
                         </FormControl>
@@ -411,6 +412,7 @@ function Profile() {
               sx={{
                 boxShadow: boxShadows.boxShadow + "!important",
                 border: "0!important",
+                marginBottom: "0!important",
               }}
             >
               <Box component={Grid} container sx={{ justifyContent: "center" }}>
