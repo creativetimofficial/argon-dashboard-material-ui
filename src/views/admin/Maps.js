@@ -133,6 +133,7 @@ const Maps = () => {
               sx={{
                 boxShadow: boxShadows.boxShadow + "!important",
                 border: "0!important",
+                marginBottom: "0!important",
               }}
             >
               <MapWrapper />
