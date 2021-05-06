@@ -1,6 +1,5 @@
 import React from "react";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
@@ -16,20 +15,31 @@ import PieChart from "@material-ui/icons/PieChart";
 // core components
 import CardStats from "components/Cards/CardStats.js";
 
-import componentStyles from "assets/theme/components/header.js";
-
-const useStyles = makeStyles(componentStyles);
-
 const Header = () => {
-  const classes = useStyles();
   const theme = useTheme();
   return (
     <>
-      <div className={classes.header}>
+      <Box
+        sx={{
+          position: "relative",
+          background:
+            "linear-gradient(87deg," + theme.palette.info.main + ",#1171ef)",
+          paddingBottom: "8rem",
+          paddingTop: "3rem",
+          [theme.breakpoints.up("md")]: {
+            paddingTop: "8rem",
+          },
+        }}
+      >
         <Container
           maxWidth={false}
           component={Box}
-          classes={{ root: classes.containerRoot }}
+          sx={{
+            [theme.breakpoints.up("md")]: {
+              paddingLeft: "39px",
+              paddingRight: "39px",
+            },
+          }}
         >
           <div>
             <Grid container>
@@ -42,21 +52,25 @@ const Header = () => {
                   footer={
                     <>
                       <Box
-                        component="span"
-                        fontSize=".875rem"
-                        color={theme.palette.success.main}
-                        marginRight=".5rem"
-                        display="flex"
-                        alignItems="center"
+                        sx={{
+                          component: "span",
+                          fontSize: ".875rem",
+                          color: theme.palette.success.main,
+                          marginRight: ".5rem",
+                          display: "flex",
+                          alignItems: "center",
+                        }}
                       >
                         <Box
                           component={ArrowUpward}
-                          width="1.5rem!important"
-                          height="1.5rem!important"
+                          sx={{
+                            width: "1.5rem!important",
+                            height: "1.5rem!important",
+                          }}
                         />{" "}
                         3.48%
                       </Box>
-                      <Box component="span" whiteSpace="nowrap">
+                      <Box component="span" sx={{ whiteSpace: "nowrap" }}>
                         Since last month
                       </Box>
                     </>
@@ -72,21 +86,25 @@ const Header = () => {
                   footer={
                     <>
                       <Box
-                        component="span"
-                        fontSize=".875rem"
-                        color={theme.palette.error.main}
-                        marginRight=".5rem"
-                        display="flex"
-                        alignItems="center"
+                        sx={{
+                          component: "span",
+                          fontSize: ".875rem",
+                          color: theme.palette.error.main,
+                          marginRight: ".5rem",
+                          display: "flex",
+                          alignItems: "center",
+                        }}
                       >
                         <Box
                           component={ArrowDownward}
-                          width="1.5rem!important"
-                          height="1.5rem!important"
+                          sx={{
+                            width: "1.5rem!important",
+                            height: "1.5rem!important",
+                          }}
                         />{" "}
                         3.48%
                       </Box>
-                      <Box component="span" whiteSpace="nowrap">
+                      <Box component="span" sx={{ whiteSpace: "nowrap" }}>
                         Since last week
                       </Box>
                     </>
@@ -102,21 +120,25 @@ const Header = () => {
                   footer={
                     <>
                       <Box
-                        component="span"
-                        fontSize=".875rem"
-                        color={theme.palette.warning.main}
-                        marginRight=".5rem"
-                        display="flex"
-                        alignItems="center"
+                        sx={{
+                          component: "span",
+                          fontSize: ".875rem",
+                          color: theme.palette.warning.main,
+                          marginRight: ".5rem",
+                          display: "flex",
+                          alignItems: "center",
+                        }}
                       >
                         <Box
                           component={ArrowDownward}
-                          width="1.5rem!important"
-                          height="1.5rem!important"
+                          sx={{
+                            width: "1.5rem!important",
+                            height: "1.5rem!important",
+                          }}
                         />{" "}
                         1.10%
                       </Box>
-                      <Box component="span" whiteSpace="nowrap">
+                      <Box component="span" sx={{ whiteSpace: "nowrap" }}>
                         Since yesterday
                       </Box>
                     </>
@@ -132,21 +154,25 @@ const Header = () => {
                   footer={
                     <>
                       <Box
-                        component="span"
-                        fontSize=".875rem"
-                        color={theme.palette.success.main}
-                        marginRight=".5rem"
-                        display="flex"
-                        alignItems="center"
+                        sx={{
+                          component: "span",
+                          fontSize: ".875rem",
+                          color: theme.palette.success.main,
+                          marginRight: ".5rem",
+                          display: "flex",
+                          alignItems: "center",
+                        }}
                       >
                         <Box
                           component={ArrowUpward}
-                          width="1.5rem!important"
-                          height="1.5rem!important"
+                          sx={{
+                            width: "1.5rem!important",
+                            height: "1.5rem!important",
+                          }}
                         />{" "}
                         10%
                       </Box>
-                      <Box component="span" whiteSpace="nowrap">
+                      <Box component="span" sx={{ whiteSpace: "nowrap" }}>
                         Since last month
                       </Box>
                     </>
@@ -156,7 +182,7 @@ const Header = () => {
             </Grid>
           </div>
         </Container>
-      </div>
+      </Box>
     </>
   );
 };
