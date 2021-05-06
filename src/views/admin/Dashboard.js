@@ -87,6 +87,7 @@ function Dashboard() {
                   "linear-gradient(87deg," +
                   theme.palette.dark.main +
                   ",#1a174d)!important",
+                marginBottom: "0!important",
               }}
             >
               <CardHeader
@@ -174,6 +175,7 @@ function Dashboard() {
               sx={{
                 boxShadow: boxShadows.boxShadow + "!important",
                 border: "0!important",
+                marginBottom: "0!important",
               }}
             >
               <CardHeader
@@ -227,6 +229,7 @@ function Dashboard() {
               sx={{
                 boxShadow: boxShadows.boxShadow + "!important",
                 border: "0!important",
+                marginBottom: "0!important",
               }}
             >
               <CardHeader
@@ -631,6 +634,7 @@ function Dashboard() {
               sx={{
                 boxShadow: boxShadows.boxShadow + "!important",
                 border: "0!important",
+                marginBottom: "0!important",
               }}
             >
               <CardHeader
