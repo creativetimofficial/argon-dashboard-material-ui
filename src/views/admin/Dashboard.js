@@ -1,6 +1,6 @@
 import React from "react";
 // javascipt plugin for creating charts
-import Chart from "chart.js";
+import { Chart, registerables } from "chart.js";
 // react plugin used to create charts
 import { Line, Bar } from "react-chartjs-2";
 // @material-ui/core components
@@ -38,6 +38,8 @@ import {
 import componentStyles from "assets/theme/views/admin/dashboard.js";
 
 const useStyles = makeStyles(componentStyles);
+
+Chart.register(...registerables);
 
 function Dashboard() {
   const classes = useStyles();
