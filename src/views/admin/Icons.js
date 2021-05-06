@@ -38,7 +38,12 @@ const Icons = () => {
         {/* Table */}
         <Grid container component={Box} sx={{ marginBottom: "39px" }}>
           <Grid item xs={12}>
-            <Card sx={{ boxShadow: boxShadows.boxShadow + "!important" }}>
+            <Card
+              sx={{
+                boxShadow: boxShadows.boxShadow + "!important",
+                marginBottom: "0!important",
+              }}
+            >
               <CardHeader
                 sx={{ backgroundColor: "initial" }}
                 title="Nucleo Icons"
@@ -7530,7 +7535,12 @@ const Icons = () => {
         </Grid>
         <Grid container component={Box} marginBottom="39px">
           <Grid item xs={12}>
-            <Card sx={{ boxShadow: boxShadows.boxShadow + "!important" }}>
+            <Card
+              sx={{
+                boxShadow: boxShadows.boxShadow + "!important",
+                marginBottom: "0!important",
+              }}
+            >
               <CardHeader
                 sx={{ backgroundColor: "initial" }}
                 title="Material Icons"
