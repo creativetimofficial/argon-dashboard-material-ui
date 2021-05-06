@@ -1,6 +1,5 @@
 import React from "react";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
@@ -19,98 +18,116 @@ import Lock from "@material-ui/icons/Lock";
 import School from "@material-ui/icons/School";
 
 // core components
-import componentStyles from "assets/theme/views/auth/register.js";
-
-const useStyles = makeStyles(componentStyles);
+import boxShadows from "assets/theme/box-shadow.js";
 
 function Register() {
-  const classes = useStyles();
   const theme = useTheme();
   return (
     <>
       <Grid item xs={12} lg={6} md={8}>
-        <Card classes={{ root: classes.cardRoot }}>
+        <Card
+          sx={{
+            boxShadow: boxShadows.boxShadow + "!important",
+            border: "0!important",
+            backgroundColor: theme.palette.secondary.main,
+          }}
+        >
           <CardHeader
-            className={classes.cardHeader}
+            sx={{ backgroundColor: "initial" }}
             title={
               <Box
-                fontSize="80%"
-                fontWeight="400"
+                sx={{
+                  fontSize: "80%",
+                  fontWeight: "400",
+                  color: theme.palette.gray[600],
+                }}
                 component="small"
-                color={theme.palette.gray[600]}
               >
                 Sign up with
               </Box>
             }
             titleTypographyProps={{
               component: Box,
-              textAlign: "center",
-              marginBottom: "1rem!important",
-              marginTop: ".5rem!important",
-              fontSize: "1rem!important",
+              sx: {
+                textAlign: "center",
+                marginBottom: "1rem!important",
+                marginTop: ".5rem!important",
+                fontSize: "1rem!important",
+              },
             }}
             subheader={
-              <Box textAlign="center">
-                <Box
-                  component={Button}
-                  variant="contained"
-                  marginRight="2rem!important"
-                  classes={{ root: classes.buttonRoot }}
+              <Box sx={{ textAlign: "center" }}>
+                <Button
+                  variant="neutral"
+                  sx={{ marginRight: "1rem!important" }}
                 >
-                  <Box component="span" marginRight="4px">
+                  <Box component="span" sx={{ marginRight: "4px" }}>
                     <Box
                       alt="..."
                       component="img"
-                      width="20px"
-                      className={classes.buttonImg}
+                      sx={{
+                        width: "20px",
+                        verticalAlign: "middle",
+                        borderStyle: "none",
+                      }}
                       src={
                         require("assets/img/icons/common/github.svg").default
                       }
                     ></Box>
                   </Box>
-                  <Box component="span" marginLeft=".75rem">
+                  <Box component="span" sx={{ marginLeft: ".75rem" }}>
                     Github
                   </Box>
-                </Box>
-                <Button
-                  variant="contained"
-                  classes={{ root: classes.buttonRoot }}
-                >
-                  <Box component="span" marginRight="4px">
+                </Button>
+                <Button variant="neutral">
+                  <Box component="span" sx={{ marginRight: "4px" }}>
                     <Box
                       alt="..."
                       component="img"
-                      width="20px"
-                      className={classes.buttonImg}
+                      sx={{
+                        width: "20px",
+                        verticalAlign: "middle",
+                        borderStyle: "none",
+                      }}
                       src={
                         require("assets/img/icons/common/google.svg").default
                       }
                     ></Box>
                   </Box>
-                  <Box component="span" marginLeft=".75rem">
+                  <Box component="span" sx={{ marginLeft: ".75rem" }}>
                     Google
                   </Box>
                 </Button>
               </Box>
             }
           ></CardHeader>
-          <CardContent classes={{ root: classes.cardContent }}>
+          <CardContent
+            sx={{
+              [theme.breakpoints.up("md")]: {
+                padding: "3rem",
+              },
+            }}
+          >
             <Box
-              color={theme.palette.gray[600]}
-              textAlign="center"
-              marginBottom="1.5rem"
-              marginTop=".5rem"
-              fontSize="1rem"
+              sx={{
+                color: theme.palette.gray[600],
+                textAlign: "center",
+                marginBottom: "1.5rem",
+                marginTop: ".5rem",
+                fontSize: "1rem",
+              }}
             >
-              <Box fontSize="80%" fontWeight="400" component="small">
+              <Box
+                sx={{ fontSize: "80%", fontWeight: "400" }}
+                component="small"
+              >
                 Or sign up with credentials
               </Box>
             </Box>
             <FormControl
               variant="filled"
               component={Box}
-              width="100%"
-              marginBottom="1.5rem!important"
+              sx={{ width: "100%", marginBottom: "1.5rem!important" }}
             >
               <FilledInput
                 autoComplete="off"
@@ -126,8 +143,7 @@ function Register() {
             <FormControl
               variant="filled"
               component={Box}
-              width="100%"
-              marginBottom="1.5rem!important"
+              sx={{ width: "100%", marginBottom: "1.5rem!important" }}
             >
               <FilledInput
                 autoComplete="off"
@@ -143,8 +159,7 @@ function Register() {
             <FormControl
               variant="filled"
               component={Box}
-              width="100%"
-              marginBottom="1.5rem!important"
+              sx={{ width: "100%", marginBottom: "1.5rem!important" }}
             >
               <FilledInput
                 autoComplete="off"
@@ -158,17 +173,18 @@ function Register() {
               />
             </FormControl>
             <Box
-              fontStyle="italic"
-              fontSize="1rem"
-              color={theme.palette.gray[600]}
-              marginBottom=".5rem"
+              sx={{
+                fontStyle: "italic",
+                fontSize: "1rem",
+                color: theme.palette.gray[600],
+                marginBottom: ".5rem",
+              }}
             >
-              <Box component="small" fontSize="80%">
+              <Box component="small" sx={{ fontSize: "80%" }}>
                 password strength:{" "}
                 <Box
                   component="span"
-                  fontWeight="700"
-                  color={theme.palette.success.main}
+                  sx={{ fontWeight: "700", color: theme.palette.success.main }}
                 >
                   strong
                 </Box>
@@ -181,21 +197,39 @@ function Register() {
                 <>
                   I agree with the{" "}
                   <Box
-                    color={theme.palette.primary.main}
+                    sx={{
+                      color: theme.palette.primary.main,
+                      textDecoration: "none",
+                    }}
                     component="a"
-                    textDecoration="none"
                   >
                     Privacy Policy
                   </Box>
                 </>
               }
               labelPlacement="end"
-              classes={{
-                root: classes.formControlLabelRoot,
-                label: classes.formControlLabelLabel,
+              sx={{
+                position: "relative",
+                display: "flex",
+                minHeight: "1.5rem",
+                WebkitPrintColorAdjust: "exact",
+                "& .MuiFormControlLabel-label": {
+                  cursor: "pointer",
+                  fontSize: ".875rem",
+                  position: "relative",
+                  verticalAlign: "top",
+                  display: "inline-block",
+                  color: theme.palette.gray[600],
+                },
               }}
             />
-            <Box textAlign="center" marginTop="1.5rem" marginBottom="1.5rem">
+            <Box
+              sx={{
+                textAlign: "center",
+                marginTop: "1.5rem",
+                marginBottom: "1.5rem",
+              }}
+            >
               <Button color="primary" variant="contained">
                 Create account
               </Button>
