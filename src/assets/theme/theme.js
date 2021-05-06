@@ -317,6 +317,11 @@ theme = createMuiTheme(theme, {
           alignItems: "center",
           width: "100%",
           backgroundColor: theme.palette.white.main + "!important",
+          "& textarea": {
+            padding: "0!important",
+            height: "auto!important",
+            resize: "none!important",
+          },
         },
         input: {
           border: 0,
