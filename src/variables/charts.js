@@ -55,7 +55,7 @@ let chartExample1 = {
       x: {
         display: true,
         title: { display: true },
-        ticks: { color: "rgba(" + hexToRgb(themeColors.white.main) + ",.7)" },
+        ticks: { color: "rgba(" + hexToRgb(themeColors.white.main) + ",.5)" },
         grid: {
           drawBorder: false,
           display: false,
@@ -65,17 +65,14 @@ let chartExample1 = {
         display: true,
         title: { display: true },
         ticks: {
-          color: "rgba(" + hexToRgb(themeColors.white.main) + ",.7)",
+          color: "rgba(" + hexToRgb(themeColors.white.main) + ",.5)",
           callback: function (value) {
             return "$" + value + "k";
           },
         },
         grid: {
           drawBorder: false,
-          borderWidth: 2,
-          borderDash: [3],
-          borderDashOffset: [3],
-          color: "rgba(" + hexToRgb(themeColors.white.main) + ",.15)",
+          display: false,
         },
       },
     },
@@ -150,8 +147,7 @@ let chartExample2 = {
         },
         grid: {
           drawBorder: false,
-          borderDash: [2],
-          color: "rgba(" + hexToRgb(themeColors.gray[900]) + ",.1)",
+          display: false,
         },
       },
     },
