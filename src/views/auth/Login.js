@@ -1,6 +1,5 @@
 import React from "react";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
@@ -18,98 +17,115 @@ import Email from "@material-ui/icons/Email";
 import Lock from "@material-ui/icons/Lock";
 
 // core components
-import componentStyles from "assets/theme/views/auth/login.js";
-
-const useStyles = makeStyles(componentStyles);
+import boxShadows from "assets/theme/box-shadow.js";
 
 function Login() {
-  const classes = useStyles();
   const theme = useTheme();
   return (
     <>
       <Grid item xs={12} lg={5} md={7}>
-        <Card classes={{ root: classes.cardRoot }}>
+        <Card
+          sx={{
+            boxShadow: boxShadows.boxShadow + "!important",
+            border: "0!important",
+            backgroundColor: theme.palette.secondary.main,
+          }}
+        >
           <CardHeader
-            className={classes.cardHeader}
+            sx={{ backgroundColor: "initial" }}
             title={
               <Box
-                fontSize="80%"
-                fontWeight="400"
-                component="small"
-                color={theme.palette.gray[600]}
+                sx={{
+                  fontSize: "80%",
+                  fontWeight: "400",
+                  component: "small",
+                  color: theme.palette.gray[600],
+                }}
               >
                 Sign in with
               </Box>
             }
             titleTypographyProps={{
               component: Box,
-              textAlign: "center",
-              marginBottom: "1rem!important",
-              marginTop: ".5rem!important",
-              fontSize: "1rem!important",
+              sx: {
+                textAlign: "center",
+                marginBottom: "1rem!important",
+                marginTop: ".5rem!important",
+                fontSize: "1rem!important",
+              },
             }}
             subheader={
-              <Box textAlign="center">
-                <Box
-                  component={Button}
-                  variant="contained"
-                  marginRight=".5rem!important"
-                  classes={{ root: classes.buttonRoot }}
+              <Box sx={{ textAlign: "center" }}>
+                <Button
+                  variant="neutral"
+                  sx={{ marginRight: "1rem!important" }}
                 >
-                  <Box component="span" marginRight="4px">
+                  <Box component="span" sx={{ marginRight: "4px" }}>
                     <Box
                       alt="..."
                       component="img"
-                      width="20px"
-                      className={classes.buttonImg}
+                      sx={{
+                        width: "20px",
+                        verticalAlign: "middle",
+                        borderStyle: "none",
+                      }}
                       src={
                         require("assets/img/icons/common/github.svg").default
                       }
                     ></Box>
                   </Box>
-                  <Box component="span" marginLeft=".75rem">
+                  <Box component="span" sx={{ marginLeft: ".75rem" }}>
                     Github
                   </Box>
-                </Box>
-                <Button
-                  variant="contained"
-                  classes={{ root: classes.buttonRoot }}
-                >
-                  <Box component="span" marginRight="4px">
+                </Button>
+                <Button variant="neutral">
+                  <Box component="span" sx={{ marginRight: "4px" }}>
                     <Box
                       alt="..."
                       component="img"
-                      width="20px"
-                      className={classes.buttonImg}
+                      sx={{
+                        width: "20px",
+                        verticalAlign: "middle",
+                        borderStyle: "none",
+                      }}
                       src={
                         require("assets/img/icons/common/google.svg").default
                       }
                     ></Box>
                   </Box>
-                  <Box component="span" marginLeft=".75rem">
+                  <Box component="span" sx={{ marginLeft: ".75rem" }}>
                     Google
                   </Box>
                 </Button>
               </Box>
             }
           ></CardHeader>
-          <CardContent classes={{ root: classes.cardContent }}>
+          <CardContent
+            sx={{
+              [theme.breakpoints.up("md")]: {
+                padding: "3rem",
+              },
+            }}
+          >
             <Box
-              color={theme.palette.gray[600]}
-              textAlign="center"
-              marginBottom="1rem"
-              marginTop=".5rem"
-              fontSize="1rem"
+              sx={{
+                color: theme.palette.gray[600],
+                textAlign: "center",
+                marginBottom: "1rem",
+                marginTop: ".5rem",
+                fontSize: "1rem",
+              }}
             >
-              <Box fontSize="80%" fontWeight="400" component="small">
+              <Box
+                sx={{ fontSize: "80%", fontWeight: "400", component: "small" }}
+              >
                 Or sign in with credentials
               </Box>
             </Box>
             <FormControl
               variant="filled"
               component={Box}
-              width="100%"
-              marginBottom="1rem!important"
+              sx={{ width: "100%", marginBottom: "1rem!important" }}
             >
               <FilledInput
                 autoComplete="off"
@@ -125,8 +141,7 @@ function Login() {
             <FormControl
               variant="filled"
               component={Box}
-              width="100%"
-              marginBottom="1rem!important"
+              sx={{ width: "100%", marginBottom: "1rem!important" }}
             >
               <FilledInput
                 autoComplete="off"
@@ -144,36 +159,54 @@ function Login() {
               control={<Checkbox color="primary" />}
               label="Remeber me"
               labelPlacement="end"
-              classes={{
-                root: classes.formControlLabelRoot,
-                label: classes.formControlLabelLabel,
+              sx={{
+                position: "relative",
+                display: "flex",
+                minHeight: "1.5rem",
+                WebkitPrintColorAdjust: "exact",
+                "& .MuiFormControlLabel-label": {
+                  cursor: "pointer",
+                  fontSize: ".875rem",
+                  position: "relative",
+                  verticalAlign: "top",
+                  display: "inline-block",
+                  color: theme.palette.gray[600],
+                },
               }}
             />
-            <Box textAlign="center" marginTop="1.5rem" marginBottom="1.5rem">
+            <Box
+              sx={{
+                textAlign: "center",
+                marginTop: "1.5rem",
+                marginBottom: "1.5rem",
+              }}
+            >
               <Button color="primary" variant="contained">
                 Sign in
               </Button>
             </Box>
           </CardContent>
         </Card>
-        <Grid container component={Box} marginTop="1rem">
-          <Grid item xs={6} component={Box} textAlign="left">
-            <a
+        <Grid container component={Box} sx={{ marginTop: "1rem" }}>
+          <Grid item xs={6} component={Box} sx={{ textAlign: "left" }}>
+            <Box
+              component="a"
               href="#admui"
               onClick={(e) => e.preventDefault()}
-              className={classes.footerLinks}
+              sx={{ color: theme.palette.gray[400], textDecoration: "none" }}
             >
               Forgot password
-            </a>
+            </Box>
           </Grid>
-          <Grid item xs={6} component={Box} textAlign="right">
-            <a
+          <Grid item xs={6} component={Box} sx={{ textAlign: "right" }}>
+            <Box
+              component="a"
               href="#admui"
               onClick={(e) => e.preventDefault()}
-              className={classes.footerLinks}
+              sx={{ color: theme.palette.gray[400], textDecoration: "none" }}
             >
               Create new account
-            </a>
+            </Box>
           </Grid>
         </Grid>
       </Grid>
