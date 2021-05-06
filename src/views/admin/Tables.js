@@ -3,6 +3,7 @@ import React from "react";
 // @material-ui/core components
 import { useTheme } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
+import AvatarGroup from "@material-ui/core/AvatarGroup";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -12,6 +13,7 @@ import Container from "@material-ui/core/Container";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import Pagination from "@material-ui/core/Pagination";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -20,8 +22,6 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Tooltip from "@material-ui/core/Tooltip";
 // @material-ui/lab components
-import AvatarGroup from "@material-ui/lab/AvatarGroup";
-import Pagination from "@material-ui/lab/Pagination";
 // @material-ui/icons components
 import MoreVert from "@material-ui/icons/MoreVert";
 
@@ -104,7 +104,12 @@ const Tables = () => {
           },
         }}
       >
-        <Card sx={{ boxShadow: boxShadows.boxShadow + "!important" }}>
+        <Card
+          sx={{
+            boxShadow: boxShadows.boxShadow + "!important",
+            marginBottom: "0!important",
+          }}
+        >
           <CardHeader
             sx={{ backgroundColor: "initial" }}
             title="Card Tables"
@@ -264,13 +269,16 @@ const Tables = () => {
                       borderTop: "0",
                     }}
                   >
-                    <AvatarGroup>
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
                           sx={{
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -285,6 +293,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -299,6 +310,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -313,6 +327,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -472,13 +489,16 @@ const Tables = () => {
                       borderTop: "0",
                     }}
                   >
-                    <AvatarGroup>
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
                           sx={{
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -493,6 +513,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -507,6 +530,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -521,6 +547,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -680,13 +709,16 @@ const Tables = () => {
                       borderTop: "0",
                     }}
                   >
-                    <AvatarGroup>
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
                           sx={{
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -701,6 +733,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -715,6 +750,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -729,6 +767,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -888,13 +929,16 @@ const Tables = () => {
                       borderTop: "0",
                     }}
                   >
-                    <AvatarGroup>
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
                           sx={{
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -909,6 +953,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -923,6 +970,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -937,6 +987,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1096,13 +1149,16 @@ const Tables = () => {
                       borderTop: "0",
                     }}
                   >
-                    <AvatarGroup>
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
                           sx={{
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1117,6 +1173,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1131,6 +1190,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1145,6 +1207,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1255,6 +1320,7 @@ const Tables = () => {
             marginTop: "3rem",
             boxShadow: boxShadows.boxShadow + "!important",
             backgroundColor: theme.palette.dark.main,
+            marginBottom: "0!important",
             "& *": {
               color: theme.palette.white.main,
             },
@@ -1262,7 +1328,7 @@ const Tables = () => {
               color: theme.palette.white.main,
               borderColor: theme.palette.dark.tableBorder,
             },
-            "& .MuiTableCell-head": {
+            "& .MuiTableHead-root .MuiTableCell-head": {
               color: theme.palette.dark.tableHeadColor,
               backgroundColor: theme.palette.dark.tableHeadBgColor,
             },
@@ -1428,13 +1494,16 @@ const Tables = () => {
                       borderTop: "0",
                     }}
                   >
-                    <AvatarGroup>
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
                           sx={{
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1449,6 +1518,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1463,6 +1535,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1477,6 +1552,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1636,13 +1714,16 @@ const Tables = () => {
                       borderTop: "0",
                     }}
                   >
-                    <AvatarGroup>
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
                           sx={{
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1657,6 +1738,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1671,6 +1755,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1685,6 +1772,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1844,13 +1934,16 @@ const Tables = () => {
                       borderTop: "0",
                     }}
                   >
-                    <AvatarGroup>
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
                           sx={{
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1865,6 +1958,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1879,6 +1975,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -1893,6 +1992,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -2052,13 +2154,16 @@ const Tables = () => {
                       borderTop: "0",
                     }}
                   >
-                    <AvatarGroup>
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
                           sx={{
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -2073,6 +2178,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -2087,6 +2195,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -2101,6 +2212,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -2260,13 +2374,16 @@ const Tables = () => {
                       borderTop: "0",
                     }}
                   >
-                    <AvatarGroup>
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
                           sx={{
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -2281,6 +2398,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -2295,6 +2415,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
@@ -2309,6 +2432,9 @@ const Tables = () => {
                             width: "36px",
                             height: "36px",
                             fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
                           }}
                           alt="..."
                           src={
