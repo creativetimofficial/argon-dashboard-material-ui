@@ -73,7 +73,8 @@ export default function AdminNavbar({ brandText }) {
                     alignItems: "center",
                     width: "auto",
                     marginRight: "1rem",
-                    borderColor: theme.palette.adminNavbarSearch.main + "!important",
+                    borderColor:
+                      theme.palette.adminNavbarSearch.main + "!important",
                     borderRadius: "2rem",
                     border: "2px solid",
                     backgroundColor: "initial",
