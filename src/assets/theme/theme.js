@@ -391,7 +391,7 @@ theme = createMuiTheme(theme, {
         },
       },
       variants: [
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { color: prop },
             style: {
@@ -414,7 +414,7 @@ theme = createMuiTheme(theme, {
         },
       },
       variants: [
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { color: prop },
             style: {
@@ -455,7 +455,7 @@ theme = createMuiTheme(theme, {
         },
       },
       variants: [
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { color: prop },
             style: {
@@ -469,7 +469,7 @@ theme = createMuiTheme(theme, {
     },
     MuiIconButton: {
       variants: [
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { color: prop },
             style: {
@@ -578,7 +578,7 @@ theme = createMuiTheme(theme, {
         },
       },
       variants: [
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { variant: "contained", color: prop },
             style: {
@@ -660,7 +660,7 @@ theme = createMuiTheme(theme, {
             borderRadius: ".4375rem",
           },
         },
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { variant: "active", color: prop },
             style: {
@@ -675,7 +675,7 @@ theme = createMuiTheme(theme, {
             },
           };
         }),
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { variant: "neutral", color: prop },
             style: {
@@ -697,7 +697,7 @@ theme = createMuiTheme(theme, {
             },
           };
         }),
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { variant: "contained", color: prop },
             style: {
@@ -725,7 +725,7 @@ theme = createMuiTheme(theme, {
             },
           };
         }),
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { variant: "outlined", color: prop },
             style: {
@@ -1020,7 +1020,7 @@ theme = createMuiTheme(theme, {
         },
       },
       variants: [
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { color: prop, variant: "rounded-full" },
             style: {
@@ -1045,7 +1045,7 @@ theme = createMuiTheme(theme, {
             },
           };
         }),
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { color: prop, variant: "relative-circle" },
             style: {
@@ -1078,7 +1078,7 @@ theme = createMuiTheme(theme, {
             },
           };
         }),
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { color: prop, variant: "relative" },
             style: {
@@ -1101,7 +1101,7 @@ theme = createMuiTheme(theme, {
             },
           };
         }),
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { color: prop, variant: "relative-md" },
             style: {
@@ -1125,7 +1125,7 @@ theme = createMuiTheme(theme, {
             },
           };
         }),
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { color: prop, variant: "relative-lg" },
             style: {
@@ -1149,7 +1149,7 @@ theme = createMuiTheme(theme, {
             },
           };
         }),
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { color: prop, variant: "relative", overlap: "circular" },
             style: {
@@ -1175,7 +1175,7 @@ theme = createMuiTheme(theme, {
             },
           };
         }),
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { color: prop, variant: "relative-md", overlap: "circular" },
             style: {
@@ -1202,7 +1202,7 @@ theme = createMuiTheme(theme, {
             },
           };
         }),
-        ...states.map((prop, key) => {
+        ...states.map((prop) => {
           return {
             props: { color: prop, variant: "relative-lg", overlap: "circular" },
             style: {
