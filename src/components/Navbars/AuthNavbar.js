@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
@@ -22,12 +21,8 @@ import Person from "@material-ui/icons/Person";
 import VpnKey from "@material-ui/icons/VpnKey";
 
 // core components
-import componentStyles from "assets/theme/components/auth-navbar.js";
-
-const useStyles = makeStyles(componentStyles);
 
 export default function AuthNavbar() {
-  const classes = useStyles();
   const theme = useTheme();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -44,25 +39,52 @@ export default function AuthNavbar() {
   const menuId = "responsive-menu-id";
   const ListObject = (
     <Box
-      display="flex"
-      alignItems="center"
-      width="auto"
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        width: "auto",
+        [theme.breakpoints.down("md")]: {
+          flexDirection: "column",
+        },
+      }}
       component={List}
-      className={classes.flexDirectionColumn}
     >
       <ListItem
         component={Link}
         to="/admin/dashboard"
         onClick={handleMenuClose}
-        classes={{
-          root: classes.listItemRoot,
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          fontSize: "1rem",
+          paddingLeft: "1.25rem",
+          paddingRight: "1.25rem",
+          paddingTop: "1rem",
+          paddingBottom: "1rem",
+          transition: "all .15s linear",
+          fontWeight: "400",
+          "& i": {
+            marginRight: "0.25rem",
+          },
+          [theme.breakpoints.up("md")]: {
+            marginRight: ".5rem",
+            paddingLeft: ".5rem",
+            paddingRight: ".5rem",
+            color: theme.palette.authNavbarLink.dark,
+            justifyContent: "center",
+            "&:hover": {
+              color: theme.palette.authNavbarLink.main,
+            },
+          },
         }}
       >
         <Box
           component={Dashboard}
-          width="1.25rem!important"
-          height="1.25rem!important"
-          marginRight=".5rem!important"
+          sx={{
+            width: "1.25rem!important",
+            height: "1.25rem!important",
+            marginRight: ".5rem!important",
+          }}
         />
         Dashboard
       </ListItem>
@@ -70,15 +92,38 @@ export default function AuthNavbar() {
         component={Link}
         to="/auth/register"
         onClick={handleMenuClose}
-        classes={{
-          root: classes.listItemRoot,
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          fontSize: "1rem",
+          paddingLeft: "1.25rem",
+          paddingRight: "1.25rem",
+          paddingTop: "1rem",
+          paddingBottom: "1rem",
+          transition: "all .15s linear",
+          fontWeight: "400",
+          "& i": {
+            marginRight: "0.25rem",
+          },
+          [theme.breakpoints.up("md")]: {
+            marginRight: ".5rem",
+            paddingLeft: ".5rem",
+            paddingRight: ".5rem",
+            color: theme.palette.authNavbarLink.dark,
+            justifyContent: "center",
+            "&:hover": {
+              color: theme.palette.authNavbarLink.main,
+            },
+          },
         }}
       >
         <Box
           component={AccountCircle}
-          width="1.25rem!important"
-          height="1.25rem!important"
-          marginRight=".5rem!important"
+          sx={{
+            width: "1.25rem!important",
+            height: "1.25rem!important",
+            marginRight: ".5rem!important",
+          }}
         />
         Register
       </ListItem>
@@ -86,15 +131,38 @@ export default function AuthNavbar() {
         component={Link}
         to="/auth/login"
         onClick={handleMenuClose}
-        classes={{
-          root: classes.listItemRoot,
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          fontSize: "1rem",
+          paddingLeft: "1.25rem",
+          paddingRight: "1.25rem",
+          paddingTop: "1rem",
+          paddingBottom: "1rem",
+          transition: "all .15s linear",
+          fontWeight: "400",
+          "& i": {
+            marginRight: "0.25rem",
+          },
+          [theme.breakpoints.up("md")]: {
+            marginRight: ".5rem",
+            paddingLeft: ".5rem",
+            paddingRight: ".5rem",
+            color: theme.palette.authNavbarLink.dark,
+            justifyContent: "center",
+            "&:hover": {
+              color: theme.palette.authNavbarLink.main,
+            },
+          },
         }}
       >
         <Box
           component={VpnKey}
-          width="1.25rem!important"
-          height="1.25rem!important"
-          marginRight=".5rem!important"
+          sx={{
+            width: "1.25rem!important",
+            height: "1.25rem!important",
+            marginRight: ".5rem!important",
+          }}
         />
         Login
       </ListItem>
@@ -102,15 +170,38 @@ export default function AuthNavbar() {
         component={Link}
         to="/admin/user-profile"
         onClick={handleMenuClose}
-        classes={{
-          root: classes.listItemRoot,
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          fontSize: "1rem",
+          paddingLeft: "1.25rem",
+          paddingRight: "1.25rem",
+          paddingTop: "1rem",
+          paddingBottom: "1rem",
+          transition: "all .15s linear",
+          fontWeight: "400",
+          "& i": {
+            marginRight: "0.25rem",
+          },
+          [theme.breakpoints.up("md")]: {
+            marginRight: ".5rem",
+            paddingLeft: ".5rem",
+            paddingRight: ".5rem",
+            color: theme.palette.authNavbarLink.dark,
+            justifyContent: "center",
+            "&:hover": {
+              color: theme.palette.authNavbarLink.main,
+            },
+          },
         }}
       >
         <Box
           component={Person}
-          width="1.25rem!important"
-          height="1.25rem!important"
-          marginRight=".5rem!important"
+          sx={{
+            width: "1.25rem!important",
+            height: "1.25rem!important",
+            marginRight: ".5rem!important",
+          }}
         />
         Profile
       </ListItem>
@@ -121,18 +212,23 @@ export default function AuthNavbar() {
       <AppBar position="absolute" color="transparent" elevation={0}>
         <Toolbar>
           <Container
-            display="flex!important"
-            justifyContent="space-between"
-            alignItems="center"
-            marginTop=".75rem"
+            sx={{
+              display: "flex!important",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: ".75rem",
+            }}
             component={Box}
             maxWidth="xl"
           >
             <Box
               alt="..."
-              height="30px"
+              sx={{
+                height: "30px",
+                verticalAlign: "middle",
+                borderStyle: "none",
+              }}
               component="img"
-              className={classes.headerImg}
               src={require("assets/img/brand/argon-react-white.png").default}
             />
             <Hidden mdUp implementation="css">
@@ -145,9 +241,11 @@ export default function AuthNavbar() {
               >
                 <Box
                   component={MenuIcon}
-                  color={theme.palette.white.main}
-                  width="2rem!important"
-                  height="2rem!important"
+                  sx={{
+                    color: theme.palette.white.main,
+                    width: "2rem!important",
+                    height: "2rem!important",
+                  }}
                 />
               </IconButton>
               <Menu
@@ -158,22 +256,31 @@ export default function AuthNavbar() {
                 transformOrigin={{ vertical: "top", horizontal: "right" }}
                 open={isMenuOpen}
                 onClose={handleMenuClose}
-                classes={{ paper: classes.menuPaper }}
+                sx={{
+                  "& .MuiMenu-paper": {
+                    width: "calc(100% - 2rem)",
+                  },
+                }}
               >
                 <Box
-                  display="flex"
-                  justifyContent="space-between"
-                  alignItems="center"
-                  paddingLeft="1.25rem"
-                  paddingRight="1.25rem"
-                  paddingBottom="1rem"
-                  className={classes.outlineNone}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    paddingLeft: "1.25rem",
+                    paddingRight: "1.25rem",
+                    paddingBottom: "1rem",
+                    outline: "none!important",
+                  }}
                 >
                   <Box
                     alt="..."
-                    height="36px"
+                    sx={{
+                      height: "36px",
+                      verticalAlign: "middle",
+                      borderStyle: "none",
+                    }}
                     component="img"
-                    className={classes.headerImg}
                     src={require("assets/img/brand/argon-react.png").default}
                   />
                   <IconButton
@@ -185,16 +292,17 @@ export default function AuthNavbar() {
                   >
                     <Box
                       component={Clear}
-                      width="2rem!important"
-                      height="2rem!important"
+                      sx={{ width: "2rem!important", height: "2rem!important" }}
                     />
                   </IconButton>
                 </Box>
                 <Box
                   component={Divider}
-                  marginBottom="1rem!important"
-                  marginLeft="1.25rem!important"
-                  marginRight="1.25rem!important"
+                  sx={{
+                    marginBottom: "1rem!important",
+                    marginLeft: "1.25rem!important",
+                    marginRight: "1.25rem!important",
+                  }}
                 />
                 {ListObject}
               </Menu>

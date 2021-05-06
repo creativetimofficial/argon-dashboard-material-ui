@@ -2,7 +2,6 @@ import React, { useState } from "react";
 // react component that copies the given text inside your clipboard
 import { CopyToClipboard } from "react-copy-to-clipboard";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
@@ -16,12 +15,9 @@ import Tooltip from "@material-ui/core/Tooltip";
 // core components
 import Header from "components/Headers/Header.js";
 
-import componentStyles from "assets/theme/views/admin/icons.js";
-
-const useStyles = makeStyles(componentStyles);
+import boxShadows from "assets/theme/box-shadow.js";
 
 const Icons = () => {
-  const classes = useStyles();
   const theme = useTheme();
   const [copiedText, setCopiedText] = useState();
   return (
@@ -31,19 +27,29 @@ const Icons = () => {
       <Container
         maxWidth={false}
         component={Box}
-        marginTop="-6rem"
-        classes={{ root: classes.containerRoot }}
+        sx={{
+          marginTop: "-6rem",
+          [theme.breakpoints.up("md")]: {
+            paddingLeft: "39px",
+            paddingRight: "39px",
+          },
+        }}
       >
         {/* Table */}
-        <Grid container component={Box} marginBottom="39px">
+        <Grid container component={Box} sx={{ marginBottom: "39px" }}>
           <Grid item xs={12}>
-            <Card classes={{ root: classes.cardRoot }}>
+            <Card
+              sx={{
+                boxShadow: boxShadows.boxShadow + "!important",
+                marginBottom: "0!important",
+              }}
+            >
               <CardHeader
-                className={classes.cardHeader}
+                sx={{ backgroundColor: "initial" }}
                 title="Nucleo Icons"
                 titleTypographyProps={{
                   component: Box,
-                  marginBottom: "0!important",
+                  sx: { marginBottom: "0!important" },
                   variant: "h3",
                 }}
               ></CardHeader>
@@ -55,8 +61,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-active-40"}
@@ -72,19 +77,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -103,8 +135,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-air-baloon"}
@@ -120,19 +151,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -151,8 +209,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-album-2"}
@@ -168,19 +225,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -199,8 +283,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-align-center"}
@@ -216,19 +299,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -247,8 +357,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-align-left-2"}
@@ -264,19 +373,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -295,8 +431,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-ambulance"}
@@ -312,19 +447,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -343,8 +505,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-app"}
@@ -360,19 +521,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -391,8 +579,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-archive-2"}
@@ -408,19 +595,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -439,8 +653,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-atom"}
@@ -456,19 +669,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -487,8 +727,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-badge"}
@@ -504,19 +743,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -535,8 +801,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-bag-17"}
@@ -552,19 +817,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -583,8 +875,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-basket"}
@@ -600,19 +891,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -631,8 +949,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-bell-55"}
@@ -648,19 +965,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -679,8 +1023,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-bold-down"}
@@ -696,19 +1039,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -727,8 +1097,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-bold-left"}
@@ -744,19 +1113,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -775,8 +1171,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-bold-right"}
@@ -792,19 +1187,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -823,8 +1245,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-bold-up"}
@@ -840,19 +1261,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -871,8 +1319,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-bold"}
@@ -888,19 +1335,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -919,8 +1393,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-book-bookmark"}
@@ -936,19 +1409,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -967,8 +1467,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-books"}
@@ -984,19 +1483,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1015,8 +1541,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-box-2"}
@@ -1032,19 +1557,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1063,8 +1615,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-briefcase-24"}
@@ -1080,19 +1631,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1111,8 +1689,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-building"}
@@ -1128,19 +1705,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1159,8 +1763,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-bulb-61"}
@@ -1176,19 +1779,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1207,8 +1837,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-bullet-list-67"}
@@ -1224,19 +1853,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1255,8 +1911,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-bus-front-12"}
@@ -1272,19 +1927,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1303,8 +1985,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-button-pause"}
@@ -1320,19 +2001,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1351,8 +2059,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-button-play"}
@@ -1368,19 +2075,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1399,8 +2133,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-button-power"}
@@ -1416,19 +2149,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1447,8 +2207,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-calendar-grid-58"}
@@ -1464,19 +2223,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1495,8 +2281,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-camera-compact"}
@@ -1512,19 +2297,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1543,8 +2355,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-caps-small"}
@@ -1560,19 +2371,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1591,8 +2429,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-cart"}
@@ -1608,19 +2445,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1639,8 +2503,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-chart-bar-32"}
@@ -1656,19 +2519,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1687,8 +2577,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-chart-pie-35"}
@@ -1704,19 +2593,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1735,8 +2651,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-chat-round"}
@@ -1752,19 +2667,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1783,8 +2725,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-check-bold"}
@@ -1800,19 +2741,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1831,8 +2799,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-circle-08"}
@@ -1848,19 +2815,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1879,8 +2873,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-cloud-download-95"}
@@ -1896,19 +2889,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1927,8 +2947,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-cloud-upload-96"}
@@ -1944,19 +2963,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -1975,8 +3021,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-compass-04"}
@@ -1992,19 +3037,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2023,8 +3095,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-controller"}
@@ -2040,19 +3111,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2071,8 +3169,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-credit-card"}
@@ -2088,19 +3185,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2119,8 +3243,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-curved-next"}
@@ -2136,19 +3259,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2167,8 +3317,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-delivery-fast"}
@@ -2184,19 +3333,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2215,8 +3391,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-diamond"}
@@ -2232,19 +3407,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2263,8 +3465,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-email-83"}
@@ -2280,19 +3481,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2311,8 +3539,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-fat-add"}
@@ -2328,19 +3555,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2359,8 +3613,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-fat-delete"}
@@ -2376,19 +3629,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2407,8 +3687,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-fat-remove"}
@@ -2424,19 +3703,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2455,8 +3761,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-favourite-28"}
@@ -2472,19 +3777,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2503,8 +3835,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-folder-17"}
@@ -2520,19 +3851,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2551,8 +3909,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-glasses-2"}
@@ -2568,19 +3925,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2599,8 +3983,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-hat-3"}
@@ -2616,19 +3999,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2647,8 +4057,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-headphones"}
@@ -2664,19 +4073,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2695,8 +4131,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-html5"}
@@ -2712,19 +4147,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2743,8 +4205,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-istanbul"}
@@ -2760,19 +4221,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2791,8 +4279,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-circle-08"}
@@ -2808,19 +4295,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2839,8 +4353,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-key-25"}
@@ -2856,19 +4369,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2887,8 +4427,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-laptop"}
@@ -2904,19 +4443,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2935,8 +4501,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-like-2"}
@@ -2952,19 +4517,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -2983,8 +4575,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-lock-circle-open"}
@@ -3000,19 +4591,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3031,8 +4649,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-map-big"}
@@ -3048,19 +4665,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3079,8 +4723,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-mobile-button"}
@@ -3096,19 +4739,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3127,8 +4797,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-money-coins"}
@@ -3144,19 +4813,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3175,8 +4871,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-note-03"}
@@ -3192,19 +4887,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3223,8 +4945,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-notification-70"}
@@ -3240,19 +4961,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3271,8 +5019,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-palette"}
@@ -3288,19 +5035,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3319,8 +5093,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-paper-diploma"}
@@ -3336,19 +5109,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3367,8 +5167,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-pin-3"}
@@ -3384,19 +5183,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3415,8 +5241,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-planet"}
@@ -3432,19 +5257,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3463,8 +5315,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-ruler-pencil"}
@@ -3480,19 +5331,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3511,8 +5389,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-satisfied"}
@@ -3528,19 +5405,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3559,8 +5463,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-scissors"}
@@ -3576,19 +5479,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3607,8 +5537,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-send"}
@@ -3624,19 +5553,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3655,8 +5611,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-settings-gear-65"}
@@ -3672,19 +5627,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3703,8 +5685,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-settings"}
@@ -3720,19 +5701,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3751,8 +5759,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-single-02"}
@@ -3768,19 +5775,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3799,8 +5833,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-single-copy-04"}
@@ -3816,19 +5849,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3847,8 +5907,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-sound-wave"}
@@ -3864,19 +5923,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3895,8 +5981,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-spaceship"}
@@ -3912,19 +5997,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3943,8 +6055,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-square-pin"}
@@ -3960,19 +6071,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -3991,8 +6129,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-support-16"}
@@ -4008,19 +6145,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4039,8 +6203,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-tablet-button"}
@@ -4056,19 +6219,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4087,8 +6277,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-tag"}
@@ -4104,19 +6293,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4135,8 +6351,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-tie-bow"}
@@ -4152,19 +6367,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4183,8 +6425,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-time-alarm"}
@@ -4200,19 +6441,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4231,8 +6499,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-trophy"}
@@ -4248,19 +6515,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4279,8 +6573,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-tv-2"}
@@ -4296,19 +6589,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4327,8 +6647,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-umbrella-13"}
@@ -4344,19 +6663,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4375,8 +6721,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-user-run"}
@@ -4392,19 +6737,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4423,8 +6795,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-vector"}
@@ -4440,19 +6811,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4471,8 +6869,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-watch-time"}
@@ -4488,19 +6885,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4519,8 +6943,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-world"}
@@ -4536,19 +6959,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4567,8 +7017,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-zoom-split-in"}
@@ -4584,19 +7033,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4615,8 +7091,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-collection"}
@@ -4632,19 +7107,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4663,8 +7165,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-image"}
@@ -4680,19 +7181,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4711,8 +7239,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-shop"}
@@ -4728,19 +7255,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4759,8 +7313,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-ungroup"}
@@ -4776,19 +7329,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4807,8 +7387,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-world-2"}
@@ -4824,19 +7403,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4855,8 +7461,7 @@ const Icons = () => {
                     md={6}
                     xs={12}
                     component={Box}
-                    paddingLeft="15px"
-                    paddingRight="15px"
+                    sx={{ paddingLeft: "15px", paddingRight: "15px" }}
                   >
                     <CopyToClipboard
                       text={"ni ni-ui-04"}
@@ -4872,19 +7477,46 @@ const Icons = () => {
                       >
                         <Box
                           component="button"
-                          fontFamily="inherit"
-                          fontSize="16px"
-                          fontWeight="400"
-                          lineHeight="1.25"
-                          display="inline-block"
-                          width="100%"
-                          margin=".5rem 0"
-                          padding="24px"
-                          textAlign="left"
-                          color={theme.palette.gray[800]}
-                          border="0"
-                          borderRadius="4px"
-                          className={classes.button}
+                          sx={{
+                            fontFamily: "inherit",
+                            fontSize: "16px",
+                            fontWeight: "400",
+                            lineHeight: "1.25",
+                            display: "inline-block",
+                            width: "100%",
+                            margin: ".5rem 0",
+                            padding: "24px",
+                            textAlign: "left",
+                            color: theme.palette.gray[800],
+                            border: "0",
+                            borderRadius: "4px",
+                            verticalAlign: "middle",
+                            backgroundColor: theme.palette.gray[200],
+                            outline: "none!important",
+                            cursor: "pointer",
+                            textDecoration: "none",
+                            "&:hover": {
+                              backgroundColor: theme.palette.white.main,
+                              boxShadow: boxShadows.iconsPageButtonBoxShadow,
+                            },
+                            "& i": {
+                              fontSize: "1.5rem",
+                              boxSizing: "initial",
+                              verticalAlign: "middle",
+                              color: theme.palette.gray[800],
+                            },
+                            "& span": {
+                              fontSize: ".875rem",
+                              lineHeight: "1.5",
+                              display: "inline-block",
+                              overflow: "hidden",
+                              marginLeft: "16px",
+                              verticalAlign: "middle",
+                              whiteSpace: "nowrap",
+                              textOverflow: "ellipsis",
+                              color: theme.palette.gray[800],
+                            },
+                          }}
                           data-clipboard-text="album-2"
                           type="button"
                         >
@@ -4903,25 +7535,31 @@ const Icons = () => {
         </Grid>
         <Grid container component={Box} marginBottom="39px">
           <Grid item xs={12}>
-            <Card classes={{ root: classes.cardRoot }}>
+            <Card
+              sx={{
+                boxShadow: boxShadows.boxShadow + "!important",
+                marginBottom: "0!important",
+              }}
+            >
               <CardHeader
-                className={classes.cardHeader}
+                sx={{ backgroundColor: "initial" }}
                 title="Material Icons"
                 titleTypographyProps={{
                   component: Box,
-                  marginBottom: "0!important",
+                  sx: { marginBottom: "0!important" },
                   variant: "h3",
                 }}
               ></CardHeader>
               <CardContent>
                 <Hidden mdDown implementation="css">
-                  <iframe
-                    className={classes.iframe}
+                  <Box
+                    component="iframe"
+                    sx={{ width: "100%", height: "500px", border: "0" }}
                     src="https://material.io/icons/?ref=creativetim"
                     title="Icons iframe"
                   >
                     <p>Your browser does not support iframes.</p>
-                  </iframe>
+                  </Box>
                 </Hidden>
                 <Hidden mdUp implementation="css">
                   <Grid item xs={12} sm={12} md={6}>

@@ -1,7 +1,6 @@
 import React from "react";
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
@@ -10,61 +9,84 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 // core components
-import componentStyles from "assets/theme/components/user-header.js";
-
-const useStyles = makeStyles(componentStyles);
 
 const UserHeader = () => {
-  const classes = useStyles();
   const theme = useTheme();
   return (
     <>
       <Box
-        paddingTop="3rem"
-        paddingBottom="8rem"
-        alignItems="center"
-        display="flex"
-        className={classes.wrapperBox}
-        minHeight="600px"
-        position="relative"
+        sx={{
+          [theme.breakpoints.up("md")]: {
+            paddingTop: "8rem",
+          },
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          backgroundImage:
+            "url(" +
+            require("assets/img/theme/profile-cover.jpg").default +
+            ")",
+          paddingTop: "3rem",
+          paddingBottom: "8rem",
+          alignItems: "center",
+          display: "flex",
+          minHeight: "600px",
+          position: "relative",
+        }}
       >
         <Box
-          position="absolute"
-          top="0"
-          left="0"
-          width="100%"
-          height="100%"
-          className={classes.overlayBox}
+          sx={{
+            transition: "all .15s ease",
+            opacity: ".9",
+            background:
+              "linear-gradient(87deg," +
+              theme.palette.dark.main +
+              ",#1a174d)!important",
+            position: "absolute",
+            top: "0",
+            left: "0",
+            width: "100%",
+            height: "100%",
+          }}
         />
         <Container
-          display="flex"
-          alignItems="center"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            zIndex: 1,
+            [theme.breakpoints.up("md")]: {
+              paddingLeft: "39px",
+              paddingRight: "39px",
+            },
+          }}
           maxWidth={false}
           component={Box}
-          classes={{ root: classes.containerRoot }}
         >
           <Grid container>
             <Grid item xs={12} md={10} lg={7}>
               <Typography
                 variant="h1"
-                classes={{ root: classes.typographyRootH1 }}
+                sx={{
+                  color: theme.palette.white.main,
+                  fontSize: "2.75rem",
+                  fontWeight: 600,
+                  lineHeight: 1.5,
+                }}
               >
                 Hello Jesse
               </Typography>
               <Box
                 component="p"
-                marginBottom="3rem"
-                color={theme.palette.white.main}
-                lineHeight="1.7"
-                fontSize="1rem"
+                sx={{
+                  marginBottom: "3rem",
+                  color: theme.palette.white.main,
+                  lineHeight: "1.7",
+                  fontSize: "1rem",
+                }}
               >
                 This is your profile page. You can see the progress you've made
                 with your work and manage your projects or assigned tasks
               </Box>
-              <Button
-                variant="contained"
-                classes={{ root: classes.buttonRoot }}
-              >
+              <Button variant="contained" color="info">
                 Edit profile
               </Button>
             </Grid>

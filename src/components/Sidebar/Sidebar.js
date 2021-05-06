@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useLocation, Link } from "react-router-dom";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
@@ -19,12 +19,9 @@ import Clear from "@material-ui/icons/Clear";
 import MenuIcon from "@material-ui/icons/Menu";
 
 // core components
-import componentStyles from "assets/theme/components/sidebar.js";
-
-const useStyles = makeStyles(componentStyles);
 
 export default function Sidebar({ routes, logo, dropdown, input }) {
-  const classes = useStyles();
+  const theme = useTheme();
   const location = useLocation();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -41,16 +38,61 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
   const menuId = "responsive-menu-id";
   // creates the links that appear in the left menu / Sidebar
   const createLinks = (routes) => {
+    let iconsColorsSx = {
+      textPrimary: {
+        color: theme.palette.primary.main,
+      },
+      textPrimaryLight: {
+        color: theme.palette.primary.light,
+      },
+      textError: {
+        color: theme.palette.error.main,
+      },
+      textErrorLight: {
+        color: theme.palette.error.light,
+      },
+      textWarning: {
+        color: theme.palette.warning.main,
+      },
+      textWarningLight: {
+        color: theme.palette.warning.light,
+      },
+      textInfo: {
+        color: theme.palette.info.main,
+      },
+      textInfoLight: {
+        color: theme.palette.info.light,
+      },
+    };
     return routes.map((prop, key) => {
       if (prop.divider) {
-        return <Divider key={key} classes={{ root: classes.divider }} />;
+        return (
+          <Divider
+            key={key}
+            sx={{
+              marginBottom: "1rem",
+              marginTop: "1rem",
+              marginLeft: "1.5rem",
+              marginRight: "1.5rem",
+            }}
+          />
+        );
       } else if (prop.title) {
         return (
           <Typography
             key={key}
             variant="h6"
             component="h6"
-            classes={{ root: classes.title }}
+            sx={{
+              paddingTop: ".25rem",
+              paddingBottom: ".25rem",
+              fontSize: ".75rem",
+              textTransform: "uppercase",
+              letterSpacing: ".04em",
+              paddingLeft: "1.5rem",
+              paddingRight: "1.5rem",
+              color: theme.palette.gray[600],
+            }}
           >
             {prop.title}
           </Typography>
@@ -58,19 +100,24 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
       }
       let textContent = (
         <>
-          <Box minWidth="2.25rem" display="flex" alignItems="center">
+          <Box
+            sx={{ minWidth: "2.25rem", display: "flex", alignItems: "center" }}
+          >
             {typeof prop.icon === "string" ? (
               <Box
                 component="i"
-                className={prop.icon + " " + classes["text" + prop.iconColor]}
+                className={prop.icon}
+                sx={iconsColorsSx["text" + prop.iconColor]}
               />
             ) : null}
             {typeof prop.icon === "object" ? (
               <Box
                 component={prop.icon}
-                width="1.25rem!important"
-                height="1.25rem!important"
-                className={classes["text" + prop.iconColor]}
+                sx={{
+                  width: "1.25rem!important",
+                  height: "1.25rem!important",
+                  ...iconsColorsSx["text" + prop.iconColor],
+                }}
               />
             ) : null}
           </Box>
@@ -78,20 +125,53 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
         </>
       );
       if (prop.href) {
+        let listItemSx = {
+          display: "flex",
+          fontSize: ".9rem",
+          color: theme.palette.sidebarLinks.main,
+          padding: ".65rem 1.5rem !important",
+          "&:hover": {
+            color: theme.palette.sidebarLinks.dark,
+          },
+          "&.Mui-selected": {
+            color: theme.palette.sidebarLinks.dark,
+            "&$listItemRoot,&$listItemRoot:hover": {
+              backgroundColor: "unset",
+            },
+            "&:before": {
+              top: ".25rem",
+              bottom: ".25rem",
+              left: 0,
+              right: "auto",
+              borderLeft: "2px solid " + theme.palette.primary.main,
+              borderBottom: 0,
+              content: '""',
+              position: "absolute",
+            },
+          },
+        };
+        if (prop.upgradeToPro) {
+          listItemSx = {
+            ...listItemSx,
+            [theme.breakpoints.up("md")]: {
+              position: "absolute",
+              bottom: "10px",
+            },
+            "&,&:hover": {
+              background: theme.palette.gray[100] + "!important",
+            },
+            "&:before": {
+              display: "none",
+            },
+          };
+        }
         return (
           <ListItem
             key={key}
             component={"a"}
             href={prop.href}
             onClick={handleMenuClose}
-            classes={{
-              root:
-                classes.listItemRoot +
-                (prop.upgradeToPro
-                  ? " " + classes.listItemRootUpgradeToPro
-                  : ""),
-              selected: classes.listItemSelected,
-            }}
+            sx={listItemSx}
             target="_blank"
             selected={prop.upgradeToPro === true}
           >
@@ -99,20 +179,53 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
           </ListItem>
         );
       } else {
+        let listItemSx = {
+          display: "flex",
+          fontSize: ".9rem",
+          color: theme.palette.sidebarLinks.main,
+          padding: ".65rem 1.5rem !important",
+          "&:hover": {
+            color: theme.palette.sidebarLinks.dark,
+          },
+          "&.Mui-selected": {
+            color: theme.palette.sidebarLinks.dark,
+            "&$listItemRoot,&$listItemRoot:hover": {
+              backgroundColor: "unset",
+            },
+            "&:before": {
+              top: ".25rem",
+              bottom: ".25rem",
+              left: 0,
+              right: "auto",
+              borderLeft: "2px solid " + theme.palette.primary.main,
+              borderBottom: 0,
+              content: '""',
+              position: "absolute",
+            },
+          },
+        };
+        if (prop.upgradeToPro) {
+          listItemSx = {
+            ...listItemSx,
+            [theme.breakpoints.up("md")]: {
+              position: "absolute",
+              bottom: "10px",
+            },
+            "&,&:hover": {
+              background: theme.palette.gray[100] + "!important",
+            },
+            "&:before": {
+              display: "none",
+            },
+          };
+        }
         return (
           <ListItem
             key={key}
             component={Link}
             onClick={handleMenuClose}
             to={prop.layout + prop.path}
-            classes={{
-              root:
-                classes.listItemRoot +
-                (prop.upgradeToPro
-                  ? " " + classes.listItemRootUpgradeToPro
-                  : ""),
-              selected: classes.listItemSelected,
-            }}
+            sx={listItemSx}
             selected={
               location.pathname === prop.layout + prop.path ||
               prop.upgradeToPro === true
@@ -125,24 +238,59 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
     });
   };
   let logoImage = (
-    <img alt={logo.imgAlt} className={classes.logoClasses} src={logo.imgSrc} />
+    <Box
+      component="img"
+      alt={logo.imgAlt}
+      sx={{
+        maxHeight: "2rem",
+        maxWidth: "100%",
+        verticalAlign: "middle",
+        borderStyle: "none",
+        [theme.breakpoints.up("md")]: {
+          maxHeight: "2.5rem",
+        },
+      }}
+      src={logo.imgSrc}
+    />
   );
   let logoObject =
     logo && logo.innerLink ? (
-      <Link to={logo.innerLink} className={classes.logoLinkClasses}>
+      <Box
+        component={Link}
+        to={logo.innerLink}
+        sx={{
+          fontSize: "1.25rem",
+          lineHeight: "inherit",
+          whiteSpace: "nowrap",
+          textDecoration: "none",
+          display: "block",
+          textAlign: "center",
+        }}
+      >
         {logoImage}
-      </Link>
+      </Box>
     ) : logo && logo.outterLink ? (
-      <a href={logo.outterLink} className={classes.logoLinkClasses}>
+      <Box
+        component="a"
+        href={logo.outterLink}
+        sx={{
+          fontSize: "1.25rem",
+          lineHeight: "inherit",
+          whiteSpace: "nowrap",
+          textDecoration: "none",
+          display: "block",
+          textAlign: "center",
+        }}
+      >
         {logoImage}
-      </a>
+      </Box>
     ) : null;
   return (
     <>
       <Hidden smDown implementation="css">
         <Drawer variant="permanent" anchor="left" open>
-          <Box paddingBottom="1rem">{logoObject}</Box>
-          <List classes={{ root: classes.listRoot }}>
+          <Box sx={{ paddingBottom: "1rem" }}>{logoObject}</Box>
+          <List sx={{ marginTop: "2rem", height: "100%" }}>
             {createLinks(routes)}
           </List>
         </Drawer>
@@ -151,19 +299,20 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
         <AppBar position="relative" color="default" elevation={0}>
           <Toolbar>
             <Container
-              display="flex!important"
-              justifyContent="space-between"
-              alignItems="center"
-              marginTop=".75rem"
-              marginBottom=".75rem"
+              sx={{
+                display: "flex!important",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginTop: ".75rem",
+                marginBottom: ".75rem",
+                padding: "0!important",
+              }}
               component={Box}
               maxWidth={false}
-              padding="0!important"
             >
               <Box
                 component={MenuIcon}
-                width="2rem!important"
-                height="2rem!important"
+                sx={{ width: "2rem!important", height: "2rem!important" }}
                 aria-controls={menuId}
                 aria-haspopup="true"
                 onClick={handleMenuOpen}
@@ -181,22 +330,27 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
           transformOrigin={{ vertical: "top", horizontal: "right" }}
           open={isMenuOpen}
           onClose={handleMenuClose}
-          classes={{ paper: classes.menuPaper }}
+          sx={{
+            "& .MuiMenu-paper": {
+              width: "calc(100% - 2rem)",
+            },
+          }}
         >
           <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            paddingLeft="1.25rem"
-            paddingRight="1.25rem"
-            paddingBottom="1rem"
-            className={classes.outlineNone}
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              paddingLeft: "1.25rem",
+              paddingRight: "1.25rem",
+              paddingBottom: "1rem",
+              outline: "none!important",
+            }}
           >
             {logoObject}
             <Box
               component={Clear}
-              width="2rem!important"
-              height="2rem!important"
+              sx={{ width: "2rem!important", height: "2rem!important" }}
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleMenuClose}
@@ -204,14 +358,16 @@ export default function Sidebar({ routes, logo, dropdown, input }) {
           </Box>
           <Box
             component={Divider}
-            marginBottom="1rem!important"
-            marginLeft="1.25rem!important"
-            marginRight="1.25rem!important"
+            sx={{
+              marginBottom: "1rem!important",
+              marginLeft: "1.25rem!important",
+              marginRight: "1.25rem!important",
+            }}
           />
-          <Box paddingLeft="1.25rem" paddingRight="1.25rem">
+          <Box sx={{ paddingLeft: "1.25rem", paddingRight: "1.25rem" }}>
             {input}
           </Box>
-          <List classes={{ root: classes.listRoot }}>
+          <List sx={{ marginTop: "2rem", height: "100%" }}>
             {createLinks(routes)}
           </List>
         </Menu>

@@ -1,7 +1,6 @@
 import React from "react";
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
@@ -11,9 +10,7 @@ import Grid from "@material-ui/core/Grid";
 // core components
 import Header from "components/Headers/Header.js";
 
-import componentStyles from "assets/theme/views/admin/maps.js";
-
-const useStyles = makeStyles(componentStyles);
+import boxShadows from "assets/theme/box-shadow.js";
 
 const MapWrapper = () => {
   const mapRef = React.useRef(null);
@@ -100,11 +97,13 @@ const MapWrapper = () => {
   return (
     <>
       <Box
-        height="600px"
-        position="relative"
-        width="100%"
-        overflow="hidden"
-        borderRadius=".375rem"
+        sx={{
+          height: "600px",
+          position: "relative",
+          width: "100%",
+          overflow: "hidden",
+          borderRadius: ".375rem",
+        }}
         ref={mapRef}
       ></Box>
     </>
@@ -112,7 +111,7 @@ const MapWrapper = () => {
 };
 
 const Maps = () => {
-  const classes = useStyles();
+  const theme = useTheme();
   return (
     <>
       <Header />
@@ -120,12 +119,23 @@ const Maps = () => {
       <Container
         maxWidth={false}
         component={Box}
-        marginTop="-6rem"
-        classes={{ root: classes.containerRoot }}
+        sx={{
+          marginTop: "-6rem",
+          [theme.breakpoints.up("md")]: {
+            paddingLeft: "39px",
+            paddingRight: "39px",
+          },
+        }}
       >
         <Grid container>
           <Grid item xs={12}>
-            <Card classes={{ root: classes.cardRoot }}>
+            <Card
+              sx={{
+                boxShadow: boxShadows.boxShadow + "!important",
+                border: "0!important",
+                marginBottom: "0!important",
+              }}
+            >
               <MapWrapper />
             </Card>
           </Grid>

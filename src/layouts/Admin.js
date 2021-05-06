@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, Route, Switch, Redirect } from "react-router-dom";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import FormControl from "@material-ui/core/FormControl";
@@ -19,12 +19,8 @@ import NavbarDropdown from "components/Dropdowns/NavbarDropdown.js";
 
 import routes from "routes.js";
 
-import componentStyles from "assets/theme/layouts/admin.js";
-
-const useStyles = makeStyles(componentStyles);
-
 const Admin = () => {
-  const classes = useStyles();
+  const theme = useTheme();
   const location = useLocation();
 
   React.useEffect(() => {
@@ -81,8 +77,10 @@ const Admin = () => {
                   <InputAdornment position="end">
                     <Box
                       component={Search}
-                      width="1.25rem!important"
-                      height="1.25rem!important"
+                      sx={{
+                        width: "1.25rem!important",
+                        height: "1.25rem!important",
+                      }}
                     />
                   </InputAdornment>
                 }
@@ -91,7 +89,14 @@ const Admin = () => {
             </FormControl>
           }
         />
-        <Box position="relative" className={classes.mainContent}>
+        <Box
+          sx={{
+            position: "relative",
+            [theme.breakpoints.up("md")]: {
+              marginLeft: "250px",
+            },
+          }}
+        >
           <AdminNavbar brandText={getBrandText(location.pathname)} />
           <Switch>
             {getRoutes(routes)}
@@ -100,7 +105,12 @@ const Admin = () => {
           <Container
             maxWidth={false}
             component={Box}
-            classes={{ root: classes.containerRoot }}
+            sx={{
+              [theme.breakpoints.up("md")]: {
+                paddingLeft: "39px",
+                paddingRight: "39px",
+              },
+            }}
           >
             <AdminFooter />
           </Container>

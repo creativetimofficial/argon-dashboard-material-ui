@@ -1,10 +1,9 @@
 import React from "react";
 // javascipt plugin for creating charts
-import Chart from "chart.js";
+import { Chart, registerables } from "chart.js";
 // react plugin used to create charts
 import { Line, Bar } from "react-chartjs-2";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
@@ -35,12 +34,11 @@ import {
   chartExample2,
 } from "variables/charts.js";
 
-import componentStyles from "assets/theme/views/admin/dashboard.js";
+import boxShadows from "assets/theme/box-shadow.js";
 
-const useStyles = makeStyles(componentStyles);
+Chart.register(...registerables);
 
 function Dashboard() {
-  const classes = useStyles();
   const theme = useTheme();
   const [activeNav, setActiveNav] = React.useState(1);
   const [chartExample1Data, setChartExample1Data] = React.useState("data1");
@@ -60,8 +58,13 @@ function Dashboard() {
       <Container
         maxWidth={false}
         component={Box}
-        marginTop="-6rem"
-        classes={{ root: classes.containerRoot }}
+        sx={{
+          marginTop: "-6rem",
+          [theme.breakpoints.up("md")]: {
+            paddingLeft: "39px",
+            paddingRight: "39px",
+          },
+        }}
       >
         <Grid container>
           <Grid
@@ -69,12 +72,22 @@ function Dashboard() {
             xs={12}
             xl={8}
             component={Box}
-            marginBottom="3rem!important"
-            classes={{ root: classes.gridItemRoot }}
+            sx={{
+              marginBottom: "3rem!important",
+              [theme.breakpoints.up("xl")]: {
+                marginBottom: "0!important",
+              },
+            }}
           >
             <Card
-              classes={{
-                root: classes.cardRoot + " " + classes.cardRootBgGradient,
+              sx={{
+                boxShadow: boxShadows.boxShadow + "!important",
+                border: "0!important",
+                background:
+                  "linear-gradient(87deg," +
+                  theme.palette.dark.main +
+                  ",#1a174d)!important",
+                marginBottom: "0!important",
               }}
             >
               <CardHeader
@@ -82,62 +95,61 @@ function Dashboard() {
                   <Grid
                     container
                     component={Box}
-                    alignItems="center"
-                    justifyContent="space-between"
+                    sx={{
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
                   >
                     <Grid item xs="auto">
                       <Box
                         component={Typography}
                         variant="h6"
-                        letterSpacing=".0625rem"
-                        marginBottom=".25rem!important"
-                        className={classes.textUppercase}
+                        sx={{
+                          letterSpacing: ".0625rem",
+                          marginBottom: ".25rem!important",
+                          textTransform: "uppercase",
+                        }}
                       >
-                        <Box component="span" color={theme.palette.gray[400]}>
+                        <Box
+                          component="span"
+                          sx={{ color: theme.palette.gray[400] }}
+                        >
                           Overview
                         </Box>
                       </Box>
                       <Box
                         component={Typography}
                         variant="h2"
-                        marginBottom="0!important"
+                        sx={{ marginBottom: "0!important" }}
                       >
-                        <Box component="span" color={theme.palette.white.main}>
+                        <Box
+                          component="span"
+                          sx={{ color: theme.palette.white.main }}
+                        >
                           Sales value
                         </Box>
                       </Box>
                     </Grid>
                     <Grid item xs="auto">
                       <Box
-                        justifyContent="flex-end"
-                        display="flex"
-                        flexWrap="wrap"
+                        sx={{
+                          justifyContent: "flex-end",
+                          display: "flex",
+                          flexWrap: "wrap",
+                        }}
                       >
                         <Button
-                          variant="contained"
+                          variant={activeNav === 1 ? "contained" : "neutral"}
                           color="primary"
-                          component={Box}
-                          marginRight="1rem!important"
+                          sx={{ marginRight: "1rem!important" }}
                           onClick={() => toggleNavs(1)}
-                          classes={{
-                            root:
-                              activeNav === 1
-                                ? ""
-                                : classes.buttonRootUnselected,
-                          }}
                         >
                           Month
                         </Button>
                         <Button
-                          variant="contained"
+                          variant={activeNav === 2 ? "contained" : "neutral"}
                           color="primary"
                           onClick={() => toggleNavs(2)}
-                          classes={{
-                            root:
-                              activeNav === 2
-                                ? ""
-                                : classes.buttonRootUnselected,
-                          }}
                         >
                           Week
                         </Button>
@@ -145,10 +157,10 @@ function Dashboard() {
                     </Grid>
                   </Grid>
                 }
-                classes={{ root: classes.cardHeaderRoot }}
+                sx={{ backgroundColor: "initial!important" }}
               ></CardHeader>
               <CardContent>
-                <Box position="relative" height="350px">
+                <Box sx={{ position: "relative", height: "350px" }}>
                   <Line
                     data={chartExample1[chartExample1Data]}
                     options={chartExample1.options}
@@ -159,33 +171,38 @@ function Dashboard() {
             </Card>
           </Grid>
           <Grid item xs={12} xl={4}>
-            <Card classes={{ root: classes.cardRoot }}>
+            <Card
+              sx={{
+                boxShadow: boxShadows.boxShadow + "!important",
+                border: "0!important",
+                marginBottom: "0!important",
+              }}
+            >
               <CardHeader
                 title={
-                  <Box component="span" color={theme.palette.gray[600]}>
+                  <Box component="span" sx={{ color: theme.palette.gray[600] }}>
                     Performane
                   </Box>
                 }
                 subheader="Total orders"
-                classes={{ root: classes.cardHeaderRoot }}
+                sx={{ backgroundColor: "initial!important" }}
                 titleTypographyProps={{
                   component: Box,
                   variant: "h6",
-                  letterSpacing: ".0625rem",
-                  marginBottom: ".25rem!important",
-                  classes: {
-                    root: classes.textUppercase,
+                  sx: {
+                    letterSpacing: ".0625rem",
+                    marginBottom: ".25rem!important",
+                    textTransform: "uppercase",
                   },
                 }}
                 subheaderTypographyProps={{
                   component: Box,
                   variant: "h2",
-                  marginBottom: "0!important",
-                  color: "initial",
+                  sx: { marginBottom: "0!important", color: "initial" },
                 }}
               ></CardHeader>
               <CardContent>
-                <Box position="relative" height="350px">
+                <Box sx={{ position: "relative", height: "350px" }}>
                   <Bar
                     data={chartExample2.data}
                     options={chartExample2.options}
@@ -195,18 +212,24 @@ function Dashboard() {
             </Card>
           </Grid>
         </Grid>
-        <Grid container component={Box} marginTop="3rem">
+        <Grid container component={Box} sx={{ marginTop: "3rem" }}>
           <Grid
             item
             xs={12}
             xl={8}
             component={Box}
-            marginBottom="3rem!important"
-            classes={{ root: classes.gridItemRoot }}
+            sx={{
+              marginBottom: "3rem!important",
+              [theme.breakpoints.up("xl")]: {
+                marginBottom: "0!important",
+              },
+            }}
           >
             <Card
-              classes={{
-                root: classes.cardRoot,
+              sx={{
+                boxShadow: boxShadows.boxShadow + "!important",
+                border: "0!important",
+                marginBottom: "0!important",
               }}
             >
               <CardHeader
@@ -214,23 +237,27 @@ function Dashboard() {
                   <Grid
                     container
                     component={Box}
-                    alignItems="center"
-                    justifyContent="space-between"
+                    sx={{
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
                   >
                     <Grid item xs="auto">
                       <Box
                         component={Typography}
                         variant="h3"
-                        marginBottom="0!important"
+                        sx={{ marginBottom: "0!important" }}
                       >
                         Page visits
                       </Box>
                     </Grid>
                     <Grid item xs="auto">
                       <Box
-                        justifyContent="flex-end"
-                        display="flex"
-                        flexWrap="wrap"
+                        sx={{
+                          justifyContent: "flex-end",
+                          display: "flex",
+                          flexWrap: "wrap",
+                        }}
                       >
                         <Button
                           variant="contained"
@@ -243,52 +270,59 @@ function Dashboard() {
                     </Grid>
                   </Grid>
                 }
-                classes={{ root: classes.cardHeaderRoot }}
+                sx={{ backgroundColor: "initial!important" }}
               ></CardHeader>
               <TableContainer>
                 <Box
                   component={Table}
-                  alignItems="center"
-                  marginBottom="0!important"
+                  sx={{ alignItems: "center", marginBottom: "0!important" }}
                 >
                   <TableHead>
                     <TableRow>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          backgroundColor: theme.palette.gray[100],
+                          color: theme.palette.gray[600],
                         }}
                       >
                         Page name
                       </TableCell>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          backgroundColor: theme.palette.gray[100],
+                          color: theme.palette.gray[600],
                         }}
                       >
                         Visitors
                       </TableCell>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          backgroundColor: theme.palette.gray[100],
+                          color: theme.palette.gray[600],
                         }}
                       >
                         Unique users
                       </TableCell>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          backgroundColor: theme.palette.gray[100],
+                          color: theme.palette.gray[600],
                         }}
                       >
                         Bounce rate
@@ -298,11 +332,13 @@ function Dashboard() {
                   <TableBody>
                     <TableRow>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          textTransform: "unset!important",
+                          fontSize: ".8125rem",
                         }}
                         component="th"
                         variant="head"
@@ -310,34 +346,57 @@ function Dashboard() {
                       >
                         /argon/
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
                         4,569
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
                         340
                       </TableCell>
                       <Box
                         component={TableCell}
-                        className={classes.tableCellRoot}
-                        marginBottom="-2px"
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          marginBottom: "-2px",
+                        }}
                       >
                         <Box
                           component={ArrowUpward}
-                          width="1rem!important"
-                          height="1rem!important"
-                          marginRight="1rem"
-                          color={theme.palette.success.main}
+                          sx={{
+                            width: "1rem!important",
+                            height: "1rem!important",
+                            marginRight: "1rem",
+                            color: theme.palette.success.main,
+                          }}
                         />
                         46,53%
                       </Box>
                     </TableRow>
                     <TableRow>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          textTransform: "unset!important",
+                          fontSize: ".8125rem",
                         }}
                         component="th"
                         variant="head"
@@ -345,34 +404,57 @@ function Dashboard() {
                       >
                         /argon/index.html
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
                         3,985
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
                         319
                       </TableCell>
                       <Box
                         component={TableCell}
-                        className={classes.tableCellRoot}
-                        marginBottom="-2px"
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          marginBottom: "-2px",
+                        }}
                       >
                         <Box
                           component={ArrowDownward}
-                          width="1rem!important"
-                          height="1rem!important"
-                          marginRight="1rem"
-                          color={theme.palette.warning.main}
+                          sx={{
+                            width: "1rem!important",
+                            height: "1rem!important",
+                            marginRight: "1rem",
+                            color: theme.palette.warning.main,
+                          }}
                         />
                         46,53%
                       </Box>
                     </TableRow>
                     <TableRow>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          textTransform: "unset!important",
+                          fontSize: ".8125rem",
                         }}
                         component="th"
                         variant="head"
@@ -380,34 +462,57 @@ function Dashboard() {
                       >
                         /argon/charts.html
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
                         3,513
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
                         294
                       </TableCell>
                       <Box
                         component={TableCell}
-                        className={classes.tableCellRoot}
-                        marginBottom="-2px"
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          marginBottom: "-2px",
+                        }}
                       >
                         <Box
                           component={ArrowDownward}
-                          width="1rem!important"
-                          height="1rem!important"
-                          marginRight="1rem"
-                          color={theme.palette.warning.main}
+                          sx={{
+                            width: "1rem!important",
+                            height: "1rem!important",
+                            marginRight: "1rem",
+                            color: theme.palette.warning.main,
+                          }}
                         />
                         36,49%
                       </Box>
                     </TableRow>
                     <TableRow>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          textTransform: "unset!important",
+                          fontSize: ".8125rem",
                         }}
                         component="th"
                         variant="head"
@@ -415,36 +520,58 @@ function Dashboard() {
                       >
                         /argon/tables.html
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
                         2,050
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
                         147
                       </TableCell>
                       <Box
                         component={TableCell}
-                        className={classes.tableCellRoot}
-                        marginBottom="-2px"
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          marginBottom: "-2px",
+                        }}
                       >
                         <Box
                           component={ArrowUpward}
-                          width="1rem!important"
-                          height="1rem!important"
-                          marginRight="1rem"
-                          color={theme.palette.success.main}
+                          sx={{
+                            width: "1rem!important",
+                            height: "1rem!important",
+                            marginRight: "1rem",
+                            color: theme.palette.success.main,
+                          }}
                         />
                         50,87%
                       </Box>
                     </TableRow>
                     <TableRow>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead +
-                            " " +
-                            classes.borderBottomUnset,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          textTransform: "unset!important",
+                          fontSize: ".8125rem",
+                          borderBottom: "0!important",
                         }}
                         component="th"
                         variant="head"
@@ -453,40 +580,46 @@ function Dashboard() {
                         /argon/profile.html
                       </TableCell>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.borderBottomUnset,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          borderBottom: "0!important",
                         }}
                       >
                         1,795
                       </TableCell>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.borderBottomUnset,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          borderBottom: "0!important",
                         }}
                       >
                         190
                       </TableCell>
                       <Box
                         component={TableCell}
-                        className={
-                          classes.tableCellRoot +
-                          " " +
-                          classes.borderBottomUnset
-                        }
-                        marginBottom="-2px"
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          borderBottom: "0!important",
+                          marginBottom: "-2px",
+                        }}
                       >
                         <Box
                           component={ArrowDownward}
-                          width="1rem!important"
-                          height="1rem!important"
-                          marginRight="1rem"
-                          color={theme.palette.error.main}
+                          sx={{
+                            width: "1rem!important",
+                            height: "1rem!important",
+                            marginRight: "1rem",
+                            color: theme.palette.error.main,
+                          }}
                         />
                         46,53%
                       </Box>
@@ -497,29 +630,39 @@ function Dashboard() {
             </Card>
           </Grid>
           <Grid item xs={12} xl={4}>
-            <Card classes={{ root: classes.cardRoot }}>
+            <Card
+              sx={{
+                boxShadow: boxShadows.boxShadow + "!important",
+                border: "0!important",
+                marginBottom: "0!important",
+              }}
+            >
               <CardHeader
                 subheader={
                   <Grid
                     container
                     component={Box}
-                    alignItems="center"
-                    justifyContent="space-between"
+                    sx={{
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
                   >
                     <Grid item xs="auto">
                       <Box
                         component={Typography}
                         variant="h3"
-                        marginBottom="0!important"
+                        sx={{ marginBottom: "0!important" }}
                       >
                         Social traffic
                       </Box>
                     </Grid>
                     <Grid item xs="auto">
                       <Box
-                        justifyContent="flex-end"
-                        display="flex"
-                        flexWrap="wrap"
+                        sx={{
+                          justifyContent: "flex-end",
+                          display: "flex",
+                          flexWrap: "wrap",
+                        }}
                       >
                         <Button
                           variant="contained"
@@ -532,42 +675,47 @@ function Dashboard() {
                     </Grid>
                   </Grid>
                 }
-                classes={{ root: classes.cardHeaderRoot }}
+                sx={{ backgroundColor: "initial!important" }}
               ></CardHeader>
               <TableContainer>
                 <Box
                   component={Table}
-                  alignItems="center"
-                  marginBottom="0!important"
+                  sx={{ alignItems: "center", marginBottom: "0!important" }}
                 >
                   <TableHead>
                     <TableRow>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          backgroundColor: theme.palette.gray[100],
+                          color: theme.palette.gray[600],
                         }}
                       >
                         Refferal
                       </TableCell>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          backgroundColor: theme.palette.gray[100],
+                          color: theme.palette.gray[600],
                         }}
                       >
                         Visitors
                       </TableCell>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          backgroundColor: theme.palette.gray[100],
+                          color: theme.palette.gray[600],
                         }}
                       ></TableCell>
                     </TableRow>
@@ -575,11 +723,13 @@ function Dashboard() {
                   <TableBody>
                     <TableRow>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          textTransform: "unset!important",
+                          fontSize: ".8125rem",
                         }}
                         component="th"
                         variant="head"
@@ -587,21 +737,42 @@ function Dashboard() {
                       >
                         Facebook
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
                         1,480
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        <Box display="flex" alignItems="center">
-                          <Box component="span" marginRight=".5rem">
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <Box component="span" sx={{ marginRight: ".5rem" }}>
                             60%
                           </Box>
-                          <Box width="100%">
+                          <Box sx={{ width: "100%" }}>
                             <LinearProgress
                               variant="determinate"
                               value={60}
-                              classes={{
-                                root: classes.linearProgressRoot,
-                                bar: classes.bgGradientError,
+                              sx={{
+                                height: "3px!important",
+                                width: "120px!important",
+                                margin: "0!important",
+                                "& .MuiLinearProgress-bar": {
+                                  background:
+                                    "linear-gradient(87deg," +
+                                    theme.palette.error.main +
+                                    ",#f56036)!important",
+                                },
                               }}
                             />
                           </Box>
@@ -610,11 +781,13 @@ function Dashboard() {
                     </TableRow>
                     <TableRow>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          textTransform: "unset!important",
+                          fontSize: ".8125rem",
                         }}
                         component="th"
                         variant="head"
@@ -622,21 +795,42 @@ function Dashboard() {
                       >
                         Facebook
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
                         5,480
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        <Box display="flex" alignItems="center">
-                          <Box component="span" marginRight=".5rem">
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <Box component="span" sx={{ marginRight: ".5rem" }}>
                             70%
                           </Box>
-                          <Box width="100%">
+                          <Box sx={{ width: "100%" }}>
                             <LinearProgress
                               variant="determinate"
                               value={70}
-                              classes={{
-                                root: classes.linearProgressRoot,
-                                bar: classes.bgGradientSuccess,
+                              sx={{
+                                height: "3px!important",
+                                width: "120px!important",
+                                margin: "0!important",
+                                "& .MuiLinearProgress-bar": {
+                                  background:
+                                    "linear-gradient(87deg," +
+                                    theme.palette.success.main +
+                                    ",#2dcecc)!important",
+                                },
                               }}
                             />
                           </Box>
@@ -645,11 +839,13 @@ function Dashboard() {
                     </TableRow>
                     <TableRow>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          textTransform: "unset!important",
+                          fontSize: ".8125rem",
                         }}
                         component="th"
                         variant="head"
@@ -657,21 +853,42 @@ function Dashboard() {
                       >
                         Google
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
                         4,807
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        <Box display="flex" alignItems="center">
-                          <Box component="span" marginRight=".5rem">
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <Box component="span" sx={{ marginRight: ".5rem" }}>
                             80%
                           </Box>
-                          <Box width="100%">
+                          <Box sx={{ width: "100%" }}>
                             <LinearProgress
                               variant="determinate"
                               value={80}
-                              classes={{
-                                root: classes.linearProgressRoot,
-                                bar: classes.bgGradientPrimary,
+                              sx={{
+                                height: "3px!important",
+                                width: "120px!important",
+                                margin: "0!important",
+                                "& .MuiLinearProgress-bar": {
+                                  background:
+                                    "linear-gradient(87deg," +
+                                    theme.palette.primary.main +
+                                    ",#825ee4)!important",
+                                },
                               }}
                             />
                           </Box>
@@ -680,11 +897,13 @@ function Dashboard() {
                     </TableRow>
                     <TableRow>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          textTransform: "unset!important",
+                          fontSize: ".8125rem",
                         }}
                         component="th"
                         variant="head"
@@ -692,21 +911,42 @@ function Dashboard() {
                       >
                         Instagram
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
                         3,678
                       </TableCell>
-                      <TableCell classes={{ root: classes.tableCellRoot }}>
-                        <Box display="flex" alignItems="center">
-                          <Box component="span" marginRight=".5rem">
+                      <TableCell
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                        }}
+                      >
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <Box component="span" sx={{ marginRight: ".5rem" }}>
                             75%
                           </Box>
-                          <Box width="100%">
+                          <Box sx={{ width: "100%" }}>
                             <LinearProgress
                               variant="determinate"
                               value={75}
-                              classes={{
-                                root: classes.linearProgressRoot,
-                                bar: classes.bgGradientInfo,
+                              sx={{
+                                height: "3px!important",
+                                width: "120px!important",
+                                margin: "0!important",
+                                "& .MuiLinearProgress-bar": {
+                                  background:
+                                    "linear-gradient(87deg," +
+                                    theme.palette.info.main +
+                                    ",#1171ef)!important",
+                                },
                               }}
                             />
                           </Box>
@@ -715,13 +955,14 @@ function Dashboard() {
                     </TableRow>
                     <TableRow>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.tableCellRootBodyHead +
-                            " " +
-                            classes.borderBottomUnset,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          textTransform: "unset!important",
+                          fontSize: ".8125rem",
+                          borderBottom: "0!important",
                         }}
                         component="th"
                         variant="head"
@@ -730,34 +971,43 @@ function Dashboard() {
                         twitter
                       </TableCell>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.borderBottomUnset,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          borderBottom: "0!important",
                         }}
                       >
                         2,645
                       </TableCell>
                       <TableCell
-                        classes={{
-                          root:
-                            classes.tableCellRoot +
-                            " " +
-                            classes.borderBottomUnset,
+                        sx={{
+                          verticalAlign: "middle",
+                          paddingLeft: "1.5rem",
+                          paddingRight: "1.5rem",
+                          borderTop: "0",
+                          borderBottom: "0!important",
                         }}
                       >
-                        <Box display="flex" alignItems="center">
-                          <Box component="span" marginRight=".5rem">
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <Box component="span" sx={{ marginRight: ".5rem" }}>
                             30%
                           </Box>
-                          <Box width="100%">
+                          <Box sx={{ width: "100%" }}>
                             <LinearProgress
                               variant="determinate"
                               value={30}
-                              classes={{
-                                root: classes.linearProgressRoot,
-                                bar: classes.bgGradientWarning,
+                              sx={{
+                                height: "3px!important",
+                                width: "120px!important",
+                                margin: "0!important",
+                                "& .MuiLinearProgress-bar": {
+                                  background:
+                                    "linear-gradient(87deg," +
+                                    theme.palette.warning.main +
+                                    ",#fbb140)!important",
+                                },
                               }}
                             />
                           </Box>

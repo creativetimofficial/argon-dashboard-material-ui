@@ -13,9 +13,11 @@ import AuthFooter from "components/Footers/AuthFooter.js";
 
 import routes from "routes.js";
 
-import componentStyles from "assets/theme/layouts/auth.js";
-
-const useStyles = makeStyles(componentStyles);
+const useStyles = makeStyles((theme) => ({
+  bgDefault: {
+    backgroundColor: theme.palette.dark.main,
+  },
+}));
 
 const Auth = () => {
   const classes = useStyles();
@@ -59,12 +61,14 @@ const Auth = () => {
         <Container
           component={Box}
           maxWidth="xl"
-          marginTop="-8rem"
-          paddingBottom="3rem"
-          position="relative"
-          zIndex="101"
+          sx={{
+            marginTop: "-8rem",
+            paddingBottom: "3rem",
+            position: "relative",
+            zIndex: "101",
+          }}
         >
-          <Box component={Grid} container justifyContent="center">
+          <Box component={Grid} container sx={{ justifyContent: "center" }}>
             <Switch>
               {getRoutes(routes)}
               <Redirect from="*" to="/auth/login" />

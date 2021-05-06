@@ -1,6 +1,5 @@
 import React from "react";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
@@ -22,13 +21,9 @@ import School from "@material-ui/icons/School";
 // core components
 import UserHeader from "components/Headers/UserHeader.js";
 
-import componentStyles from "assets/theme/views/admin/profile.js";
 import boxShadows from "assets/theme/box-shadow.js";
 
-const useStyles = makeStyles(componentStyles);
-
 function Profile() {
-  const classes = useStyles();
   const theme = useTheme();
   return (
     <>
@@ -37,8 +32,13 @@ function Profile() {
       <Container
         maxWidth={false}
         component={Box}
-        marginTop="-6rem"
-        classes={{ root: classes.containerRoot }}
+        sx={{
+          marginTop: "-6rem",
+          [theme.breakpoints.up("md")]: {
+            paddingLeft: "39px",
+            paddingRight: "39px",
+          },
+        }}
       >
         <Grid container>
           <Grid
@@ -46,12 +46,22 @@ function Profile() {
             xs={12}
             xl={8}
             component={Box}
-            marginBottom="3rem"
-            classes={{ root: classes.gridItemRoot + " " + classes.order2 }}
+            sx={{
+              marginBottom: "3rem",
+              [theme.breakpoints.up("xl")]: {
+                marginBottom: "0!important",
+              },
+              [theme.breakpoints.down("lg")]: {
+                order: "2!important",
+              },
+            }}
           >
             <Card
-              classes={{
-                root: classes.cardRoot + " " + classes.cardRootSecondary,
+              sx={{
+                boxShadow: boxShadows.boxShadow + "!important",
+                border: "0!important",
+                backgroundColor: theme.palette.secondary.main,
+                marginBottom: "0!important",
               }}
             >
               <CardHeader
@@ -59,23 +69,27 @@ function Profile() {
                   <Grid
                     container
                     component={Box}
-                    alignItems="center"
-                    justifyContent="space-between"
+                    sx={{
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
                   >
                     <Grid item xs="auto">
                       <Box
                         component={Typography}
                         variant="h3"
-                        marginBottom="0!important"
+                        sx={{ marginBottom: "0!important" }}
                       >
                         My Account
                       </Box>
                     </Grid>
                     <Grid item xs="auto">
                       <Box
-                        justifyContent="flex-end"
-                        display="flex"
-                        flexWrap="wrap"
+                        sx={{
+                          justifyContent: "flex-end",
+                          display: "flex",
+                          flexWrap: "wrap",
+                        }}
                       >
                         <Button
                           variant="contained"
@@ -88,23 +102,33 @@ function Profile() {
                     </Grid>
                   </Grid>
                 }
-                classes={{ root: classes.cardHeaderRoot }}
+                sx={{
+                  backgroundColor: theme.palette.white.main + "!important",
+                }}
               ></CardHeader>
               <CardContent>
                 <Box
                   component={Typography}
                   variant="h6"
-                  color={theme.palette.gray[600] + "!important"}
-                  paddingTop=".25rem"
-                  paddingBottom=".25rem"
-                  fontSize=".75rem!important"
-                  letterSpacing=".04em"
-                  marginBottom="1.5rem!important"
-                  classes={{ root: classes.typographyRootH6 }}
+                  sx={{
+                    color: theme.palette.gray[600] + "!important",
+                    paddingTop: ".25rem",
+                    paddingBottom: ".25rem",
+                    fontSize: ".75rem!important",
+                    letterSpacing: ".04em",
+                    marginBottom: "1.5rem!important",
+                    textTransform: "uppercase",
+                  }}
                 >
                   User Information
                 </Box>
-                <div className={classes.plLg4}>
+                <Box
+                  sx={{
+                    [theme.breakpoints.up("md")]: {
+                      paddingLeft: "1.5rem",
+                    },
+                  }}
+                >
                   <Grid container>
                     <Grid item xs={12} lg={6}>
                       <FormGroup>
@@ -112,12 +136,13 @@ function Profile() {
                         <FormControl
                           variant="filled"
                           component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
+                          sx={{ width: "100%", marginBottom: "1rem!important" }}
                         >
                           <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
+                            sx={{
+                              paddingLeft: "0.75rem",
+                              paddingRight: "0.75rem",
+                            }}
                             component={FilledInput}
                             autoComplete="off"
                             type="text"
@@ -132,12 +157,13 @@ function Profile() {
                         <FormControl
                           variant="filled"
                           component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
+                          sx={{ width: "100%", marginBottom: "1rem!important" }}
                         >
                           <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
+                            sx={{
+                              paddingLeft: "0.75rem",
+                              paddingRight: "0.75rem",
+                            }}
                             component={FilledInput}
                             autoComplete="off"
                             type="email"
@@ -154,12 +180,13 @@ function Profile() {
                         <FormControl
                           variant="filled"
                           component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
+                          sx={{ width: "100%", marginBottom: "1rem!important" }}
                         >
                           <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
+                            sx={{
+                              paddingLeft: "0.75rem",
+                              paddingRight: "0.75rem",
+                            }}
                             component={FilledInput}
                             autoComplete="off"
                             type="text"
@@ -174,12 +201,13 @@ function Profile() {
                         <FormControl
                           variant="filled"
                           component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
+                          sx={{ width: "100%", marginBottom: "1rem!important" }}
                         >
                           <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
+                            sx={{
+                              paddingLeft: "0.75rem",
+                              paddingRight: "0.75rem",
+                            }}
                             component={FilledInput}
                             autoComplete="off"
                             type="text"
@@ -189,26 +217,36 @@ function Profile() {
                       </FormGroup>
                     </Grid>
                   </Grid>
-                </div>
+                </Box>
                 <Box
                   component={Divider}
-                  marginBottom="1.5rem!important"
-                  marginTop="1.5rem!important"
+                  sx={{
+                    marginBottom: "1.5rem!important",
+                    marginTop: "1.5rem!important",
+                  }}
                 />
                 <Box
                   component={Typography}
                   variant="h6"
-                  color={theme.palette.gray[600] + "!important"}
-                  paddingTop=".25rem"
-                  paddingBottom=".25rem"
-                  fontSize=".75rem!important"
-                  letterSpacing=".04em"
-                  marginBottom="1.5rem!important"
-                  classes={{ root: classes.typographyRootH6 }}
+                  sx={{
+                    color: theme.palette.gray[600] + "!important",
+                    paddingTop: ".25rem",
+                    paddingBottom: ".25rem",
+                    fontSize: ".75rem!important",
+                    letterSpacing: ".04em",
+                    marginBottom: "1.5rem!important",
+                    textTransform: "uppercase",
+                  }}
                 >
                   Contact Information
                 </Box>
-                <div className={classes.plLg4}>
+                <Box
+                  sx={{
+                    [theme.breakpoints.up("md")]: {
+                      paddingLeft: "1.5rem",
+                    },
+                  }}
+                >
                   <Grid container>
                     <Grid item xs={12}>
                       <FormGroup>
@@ -216,12 +254,13 @@ function Profile() {
                         <FormControl
                           variant="filled"
                           component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
+                          sx={{ width: "100%", marginBottom: "1rem!important" }}
                         >
                           <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
+                            sx={{
+                              paddingLeft: "0.75rem",
+                              paddingRight: "0.75rem",
+                            }}
                             component={FilledInput}
                             autoComplete="off"
                             type="text"
@@ -238,12 +277,13 @@ function Profile() {
                         <FormControl
                           variant="filled"
                           component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
+                          sx={{ width: "100%", marginBottom: "1rem!important" }}
                         >
                           <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
+                            sx={{
+                              paddingLeft: "0.75rem",
+                              paddingRight: "0.75rem",
+                            }}
                             component={FilledInput}
                             autoComplete="off"
                             type="text"
@@ -258,12 +298,13 @@ function Profile() {
                         <FormControl
                           variant="filled"
                           component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
+                          sx={{ width: "100%", marginBottom: "1rem!important" }}
                         >
                           <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
+                            sx={{
+                              paddingLeft: "0.75rem",
+                              paddingRight: "0.75rem",
+                            }}
                             component={FilledInput}
                             autoComplete="off"
                             type="text"
@@ -278,12 +319,13 @@ function Profile() {
                         <FormControl
                           variant="filled"
                           component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
+                          sx={{ width: "100%", marginBottom: "1rem!important" }}
                         >
                           <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
+                            sx={{
+                              paddingLeft: "0.75rem",
+                              paddingRight: "0.75rem",
+                            }}
                             component={FilledInput}
                             autoComplete="off"
                             type="text"
@@ -293,26 +335,36 @@ function Profile() {
                       </FormGroup>
                     </Grid>
                   </Grid>
-                </div>
+                </Box>
                 <Box
                   component={Divider}
-                  marginBottom="1.5rem!important"
-                  marginTop="1.5rem!important"
+                  sx={{
+                    marginBottom: "1.5rem!important",
+                    marginTop: "1.5rem!important",
+                  }}
                 />
                 <Box
                   component={Typography}
                   variant="h6"
-                  color={theme.palette.gray[600] + "!important"}
-                  paddingTop=".25rem"
-                  paddingBottom=".25rem"
-                  fontSize=".75rem!important"
-                  letterSpacing=".04em"
-                  marginBottom="1.5rem!important"
-                  classes={{ root: classes.typographyRootH6 }}
+                  sx={{
+                    color: theme.palette.gray[600] + "!important",
+                    paddingTop: ".25rem",
+                    paddingBottom: ".25rem",
+                    fontSize: ".75rem!important",
+                    letterSpacing: ".04em",
+                    marginBottom: "1.5rem!important",
+                    textTransform: "uppercase",
+                  }}
                 >
                   About me
                 </Box>
-                <div className={classes.plLg4}>
+                <Box
+                  sx={{
+                    [theme.breakpoints.up("md")]: {
+                      paddingLeft: "1.5rem",
+                    },
+                  }}
+                >
                   <Grid container>
                     <Grid item xs={12}>
                       <FormGroup>
@@ -320,23 +372,24 @@ function Profile() {
                         <FormControl
                           variant="filled"
                           component={Box}
-                          width="100%"
-                          marginBottom="1rem!important"
+                          sx={{ width: "100%", marginBottom: "1rem!important" }}
                         >
                           <Box
-                            paddingLeft="0.75rem"
-                            paddingRight="0.75rem"
+                            sx={{
+                              paddingLeft: "0.75rem",
+                              paddingRight: "0.75rem",
+                            }}
                             component={FilledInput}
                             autoComplete="off"
                             multiline
-                            defaultValue="A beautiful Dashboard for Bootstrap 4. It is Free and Open Source."
+                            defaultValue="A beautiful Dashboard for Material-UI v5. It is Free and Open Source."
                             rows="4"
                           />
                         </FormControl>
                       </FormGroup>
                     </Grid>
                   </Grid>
-                </div>
+                </Box>
               </CardContent>
             </Card>
           </Grid>
@@ -345,11 +398,24 @@ function Profile() {
             xs={12}
             xl={4}
             component={Box}
-            marginBottom="3rem!important"
-            classes={{ root: classes.order1 + " " + classes.marginBottomXl0 }}
+            sx={{
+              marginBottom: "3rem!important",
+              [theme.breakpoints.down("lg")]: {
+                order: "1!important",
+              },
+              [theme.breakpoints.up("lg")]: {
+                marginBottom: "0!important",
+              },
+            }}
           >
-            <Card classes={{ root: classes.cardRoot }}>
-              <Box component={Grid} container justifyContent="center">
+            <Card
+              sx={{
+                boxShadow: boxShadows.boxShadow + "!important",
+                border: "0!important",
+                marginBottom: "0!important",
+              }}
+            >
+              <Box component={Grid} container sx={{ justifyContent: "center" }}>
                 <Grid item xs={12} lg={3}>
                   <Box position="relative">
                     <Box
@@ -358,37 +424,41 @@ function Profile() {
                         require("assets/img/theme/team-4-800x800.jpg").default
                       }
                       alt="..."
-                      maxWidth="180px"
-                      borderRadius="50%"
-                      position="absolute"
-                      left="50%"
-                      boxShadow={boxShadows.boxShadow + "!important"}
-                      className={classes.profileImage}
+                      sx={{
+                        maxWidth: "180px",
+                        borderRadius: "50%",
+                        position: "absolute",
+                        left: "50%",
+                        boxShadow: boxShadows.boxShadow + "!important",
+                        verticalAlign: "middle",
+                        borderStyle: "none",
+                        transform: "translate(-50%,-30%)",
+                        transition: "all .15s ease",
+                      }}
                     />
                   </Box>
                 </Grid>
               </Box>
               <Box
                 component={CardHeader}
-                border="0!important"
-                textAlign="center"
-                paddingBottom="0!important"
-                paddingTop="8rem!important"
-                classes={{ root: classes.cardHeaderRootProfile }}
+                sx={{
+                  border: "0!important",
+                  textAlign: "center",
+                  paddingBottom: "0!important",
+                  paddingTop: "8rem!important",
+                  [theme.breakpoints.up("sm")]: {
+                    paddingBottom: "1.5rem!important",
+                    paddingTop: "1.5rem!important",
+                  },
+                }}
                 subheader={
-                  <Box display="flex" justifyContent="space-between">
-                    <Button
-                      variant="contained"
-                      size="small"
-                      classes={{ root: classes.buttonRootInfo }}
-                    >
+                  <Box
+                    sx={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    <Button variant="contained" size="small" color="info">
                       Connect
                     </Button>
-                    <Button
-                      variant="contained"
-                      size="small"
-                      classes={{ root: classes.buttonRootDark }}
-                    >
+                    <Button variant="contained" size="small" color="dark">
                       Message
                     </Button>
                   </Box>
@@ -396,78 +466,102 @@ function Profile() {
               ></Box>
               <Box
                 component={CardContent}
-                classes={{ root: classes.ptMd4 }}
-                paddingTop="0!important"
+                sx={{
+                  paddingTop: "0!important",
+                  [theme.breakpoints.up("sm")]: {
+                    paddingTop: "1.5rem!important",
+                  },
+                }}
               >
                 <Grid container>
                   <Grid item xs={12}>
                     <Box
-                      padding="1rem 0"
-                      justifyContent="center"
-                      display="flex"
-                      className={classes.mtMd5}
+                      sx={{
+                        padding: "1rem 0",
+                        justifyContent: "center",
+                        display: "flex",
+                        [theme.breakpoints.up("sm")]: {
+                          paddingTop: "3rem!important",
+                        },
+                      }}
                     >
                       <Box
-                        textAlign="center"
-                        marginRight="1rem"
-                        padding=".875rem"
+                        sx={{
+                          textAlign: "center",
+                          marginRight: "1rem",
+                          padding: ".875rem",
+                        }}
                       >
                         <Box
                           component="span"
-                          fontSize="1.1rem"
-                          fontWeight="700"
-                          display="block"
-                          letterSpacing=".025em"
-                          className={classes.typographyRootH6}
+                          sx={{
+                            fontSize: "1.1rem",
+                            fontWeight: "700",
+                            display: "block",
+                            letterSpacing: ".025em",
+                            textTransform: "uppercase",
+                          }}
                         >
                           22
                         </Box>
                         <Box
                           component="span"
-                          fontSize=".875rem"
-                          color={theme.palette.gray[500]}
+                          sx={{
+                            fontSize: ".875rem",
+                            color: theme.palette.gray[500],
+                          }}
                         >
                           Friends
                         </Box>
                       </Box>
                       <Box
-                        textAlign="center"
-                        marginRight="1rem"
-                        padding=".875rem"
+                        sx={{
+                          textAlign: "center",
+                          marginRight: "1rem",
+                          padding: ".875rem",
+                        }}
                       >
                         <Box
                           component="span"
-                          fontSize="1.1rem"
-                          fontWeight="700"
-                          display="block"
-                          letterSpacing=".025em"
-                          className={classes.typographyRootH6}
+                          sx={{
+                            fontSize: "1.1rem",
+                            fontWeight: "700",
+                            display: "block",
+                            letterSpacing: ".025em",
+                            textTransform: "uppercase",
+                          }}
                         >
                           10
                         </Box>
                         <Box
                           component="span"
-                          fontSize=".875rem"
-                          color={theme.palette.gray[500]}
+                          sx={{
+                            fontSize: ".875rem",
+                            color: theme.palette.gray[500],
+                          }}
                         >
                           Photos
                         </Box>
                       </Box>
-                      <Box textAlign="center" padding=".875rem">
+                      <Box sx={{ textAlign: "center", padding: ".875rem" }}>
                         <Box
                           component="span"
-                          fontSize="1.1rem"
-                          fontWeight="700"
-                          display="block"
-                          letterSpacing=".025em"
-                          className={classes.typographyRootH6}
+                          sx={{
+                            fontSize: "1.1rem",
+                            fontWeight: "700",
+                            display: "block",
+                            letterSpacing: ".025em",
+                            textTransform: "uppercase",
+                          }}
                         >
                           89
                         </Box>
                         <Box
                           component="span"
-                          fontSize=".875rem"
-                          color={theme.palette.gray[500]}
+                          sx={{
+                            fontSize: ".875rem",
+                            color: theme.palette.gray[500],
+                          }}
                         >
                           Comments
                         </Box>
@@ -475,72 +569,93 @@ function Profile() {
                     </Box>
                   </Grid>
                 </Grid>
-                <Box textAlign="center">
+                <Box sx={{ textAlign: "center" }}>
                   <Typography variant="h3">
                     Jessica Jones
-                    <Box component="span" fontWeight="300">
+                    <Box component="span" sx={{ fontWeight: "300" }}>
                       , 27
                     </Box>
                   </Typography>
                   <Box
                     component={Typography}
                     variant="h5"
-                    fontWeight="300!important"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
+                    sx={{
+                      fontWeight: "300!important",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
                   >
                     <Box
                       component={LocationOn}
-                      width="1.25rem!important"
-                      height="1.25rem!important"
+                      sx={{
+                        width: "1.25rem!important",
+                        height: "1.25rem!important",
+                      }}
                     ></Box>
                     Bucharest, Romania
                   </Box>
                   <Box
                     component={Typography}
                     variant="h5"
-                    marginTop="3rem!important"
+                    sx={{ marginTop: "3rem!important" }}
                   >
                     Solution Manager - Creative Tim Officer
                   </Box>
                   <Box
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    fontSize="1rem"
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "1rem",
+                    }}
                   >
                     <Box
                       component={School}
-                      width="1.25rem!important"
-                      height="1.25rem!important"
-                      marginRight=".5rem"
+                      sx={{
+                        width: "1.25rem!important",
+                        height: "1.25rem!important",
+                        marginRight: ".5rem",
+                      }}
                     ></Box>
                     University of Computer Science
                   </Box>
                   <Box
                     component={Divider}
-                    marginTop="1.5rem!important"
-                    marginBottom="1.5rem!important"
+                    sx={{
+                      marginTop: "1.5rem!important",
+                      marginBottom: "1.5rem!important",
+                    }}
                   ></Box>
                   <Box
                     component="p"
-                    fontWeight="300"
-                    lineHeight="1.7"
-                    marginBottom="1rem"
-                    fontSize="1rem"
+                    sx={{
+                      fontWeight: "300",
+                      lineHeight: "1.7",
+                      marginBottom: "1rem",
+                      fontSize: "1rem",
+                    }}
                   >
                     Ryan — the name taken by Melbourne-raised, Brooklyn-based
                     Nick Murphy — writes, performs and records all of his own
                     music.
                   </Box>
-                  <a
+                  <Box
+                    component="a"
                     href="#mui"
-                    className={classes.cardProfileLink}
+                    sx={{
+                      color: theme.palette.primary.main,
+                      backgroundColor: "initial",
+                      textDecoration: "none",
+                      fontSize: "1rem",
+                      "&:hover": {
+                        color: theme.palette.primary.dark,
+                      },
+                    }}
                     onClick={(e) => e.preventDefault()}
                   >
                     Show More
-                  </a>
+                  </Box>
                 </Box>
               </Box>
             </Card>

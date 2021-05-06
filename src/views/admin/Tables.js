@@ -1,9 +1,9 @@
 import React from "react";
 
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
 import { useTheme } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
+import AvatarGroup from "@material-ui/core/AvatarGroup";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -13,6 +13,7 @@ import Container from "@material-ui/core/Container";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import Pagination from "@material-ui/core/Pagination";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -21,20 +22,15 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Tooltip from "@material-ui/core/Tooltip";
 // @material-ui/lab components
-import AvatarGroup from "@material-ui/lab/AvatarGroup";
-import Pagination from "@material-ui/lab/Pagination";
 // @material-ui/icons components
 import MoreVert from "@material-ui/icons/MoreVert";
 
 // core components
 import Header from "components/Headers/Header.js";
 
-import componentStyles from "assets/theme/views/admin/tables.js";
-
-const useStyles = makeStyles(componentStyles);
+import boxShadows from "assets/theme/box-shadow.js";
 
 const Tables = () => {
-  const classes = useStyles();
   const theme = useTheme();
   const [anchorEl1, setAnchorEl1] = React.useState(null);
   const [anchorEl2, setAnchorEl2] = React.useState(null);
@@ -100,12 +96,22 @@ const Tables = () => {
       <Container
         maxWidth={false}
         component={Box}
-        marginTop="-6rem"
-        classes={{ root: classes.containerRoot }}
+        sx={{
+          marginTop: "-6rem",
+          [theme.breakpoints.up("md")]: {
+            paddingLeft: "39px",
+            paddingRight: "39px",
+          },
+        }}
       >
-        <Card classes={{ root: classes.cardRoot }}>
+        <Card
+          sx={{
+            boxShadow: boxShadows.boxShadow + "!important",
+            marginBottom: "0!important",
+          }}
+        >
           <CardHeader
-            className={classes.cardHeader}
+            sx={{ backgroundColor: "initial" }}
             title="Card Tables"
             titleTypographyProps={{
               component: Box,
@@ -116,55 +122,78 @@ const Tables = () => {
           <TableContainer>
             <Box
               component={Table}
-              alignItems="center"
-              marginBottom="0!important"
+              sx={{ alignItems: "center", marginBottom: "0!important" }}
             >
               <TableHead>
                 <TableRow>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot + " " + classes.tableCellRootHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      backgroundColor: theme.palette.gray[100],
+                      color: theme.palette.gray[600],
                     }}
                   >
                     Project
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot + " " + classes.tableCellRootHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      backgroundColor: theme.palette.gray[100],
+                      color: theme.palette.gray[600],
                     }}
                   >
                     Budget
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot + " " + classes.tableCellRootHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      backgroundColor: theme.palette.gray[100],
+                      color: theme.palette.gray[600],
                     }}
                   >
                     Status
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot + " " + classes.tableCellRootHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      backgroundColor: theme.palette.gray[100],
+                      color: theme.palette.gray[600],
                     }}
                   >
                     Users
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot + " " + classes.tableCellRootHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      backgroundColor: theme.palette.gray[100],
+                      color: theme.palette.gray[600],
                     }}
                   >
                     Completion
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot + " " + classes.tableCellRootHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      backgroundColor: theme.palette.gray[100],
+                      color: theme.palette.gray[600],
                     }}
                   ></TableCell>
                 </TableRow>
@@ -172,54 +201,85 @@ const Tables = () => {
               <TableBody>
                 <TableRow>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot +
-                        " " +
-                        classes.tableCellRootBodyHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      textTransform: "unset!important",
+                      fontSize: ".8125rem",
                     }}
                     component="th"
                     variant="head"
                     scope="row"
                   >
-                    <Box alignItems="center" display="flex">
+                    <Box sx={{ alignItems: "center", display: "flex" }}>
                       <Box
                         component={Avatar}
-                        marginRight="1rem"
+                        sx={{ marginRight: "1rem" }}
                         alt="..."
                         src={require("assets/img/theme/bootstrap.jpg").default}
                       />
-                      <Box display="flex" alignItems="flex-start">
-                        <Box fontSize=".875rem" component="span">
+                      <Box sx={{ alignItems: "flex-start", display: "flex" }}>
+                        <Box sx={{ fontSize: ".875rem" }} component="span">
                           Argon Design System
                         </Box>
                       </Box>
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
                     $2,500 USD
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box paddingTop=".35rem" paddingBottom=".35rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ paddingTop: ".35rem", paddingBottom: ".35rem" }}>
                       <Box
-                        marginRight="10px"
                         component="i"
-                        width=".375rem"
-                        height=".375rem"
-                        borderRadius="50%"
-                        display="inline-block"
-                        className={
-                          classes.verticalAlignMiddle + " " + classes.bgWarning
-                        }
+                        sx={{
+                          marginRight: "10px",
+                          width: ".375rem",
+                          height: ".375rem",
+                          borderRadius: "50%",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          backgroundColor: theme.palette.warning.main,
+                        }}
                       ></Box>
                       pending
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <AvatarGroup>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-1-800x800.jpg")
@@ -229,7 +289,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Romina Hadid" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-2-800x800.jpg")
@@ -239,7 +306,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Alexander Smith" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-3-800x800.jpg")
@@ -249,7 +323,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Jessica Doe" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-4-800x800.jpg")
@@ -259,25 +340,44 @@ const Tables = () => {
                       </Tooltip>
                     </AvatarGroup>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box display="flex" alignItems="center">
-                      <Box component="span" marginRight=".5rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Box component="span" sx={{ marginRight: ".5rem" }}>
                         60%
                       </Box>
-                      <Box width="100%">
+                      <Box sx={{ width: "100%" }}>
                         <LinearProgress
                           variant="determinate"
                           value={60}
-                          classes={{
-                            root: classes.linearProgressRoot,
-                            bar: classes.bgGradientError,
+                          sx={{
+                            height: "3px!important",
+                            width: "120px!important",
+                            margin: "0!important",
+                            "& .MuiLinearProgress-bar": {
+                              background:
+                                "linear-gradient(87deg," +
+                                theme.palette.error.main +
+                                ",#f56036)!important",
+                            },
                           }}
                         />
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell
-                    classes={{ root: classes.tableCellRoot }}
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
                     align="right"
                   >
                     <Box
@@ -286,18 +386,22 @@ const Tables = () => {
                       onClick={handleClick}
                       size="small"
                       component={Button}
-                      width="2rem!important"
-                      height="2rem!important"
-                      minWidth="2rem!important"
-                      minHeight="2rem!important"
+                      sx={{
+                        width: "2rem!important",
+                        height: "2rem!important",
+                        minWidth: "2rem!important",
+                        minHeight: "2rem!important",
+                      }}
                     >
                       <Box
                         component={MoreVert}
-                        width="1.25rem!important"
-                        height="1.25rem!important"
-                        position="relative"
-                        top="2px"
-                        color={theme.palette.gray[500]}
+                        sx={{
+                          width: "1.25rem!important",
+                          height: "1.25rem!important",
+                          position: "relative",
+                          top: "2px",
+                          color: theme.palette.gray[500],
+                        }}
                       />
                     </Box>
                     <Menu
@@ -317,54 +421,85 @@ const Tables = () => {
                 </TableRow>
                 <TableRow>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot +
-                        " " +
-                        classes.tableCellRootBodyHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      textTransform: "unset!important",
+                      fontSize: ".8125rem",
                     }}
                     component="th"
                     variant="head"
                     scope="row"
                   >
-                    <Box alignItems="center" display="flex">
+                    <Box sx={{ alignItems: "center", display: "flex" }}>
                       <Box
                         component={Avatar}
-                        marginRight="1rem"
+                        sx={{ marginRight: "1rem" }}
                         alt="..."
                         src={require("assets/img/theme/angular.jpg").default}
                       />
-                      <Box display="flex" alignItems="flex-start">
-                        <Box fontSize=".875rem" component="span">
+                      <Box sx={{ alignItems: "flex-start", display: "flex" }}>
+                        <Box sx={{ fontSize: ".875rem" }} component="span">
                           Angular Now UI Kit PRO
                         </Box>
                       </Box>
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
                     $1,800 USD
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box paddingTop=".35rem" paddingBottom=".35rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ paddingTop: ".35rem", paddingBottom: ".35rem" }}>
                       <Box
-                        marginRight="10px"
                         component="i"
-                        width=".375rem"
-                        height=".375rem"
-                        borderRadius="50%"
-                        display="inline-block"
-                        className={
-                          classes.verticalAlignMiddle + " " + classes.bgSuccess
-                        }
+                        sx={{
+                          marginRight: "10px",
+                          width: ".375rem",
+                          height: ".375rem",
+                          borderRadius: "50%",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          backgroundColor: theme.palette.success.main,
+                        }}
                       ></Box>
                       completed
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <AvatarGroup>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-1-800x800.jpg")
@@ -374,7 +509,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Romina Hadid" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-2-800x800.jpg")
@@ -384,7 +526,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Alexander Smith" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-3-800x800.jpg")
@@ -394,7 +543,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Jessica Doe" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-4-800x800.jpg")
@@ -404,25 +560,44 @@ const Tables = () => {
                       </Tooltip>
                     </AvatarGroup>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box display="flex" alignItems="center">
-                      <Box component="span" marginRight=".5rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Box component="span" sx={{ marginRight: ".5rem" }}>
                         100%
                       </Box>
-                      <Box width="100%">
+                      <Box sx={{ width: "100%" }}>
                         <LinearProgress
                           variant="determinate"
                           value={100}
-                          classes={{
-                            root: classes.linearProgressRoot,
-                            bar: classes.bgGradientSuccess,
+                          sx={{
+                            height: "3px!important",
+                            width: "120px!important",
+                            margin: "0!important",
+                            "& .MuiLinearProgress-bar": {
+                              background:
+                                "linear-gradient(87deg," +
+                                theme.palette.success.main +
+                                ",#2dcecc)!important",
+                            },
                           }}
                         />
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell
-                    classes={{ root: classes.tableCellRoot }}
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
                     align="right"
                   >
                     <Box
@@ -431,18 +606,22 @@ const Tables = () => {
                       onClick={handleClick}
                       size="small"
                       component={Button}
-                      width="2rem!important"
-                      height="2rem!important"
-                      minWidth="2rem!important"
-                      minHeight="2rem!important"
+                      sx={{
+                        width: "2rem!important",
+                        height: "2rem!important",
+                        minWidth: "2rem!important",
+                        minHeight: "2rem!important",
+                      }}
                     >
                       <Box
                         component={MoreVert}
-                        width="1.25rem!important"
-                        height="1.25rem!important"
-                        position="relative"
-                        top="2px"
-                        color={theme.palette.gray[500]}
+                        sx={{
+                          width: "1.25rem!important",
+                          height: "1.25rem!important",
+                          position: "relative",
+                          top: "2px",
+                          color: theme.palette.gray[500],
+                        }}
                       />
                     </Box>
                     <Menu
@@ -462,54 +641,85 @@ const Tables = () => {
                 </TableRow>
                 <TableRow>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot +
-                        " " +
-                        classes.tableCellRootBodyHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      textTransform: "unset!important",
+                      fontSize: ".8125rem",
                     }}
                     component="th"
                     variant="head"
                     scope="row"
                   >
-                    <Box alignItems="center" display="flex">
+                    <Box sx={{ alignItems: "center", display: "flex" }}>
                       <Box
                         component={Avatar}
-                        marginRight="1rem"
+                        sx={{ marginRight: "1rem" }}
                         alt="..."
                         src={require("assets/img/theme/sketch.jpg").default}
                       />
-                      <Box display="flex" alignItems="flex-start">
-                        <Box fontSize=".875rem" component="span">
+                      <Box sx={{ alignItems: "flex-start", display: "flex" }}>
+                        <Box sx={{ fontSize: ".875rem" }} component="span">
                           Black Dashboard
                         </Box>
                       </Box>
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
                     $3,150 USD
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box paddingTop=".35rem" paddingBottom=".35rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ paddingTop: ".35rem", paddingBottom: ".35rem" }}>
                       <Box
-                        marginRight="10px"
                         component="i"
-                        width=".375rem"
-                        height=".375rem"
-                        borderRadius="50%"
-                        display="inline-block"
-                        className={
-                          classes.verticalAlignMiddle + " " + classes.bgError
-                        }
+                        sx={{
+                          marginRight: "10px",
+                          width: ".375rem",
+                          height: ".375rem",
+                          borderRadius: "50%",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          backgroundColor: theme.palette.error.main,
+                        }}
                       ></Box>
                       delayed
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <AvatarGroup>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-1-800x800.jpg")
@@ -519,7 +729,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Romina Hadid" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-2-800x800.jpg")
@@ -529,7 +746,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Alexander Smith" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-3-800x800.jpg")
@@ -539,7 +763,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Jessica Doe" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-4-800x800.jpg")
@@ -549,25 +780,44 @@ const Tables = () => {
                       </Tooltip>
                     </AvatarGroup>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box display="flex" alignItems="center">
-                      <Box component="span" marginRight=".5rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Box component="span" sx={{ marginRight: ".5rem" }}>
                         72%
                       </Box>
-                      <Box width="100%">
+                      <Box sx={{ width: "100%" }}>
                         <LinearProgress
                           variant="determinate"
                           value={72}
-                          classes={{
-                            root: classes.linearProgressRoot,
-                            bar: classes.bgGradientError,
+                          sx={{
+                            height: "3px!important",
+                            width: "120px!important",
+                            margin: "0!important",
+                            "& .MuiLinearProgress-bar": {
+                              background:
+                                "linear-gradient(87deg," +
+                                theme.palette.error.main +
+                                ",#f56036)!important",
+                            },
                           }}
                         />
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell
-                    classes={{ root: classes.tableCellRoot }}
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
                     align="right"
                   >
                     <Box
@@ -576,18 +826,22 @@ const Tables = () => {
                       onClick={handleClick}
                       size="small"
                       component={Button}
-                      width="2rem!important"
-                      height="2rem!important"
-                      minWidth="2rem!important"
-                      minHeight="2rem!important"
+                      sx={{
+                        width: "2rem!important",
+                        height: "2rem!important",
+                        minWidth: "2rem!important",
+                        minHeight: "2rem!important",
+                      }}
                     >
                       <Box
                         component={MoreVert}
-                        width="1.25rem!important"
-                        height="1.25rem!important"
-                        position="relative"
-                        top="2px"
-                        color={theme.palette.gray[500]}
+                        sx={{
+                          width: "1.25rem!important",
+                          height: "1.25rem!important",
+                          position: "relative",
+                          top: "2px",
+                          color: theme.palette.gray[500],
+                        }}
                       />
                     </Box>
                     <Menu
@@ -607,54 +861,85 @@ const Tables = () => {
                 </TableRow>
                 <TableRow>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot +
-                        " " +
-                        classes.tableCellRootBodyHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      textTransform: "unset!important",
+                      fontSize: ".8125rem",
                     }}
                     component="th"
                     variant="head"
                     scope="row"
                   >
-                    <Box alignItems="center" display="flex">
+                    <Box sx={{ alignItems: "center", display: "flex" }}>
                       <Box
                         component={Avatar}
-                        marginRight="1rem"
+                        sx={{ marginRight: "1rem" }}
                         alt="..."
                         src={require("assets/img/theme/react.jpg").default}
                       />
-                      <Box display="flex" alignItems="flex-start">
-                        <Box fontSize=".875rem" component="span">
+                      <Box sx={{ alignItems: "flex-start", display: "flex" }}>
+                        <Box sx={{ fontSize: ".875rem" }} component="span">
                           React Material Dashboard
                         </Box>
                       </Box>
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
                     $4,400 USD
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box paddingTop=".35rem" paddingBottom=".35rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ paddingTop: ".35rem", paddingBottom: ".35rem" }}>
                       <Box
-                        marginRight="10px"
                         component="i"
-                        width=".375rem"
-                        height=".375rem"
-                        borderRadius="50%"
-                        display="inline-block"
-                        className={
-                          classes.verticalAlignMiddle + " " + classes.bgInfo
-                        }
+                        sx={{
+                          marginRight: "10px",
+                          width: ".375rem",
+                          height: ".375rem",
+                          borderRadius: "50%",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          backgroundColor: theme.palette.info.main,
+                        }}
                       ></Box>
                       on schedule
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <AvatarGroup>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-1-800x800.jpg")
@@ -664,7 +949,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Romina Hadid" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-2-800x800.jpg")
@@ -674,7 +966,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Alexander Smith" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-3-800x800.jpg")
@@ -684,7 +983,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Jessica Doe" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-4-800x800.jpg")
@@ -694,25 +1000,44 @@ const Tables = () => {
                       </Tooltip>
                     </AvatarGroup>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box display="flex" alignItems="center">
-                      <Box component="span" marginRight=".5rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Box component="span" sx={{ marginRight: ".5rem" }}>
                         90%
                       </Box>
-                      <Box width="100%">
+                      <Box sx={{ width: "100%" }}>
                         <LinearProgress
                           variant="determinate"
                           value={90}
-                          classes={{
-                            root: classes.linearProgressRoot,
-                            bar: classes.bgGradientInfo,
+                          sx={{
+                            height: "3px!important",
+                            width: "120px!important",
+                            margin: "0!important",
+                            "& .MuiLinearProgress-bar": {
+                              background:
+                                "linear-gradient(87deg," +
+                                theme.palette.info.main +
+                                ",#1171ef)!important",
+                            },
                           }}
                         />
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell
-                    classes={{ root: classes.tableCellRoot }}
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
                     align="right"
                   >
                     <Box
@@ -721,18 +1046,22 @@ const Tables = () => {
                       onClick={handleClick}
                       size="small"
                       component={Button}
-                      width="2rem!important"
-                      height="2rem!important"
-                      minWidth="2rem!important"
-                      minHeight="2rem!important"
+                      sx={{
+                        width: "2rem!important",
+                        height: "2rem!important",
+                        minWidth: "2rem!important",
+                        minHeight: "2rem!important",
+                      }}
                     >
                       <Box
                         component={MoreVert}
-                        width="1.25rem!important"
-                        height="1.25rem!important"
-                        position="relative"
-                        top="2px"
-                        color={theme.palette.gray[500]}
+                        sx={{
+                          width: "1.25rem!important",
+                          height: "1.25rem!important",
+                          position: "relative",
+                          top: "2px",
+                          color: theme.palette.gray[500],
+                        }}
                       />
                     </Box>
                     <Menu
@@ -752,58 +1081,85 @@ const Tables = () => {
                 </TableRow>
                 <TableRow>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot +
-                        " " +
-                        classes.tableCellRootBodyHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      textTransform: "unset!important",
+                      fontSize: ".8125rem",
                     }}
                     component="th"
                     variant="head"
                     scope="row"
                   >
-                    <Box alignItems="center" display="flex">
+                    <Box sx={{ alignItems: "center", display: "flex" }}>
                       <Box
                         component={Avatar}
-                        marginRight="1rem"
+                        sx={{ marginRight: "1rem" }}
                         alt="..."
                         src={require("assets/img/theme/vue.jpg").default}
                       />
-                      <Box display="flex" alignItems="flex-start">
-                        <Box fontSize=".875rem" component="span">
+                      <Box sx={{ alignItems: "flex-start", display: "flex" }}>
+                        <Box sx={{ fontSize: ".875rem" }} component="span">
                           Vue Paper UI Kit PRO
                         </Box>
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root: classes.tableCellRoot,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
                     }}
                   >
                     $2,200 USD
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box paddingTop=".35rem" paddingBottom=".35rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ paddingTop: ".35rem", paddingBottom: ".35rem" }}>
                       <Box
-                        marginRight="10px"
                         component="i"
-                        width=".375rem"
-                        height=".375rem"
-                        borderRadius="50%"
-                        display="inline-block"
-                        className={
-                          classes.verticalAlignMiddle + " " + classes.bgSuccess
-                        }
+                        sx={{
+                          marginRight: "10px",
+                          width: ".375rem",
+                          height: ".375rem",
+                          borderRadius: "50%",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          backgroundColor: theme.palette.success.main,
+                        }}
                       ></Box>
                       completed
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <AvatarGroup>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-1-800x800.jpg")
@@ -813,7 +1169,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Romina Hadid" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-2-800x800.jpg")
@@ -823,7 +1186,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Alexander Smith" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-3-800x800.jpg")
@@ -833,7 +1203,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Jessica Doe" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-4-800x800.jpg")
@@ -844,28 +1221,43 @@ const Tables = () => {
                     </AvatarGroup>
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root: classes.tableCellRoot,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
                     }}
                   >
-                    <Box display="flex" alignItems="center">
-                      <Box component="span" marginRight=".5rem">
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Box component="span" sx={{ marginRight: ".5rem" }}>
                         100%
                       </Box>
-                      <Box width="100%">
+                      <Box sx={{ width: "100%" }}>
                         <LinearProgress
                           variant="determinate"
                           value={100}
-                          classes={{
-                            root: classes.linearProgressRoot,
-                            bar: classes.bgGradientSuccess,
+                          sx={{
+                            height: "3px!important",
+                            width: "120px!important",
+                            margin: "0!important",
+                            "& .MuiLinearProgress-bar": {
+                              background:
+                                "linear-gradient(87deg," +
+                                theme.palette.success.main +
+                                ",#2dcecc)!important",
+                            },
                           }}
                         />
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell
-                    classes={{ root: classes.tableCellRoot }}
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
                     align="right"
                   >
                     <Box
@@ -874,18 +1266,22 @@ const Tables = () => {
                       onClick={handleClick}
                       size="small"
                       component={Button}
-                      width="2rem!important"
-                      height="2rem!important"
-                      minWidth="2rem!important"
-                      minHeight="2rem!important"
+                      sx={{
+                        width: "2rem!important",
+                        height: "2rem!important",
+                        minWidth: "2rem!important",
+                        minHeight: "2rem!important",
+                      }}
                     >
                       <Box
                         component={MoreVert}
-                        width="1.25rem!important"
-                        height="1.25rem!important"
-                        position="relative"
-                        top="2px"
-                        color={theme.palette.gray[500]}
+                        sx={{
+                          width: "1.25rem!important",
+                          height: "1.25rem!important",
+                          position: "relative",
+                          top: "2px",
+                          color: theme.palette.gray[500],
+                        }}
                       />
                     </Box>
                     <Menu
@@ -907,20 +1303,39 @@ const Tables = () => {
             </Box>
           </TableContainer>
           <Box
-            classes={{ root: classes.cardActionsRoot }}
             component={CardActions}
-            justifyContent="flex-end"
+            sx={{
+              justifyContent: "flex-end",
+              paddingBottom: "1.5rem!important",
+              paddingTop: "1.5rem!important",
+              borderTop: "0!important",
+            }}
           >
             <Pagination count={3} color="primary" variant="outlined" />
           </Box>
         </Card>
         <Box
           component={Card}
-          marginTop="3rem"
-          classes={{ root: classes.cardRoot + " " + classes.cardRootDark }}
+          sx={{
+            marginTop: "3rem",
+            boxShadow: boxShadows.boxShadow + "!important",
+            backgroundColor: theme.palette.dark.main,
+            marginBottom: "0!important",
+            "& *": {
+              color: theme.palette.white.main,
+            },
+            "& .MuiTableCell-root, & .MuiTable-root": {
+              color: theme.palette.white.main,
+              borderColor: theme.palette.dark.tableBorder,
+            },
+            "& .MuiTableHead-root .MuiTableCell-head": {
+              color: theme.palette.dark.tableHeadColor,
+              backgroundColor: theme.palette.dark.tableHeadBgColor,
+            },
+          }}
         >
           <CardHeader
-            className={classes.cardHeader}
+            sx={{ backgroundColor: "initial" }}
             title="Card Tables"
             titleTypographyProps={{
               component: Box,
@@ -937,49 +1352,73 @@ const Tables = () => {
               <TableHead>
                 <TableRow>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot + " " + classes.tableCellRootHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      backgroundColor: theme.palette.gray[100],
+                      color: theme.palette.gray[600],
                     }}
                   >
                     Project
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot + " " + classes.tableCellRootHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      backgroundColor: theme.palette.gray[100],
+                      color: theme.palette.gray[600],
                     }}
                   >
                     Budget
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot + " " + classes.tableCellRootHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      backgroundColor: theme.palette.gray[100],
+                      color: theme.palette.gray[600],
                     }}
                   >
                     Status
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot + " " + classes.tableCellRootHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      backgroundColor: theme.palette.gray[100],
+                      color: theme.palette.gray[600],
                     }}
                   >
                     Users
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot + " " + classes.tableCellRootHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      backgroundColor: theme.palette.gray[100],
+                      color: theme.palette.gray[600],
                     }}
                   >
                     Completion
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot + " " + classes.tableCellRootHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      backgroundColor: theme.palette.gray[100],
+                      color: theme.palette.gray[600],
                     }}
                   ></TableCell>
                 </TableRow>
@@ -987,54 +1426,85 @@ const Tables = () => {
               <TableBody>
                 <TableRow>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot +
-                        " " +
-                        classes.tableCellRootBodyHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      textTransform: "unset!important",
+                      fontSize: ".8125rem",
                     }}
                     component="th"
                     variant="head"
                     scope="row"
                   >
-                    <Box alignItems="center" display="flex">
+                    <Box sx={{ alignItems: "center", display: "flex" }}>
                       <Box
                         component={Avatar}
-                        marginRight="1rem"
+                        sx={{ marginRight: "1rem" }}
                         alt="..."
                         src={require("assets/img/theme/bootstrap.jpg").default}
                       />
-                      <Box display="flex" alignItems="flex-start">
-                        <Box fontSize=".875rem" component="span">
+                      <Box sx={{ alignItems: "flex-start", display: "flex" }}>
+                        <Box sx={{ fontSize: ".875rem" }} component="span">
                           Argon Design System
                         </Box>
                       </Box>
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
                     $2,500 USD
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box paddingTop=".35rem" paddingBottom=".35rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ paddingTop: ".35rem", paddingBottom: ".35rem" }}>
                       <Box
-                        marginRight="10px"
                         component="i"
-                        width=".375rem"
-                        height=".375rem"
-                        borderRadius="50%"
-                        display="inline-block"
-                        className={
-                          classes.verticalAlignMiddle + " " + classes.bgWarning
-                        }
+                        sx={{
+                          marginRight: "10px",
+                          width: ".375rem",
+                          height: ".375rem",
+                          borderRadius: "50%",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          backgroundColor: theme.palette.warning.main,
+                        }}
                       ></Box>
                       pending
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <AvatarGroup>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-1-800x800.jpg")
@@ -1044,7 +1514,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Romina Hadid" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-2-800x800.jpg")
@@ -1054,7 +1531,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Alexander Smith" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-3-800x800.jpg")
@@ -1064,7 +1548,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Jessica Doe" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-4-800x800.jpg")
@@ -1074,25 +1565,44 @@ const Tables = () => {
                       </Tooltip>
                     </AvatarGroup>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box display="flex" alignItems="center">
-                      <Box component="span" marginRight=".5rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Box component="span" sx={{ marginRight: ".5rem" }}>
                         60%
                       </Box>
-                      <Box width="100%">
+                      <Box sx={{ width: "100%" }}>
                         <LinearProgress
                           variant="determinate"
                           value={60}
-                          classes={{
-                            root: classes.linearProgressRoot,
-                            bar: classes.bgGradientError,
+                          sx={{
+                            height: "3px!important",
+                            width: "120px!important",
+                            margin: "0!important",
+                            "& .MuiLinearProgress-bar": {
+                              background:
+                                "linear-gradient(87deg," +
+                                theme.palette.error.main +
+                                ",#f56036)!important",
+                            },
                           }}
                         />
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell
-                    classes={{ root: classes.tableCellRoot }}
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
                     align="right"
                   >
                     <Box
@@ -1101,18 +1611,22 @@ const Tables = () => {
                       onClick={handleClick}
                       size="small"
                       component={Button}
-                      width="2rem!important"
-                      height="2rem!important"
-                      minWidth="2rem!important"
-                      minHeight="2rem!important"
+                      sx={{
+                        width: "2rem!important",
+                        height: "2rem!important",
+                        minWidth: "2rem!important",
+                        minHeight: "2rem!important",
+                      }}
                     >
                       <Box
                         component={MoreVert}
-                        width="1.25rem!important"
-                        height="1.25rem!important"
-                        position="relative"
-                        top="2px"
-                        color={theme.palette.gray[500]}
+                        sx={{
+                          width: "1.25rem!important",
+                          height: "1.25rem!important",
+                          position: "relative",
+                          top: "2px",
+                          color: theme.palette.gray[500],
+                        }}
                       />
                     </Box>
                     <Menu
@@ -1132,54 +1646,85 @@ const Tables = () => {
                 </TableRow>
                 <TableRow>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot +
-                        " " +
-                        classes.tableCellRootBodyHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      textTransform: "unset!important",
+                      fontSize: ".8125rem",
                     }}
                     component="th"
                     variant="head"
                     scope="row"
                   >
-                    <Box alignItems="center" display="flex">
+                    <Box sx={{ alignItems: "center", display: "flex" }}>
                       <Box
                         component={Avatar}
-                        marginRight="1rem"
+                        sx={{ marginRight: "1rem" }}
                         alt="..."
                         src={require("assets/img/theme/angular.jpg").default}
                       />
-                      <Box display="flex" alignItems="flex-start">
-                        <Box fontSize=".875rem" component="span">
+                      <Box sx={{ alignItems: "flex-start", display: "flex" }}>
+                        <Box sx={{ fontSize: ".875rem" }} component="span">
                           Angular Now UI Kit PRO
                         </Box>
                       </Box>
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
                     $1,800 USD
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box paddingTop=".35rem" paddingBottom=".35rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ paddingTop: ".35rem", paddingBottom: ".35rem" }}>
                       <Box
-                        marginRight="10px"
                         component="i"
-                        width=".375rem"
-                        height=".375rem"
-                        borderRadius="50%"
-                        display="inline-block"
-                        className={
-                          classes.verticalAlignMiddle + " " + classes.bgSuccess
-                        }
+                        sx={{
+                          marginRight: "10px",
+                          width: ".375rem",
+                          height: ".375rem",
+                          borderRadius: "50%",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          backgroundColor: theme.palette.success.main,
+                        }}
                       ></Box>
                       completed
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <AvatarGroup>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-1-800x800.jpg")
@@ -1189,7 +1734,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Romina Hadid" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-2-800x800.jpg")
@@ -1199,7 +1751,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Alexander Smith" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-3-800x800.jpg")
@@ -1209,7 +1768,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Jessica Doe" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-4-800x800.jpg")
@@ -1219,25 +1785,44 @@ const Tables = () => {
                       </Tooltip>
                     </AvatarGroup>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box display="flex" alignItems="center">
-                      <Box component="span" marginRight=".5rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Box component="span" sx={{ marginRight: ".5rem" }}>
                         100%
                       </Box>
-                      <Box width="100%">
+                      <Box sx={{ width: "100%" }}>
                         <LinearProgress
                           variant="determinate"
                           value={100}
-                          classes={{
-                            root: classes.linearProgressRoot,
-                            bar: classes.bgGradientSuccess,
+                          sx={{
+                            height: "3px!important",
+                            width: "120px!important",
+                            margin: "0!important",
+                            "& .MuiLinearProgress-bar": {
+                              background:
+                                "linear-gradient(87deg," +
+                                theme.palette.success.main +
+                                ",#2dcecc)!important",
+                            },
                           }}
                         />
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell
-                    classes={{ root: classes.tableCellRoot }}
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
                     align="right"
                   >
                     <Box
@@ -1246,18 +1831,22 @@ const Tables = () => {
                       onClick={handleClick}
                       size="small"
                       component={Button}
-                      width="2rem!important"
-                      height="2rem!important"
-                      minWidth="2rem!important"
-                      minHeight="2rem!important"
+                      sx={{
+                        width: "2rem!important",
+                        height: "2rem!important",
+                        minWidth: "2rem!important",
+                        minHeight: "2rem!important",
+                      }}
                     >
                       <Box
                         component={MoreVert}
-                        width="1.25rem!important"
-                        height="1.25rem!important"
-                        position="relative"
-                        top="2px"
-                        color={theme.palette.gray[500]}
+                        sx={{
+                          width: "1.25rem!important",
+                          height: "1.25rem!important",
+                          position: "relative",
+                          top: "2px",
+                          color: theme.palette.gray[500],
+                        }}
                       />
                     </Box>
                     <Menu
@@ -1277,54 +1866,85 @@ const Tables = () => {
                 </TableRow>
                 <TableRow>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot +
-                        " " +
-                        classes.tableCellRootBodyHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      textTransform: "unset!important",
+                      fontSize: ".8125rem",
                     }}
                     component="th"
                     variant="head"
                     scope="row"
                   >
-                    <Box alignItems="center" display="flex">
+                    <Box sx={{ alignItems: "center", display: "flex" }}>
                       <Box
                         component={Avatar}
-                        marginRight="1rem"
+                        sx={{ marginRight: "1rem" }}
                         alt="..."
                         src={require("assets/img/theme/sketch.jpg").default}
                       />
-                      <Box display="flex" alignItems="flex-start">
-                        <Box fontSize=".875rem" component="span">
+                      <Box sx={{ alignItems: "flex-start", display: "flex" }}>
+                        <Box sx={{ fontSize: ".875rem" }} component="span">
                           Black Dashboard
                         </Box>
                       </Box>
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
                     $3,150 USD
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box paddingTop=".35rem" paddingBottom=".35rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ paddingTop: ".35rem", paddingBottom: ".35rem" }}>
                       <Box
-                        marginRight="10px"
                         component="i"
-                        width=".375rem"
-                        height=".375rem"
-                        borderRadius="50%"
-                        display="inline-block"
-                        className={
-                          classes.verticalAlignMiddle + " " + classes.bgError
-                        }
+                        sx={{
+                          marginRight: "10px",
+                          width: ".375rem",
+                          height: ".375rem",
+                          borderRadius: "50%",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          backgroundColor: theme.palette.error.main,
+                        }}
                       ></Box>
                       delayed
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <AvatarGroup>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-1-800x800.jpg")
@@ -1334,7 +1954,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Romina Hadid" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-2-800x800.jpg")
@@ -1344,7 +1971,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Alexander Smith" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-3-800x800.jpg")
@@ -1354,7 +1988,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Jessica Doe" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-4-800x800.jpg")
@@ -1364,25 +2005,44 @@ const Tables = () => {
                       </Tooltip>
                     </AvatarGroup>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box display="flex" alignItems="center">
-                      <Box component="span" marginRight=".5rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Box component="span" sx={{ marginRight: ".5rem" }}>
                         72%
                       </Box>
-                      <Box width="100%">
+                      <Box sx={{ width: "100%" }}>
                         <LinearProgress
                           variant="determinate"
                           value={72}
-                          classes={{
-                            root: classes.linearProgressRoot,
-                            bar: classes.bgGradientError,
+                          sx={{
+                            height: "3px!important",
+                            width: "120px!important",
+                            margin: "0!important",
+                            "& .MuiLinearProgress-bar": {
+                              background:
+                                "linear-gradient(87deg," +
+                                theme.palette.error.main +
+                                ",#f56036)!important",
+                            },
                           }}
                         />
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell
-                    classes={{ root: classes.tableCellRoot }}
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
                     align="right"
                   >
                     <Box
@@ -1391,18 +2051,22 @@ const Tables = () => {
                       onClick={handleClick}
                       size="small"
                       component={Button}
-                      width="2rem!important"
-                      height="2rem!important"
-                      minWidth="2rem!important"
-                      minHeight="2rem!important"
+                      sx={{
+                        width: "2rem!important",
+                        height: "2rem!important",
+                        minWidth: "2rem!important",
+                        minHeight: "2rem!important",
+                      }}
                     >
                       <Box
                         component={MoreVert}
-                        width="1.25rem!important"
-                        height="1.25rem!important"
-                        position="relative"
-                        top="2px"
-                        color={theme.palette.gray[500]}
+                        sx={{
+                          width: "1.25rem!important",
+                          height: "1.25rem!important",
+                          position: "relative",
+                          top: "2px",
+                          color: theme.palette.gray[500],
+                        }}
                       />
                     </Box>
                     <Menu
@@ -1422,54 +2086,85 @@ const Tables = () => {
                 </TableRow>
                 <TableRow>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot +
-                        " " +
-                        classes.tableCellRootBodyHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      textTransform: "unset!important",
+                      fontSize: ".8125rem",
                     }}
                     component="th"
                     variant="head"
                     scope="row"
                   >
-                    <Box alignItems="center" display="flex">
+                    <Box sx={{ alignItems: "center", display: "flex" }}>
                       <Box
                         component={Avatar}
-                        marginRight="1rem"
+                        sx={{ marginRight: "1rem" }}
                         alt="..."
                         src={require("assets/img/theme/react.jpg").default}
                       />
-                      <Box display="flex" alignItems="flex-start">
-                        <Box fontSize=".875rem" component="span">
+                      <Box sx={{ alignItems: "flex-start", display: "flex" }}>
+                        <Box sx={{ fontSize: ".875rem" }} component="span">
                           React Material Dashboard
                         </Box>
                       </Box>
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
                     $4,400 USD
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box paddingTop=".35rem" paddingBottom=".35rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ paddingTop: ".35rem", paddingBottom: ".35rem" }}>
                       <Box
-                        marginRight="10px"
                         component="i"
-                        width=".375rem"
-                        height=".375rem"
-                        borderRadius="50%"
-                        display="inline-block"
-                        className={
-                          classes.verticalAlignMiddle + " " + classes.bgInfo
-                        }
+                        sx={{
+                          marginRight: "10px",
+                          width: ".375rem",
+                          height: ".375rem",
+                          borderRadius: "50%",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          backgroundColor: theme.palette.info.main,
+                        }}
                       ></Box>
                       on schedule
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <AvatarGroup>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-1-800x800.jpg")
@@ -1479,7 +2174,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Romina Hadid" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-2-800x800.jpg")
@@ -1489,7 +2191,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Alexander Smith" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-3-800x800.jpg")
@@ -1499,7 +2208,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Jessica Doe" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-4-800x800.jpg")
@@ -1509,25 +2225,44 @@ const Tables = () => {
                       </Tooltip>
                     </AvatarGroup>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box display="flex" alignItems="center">
-                      <Box component="span" marginRight=".5rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Box component="span" sx={{ marginRight: ".5rem" }}>
                         90%
                       </Box>
-                      <Box width="100%">
+                      <Box sx={{ width: "100%" }}>
                         <LinearProgress
                           variant="determinate"
                           value={90}
-                          classes={{
-                            root: classes.linearProgressRoot,
-                            bar: classes.bgGradientInfo,
+                          sx={{
+                            height: "3px!important",
+                            width: "120px!important",
+                            margin: "0!important",
+                            "& .MuiLinearProgress-bar": {
+                              background:
+                                "linear-gradient(87deg," +
+                                theme.palette.info.main +
+                                ",#1171ef)!important",
+                            },
                           }}
                         />
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell
-                    classes={{ root: classes.tableCellRoot }}
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
                     align="right"
                   >
                     <Box
@@ -1536,18 +2271,22 @@ const Tables = () => {
                       onClick={handleClick}
                       size="small"
                       component={Button}
-                      width="2rem!important"
-                      height="2rem!important"
-                      minWidth="2rem!important"
-                      minHeight="2rem!important"
+                      sx={{
+                        width: "2rem!important",
+                        height: "2rem!important",
+                        minWidth: "2rem!important",
+                        minHeight: "2rem!important",
+                      }}
                     >
                       <Box
                         component={MoreVert}
-                        width="1.25rem!important"
-                        height="1.25rem!important"
-                        position="relative"
-                        top="2px"
-                        color={theme.palette.gray[500]}
+                        sx={{
+                          width: "1.25rem!important",
+                          height: "1.25rem!important",
+                          position: "relative",
+                          top: "2px",
+                          color: theme.palette.gray[500],
+                        }}
                       />
                     </Box>
                     <Menu
@@ -1567,58 +2306,85 @@ const Tables = () => {
                 </TableRow>
                 <TableRow>
                   <TableCell
-                    classes={{
-                      root:
-                        classes.tableCellRoot +
-                        " " +
-                        classes.tableCellRootBodyHead,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                      textTransform: "unset!important",
+                      fontSize: ".8125rem",
                     }}
                     component="th"
                     variant="head"
                     scope="row"
                   >
-                    <Box alignItems="center" display="flex">
+                    <Box sx={{ alignItems: "center", display: "flex" }}>
                       <Box
                         component={Avatar}
-                        marginRight="1rem"
+                        sx={{ marginRight: "1rem" }}
                         alt="..."
                         src={require("assets/img/theme/vue.jpg").default}
                       />
-                      <Box display="flex" alignItems="flex-start">
-                        <Box fontSize=".875rem" component="span">
+                      <Box sx={{ alignItems: "flex-start", display: "flex" }}>
+                        <Box sx={{ fontSize: ".875rem" }} component="span">
                           Vue Paper UI Kit PRO
                         </Box>
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root: classes.tableCellRoot,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
                     }}
                   >
                     $2,200 USD
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <Box paddingTop=".35rem" paddingBottom=".35rem">
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <Box sx={{ paddingTop: ".35rem", paddingBottom: ".35rem" }}>
                       <Box
-                        marginRight="10px"
                         component="i"
-                        width=".375rem"
-                        height=".375rem"
-                        borderRadius="50%"
-                        display="inline-block"
-                        className={
-                          classes.verticalAlignMiddle + " " + classes.bgSuccess
-                        }
+                        sx={{
+                          marginRight: "10px",
+                          width: ".375rem",
+                          height: ".375rem",
+                          borderRadius: "50%",
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          backgroundColor: theme.palette.success.main,
+                        }}
                       ></Box>
                       completed
                     </Box>
                   </TableCell>
-                  <TableCell classes={{ root: classes.tableCellRoot }}>
-                    <AvatarGroup>
+                  <TableCell
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
+                  >
+                    <AvatarGroup sx={{ justifyContent: "flex-end" }}>
                       <Tooltip title="Ryan Tompson" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-1-800x800.jpg")
@@ -1628,7 +2394,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Romina Hadid" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-2-800x800.jpg")
@@ -1638,7 +2411,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Alexander Smith" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-3-800x800.jpg")
@@ -1648,7 +2428,14 @@ const Tables = () => {
                       </Tooltip>
                       <Tooltip title="Jessica Doe" placement="top">
                         <Avatar
-                          classes={{ root: classes.avatarRoot }}
+                          sx={{
+                            width: "36px",
+                            height: "36px",
+                            fontSize: ".875rem",
+                            marginLeft: "-.75rem",
+                            boxSizing: "border-box!important",
+                            "&:hover": { zIndex: "5!important" },
+                          }}
                           alt="..."
                           src={
                             require("assets/img/theme/team-4-800x800.jpg")
@@ -1659,28 +2446,43 @@ const Tables = () => {
                     </AvatarGroup>
                   </TableCell>
                   <TableCell
-                    classes={{
-                      root: classes.tableCellRoot,
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
                     }}
                   >
-                    <Box display="flex" alignItems="center">
-                      <Box component="span" marginRight=".5rem">
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <Box component="span" sx={{ marginRight: ".5rem" }}>
                         100%
                       </Box>
-                      <Box width="100%">
+                      <Box sx={{ width: "100%" }}>
                         <LinearProgress
                           variant="determinate"
                           value={100}
-                          classes={{
-                            root: classes.linearProgressRoot,
-                            bar: classes.bgGradientSuccess,
+                          sx={{
+                            height: "3px!important",
+                            width: "120px!important",
+                            margin: "0!important",
+                            "& .MuiLinearProgress-bar": {
+                              background:
+                                "linear-gradient(87deg," +
+                                theme.palette.success.main +
+                                ",#2dcecc)!important",
+                            },
                           }}
                         />
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell
-                    classes={{ root: classes.tableCellRoot }}
+                    sx={{
+                      verticalAlign: "middle",
+                      paddingLeft: "1.5rem",
+                      paddingRight: "1.5rem",
+                      borderTop: "0",
+                    }}
                     align="right"
                   >
                     <Box
@@ -1689,18 +2491,22 @@ const Tables = () => {
                       onClick={handleClick}
                       size="small"
                       component={Button}
-                      width="2rem!important"
-                      height="2rem!important"
-                      minWidth="2rem!important"
-                      minHeight="2rem!important"
+                      sx={{
+                        width: "2rem!important",
+                        height: "2rem!important",
+                        minWidth: "2rem!important",
+                        minHeight: "2rem!important",
+                      }}
                     >
                       <Box
                         component={MoreVert}
-                        width="1.25rem!important"
-                        height="1.25rem!important"
-                        position="relative"
-                        top="2px"
-                        color={theme.palette.gray[500]}
+                        sx={{
+                          width: "1.25rem!important",
+                          height: "1.25rem!important",
+                          position: "relative",
+                          top: "2px",
+                          color: theme.palette.gray[500],
+                        }}
                       />
                     </Box>
                     <Menu
