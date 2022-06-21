@@ -8,7 +8,7 @@
 
 - Migration from Material-UI to MUI v5.
 - Migration from JSS to `styled` api, emotion and `sx` prop.
-- Product folders and files structured are updated: [README](https://github.com/creativetimofficial/ct-argon-dashboard-material-ui/blob/main/README.md)
+- Product folders and files structured are updated: [README](https://github.com/creativetimofficial/argon-dashboard-material-ui/blob/main/README.md)
 - New components are added
 - New example blocks are added
 - Components are Example Blocks are totally customizable and reusable now
@@ -23,82 +23,42 @@ All from previous version
 - ArgonAlert
 - ArgonAvatar
 - ArgonBadge
-- ArgonBadgeDot
 - ArgonBox
 - ArgonButton
-- ArgonDatePicker
-- ArgonDropzone
-- ArgonEditor
 - ArgonInput
 - ArgonPagination
 - ArgonProgress
-- ArgonSelect
-- ArgonSnackbar
-- ArgonSocialButton
-- ArgonTagInput
 - ArgonTypography
 - Breadcrumbs
-- Calendar
 - Cards
-  - AnnouncementCard
-  - BackgroundCard
   - BlogCards
-    - BackgroundBlogCard
     - DefaultBlogCard
-    - SimpleBlogCard
     - TransparentBlogCard
-    - WavedBlogCard
-  - ControllerCard
   - CounterCards
-    - DefaultCounterCard
     - OutlinedCounterCard
-  - EventCard
   - InfoCards
     - DefaultInfoCard
-    - MiniInfoCard
     - ProfileInfoCard
-    - TransparentInfoCard
   - MasterCard
   - PlaceholderCard
   - PricingCards
     - DefaultPricingCard
-    - OutlinedPricingCard
-    - WavedPricingCard
-  - ProfileCards
-    - ComplexProfileCard
-    - DefaultProfileCard
-    - SimpleProfileCard
   - ProjectCards
-    - ComplexProjectCard
     - DefaultProjectCard
   - StatisticsCards
-    - AnimatedStatisticsCard
-    - ComplexStatisticsCard
-    - DefaultStatisticsCard
     - DetailedStatisticsCard
     - MiniStatisticsCard
-  - TeamCards
-    - ComplexTeamCard
-    - DefaultTeamCard
-    - TeamProfileCard
-  - WeatherCard
 - Charts
   - BarCharts
     - HorizontalBarChart
     - VerticalBarChart
     - ReportsBarChart
-    - ThinBarChart
   - BubbleChart
   - DoughnutCharts
-    - ComplexReportsDoughnutChart
     - DefaultDoughnutChart
-    - ProgressDoughnutChart
-    - ReportsDoughnutChart
   - LineCharts
     - DefaultLineChart
     - GradientLineChart
-    - ProgressLineChart
-    - MiniGradientLineChart
   - MixedChart
   - PieChart
   - PolarChart
@@ -106,7 +66,6 @@ All from previous version
 - Configurator
 - Footer
 - Items
-  - DefaultItem
   - NotificationItem
 - LayoutContainers
   - DashboardLayout
@@ -114,13 +73,11 @@ All from previous version
 - Lists
   - CategoriesList
   - ProfilesList
-  - RankingsList
 - Navbars
   - DashboardNavbar
   - DefaultNavbar
 - Sidenav
 - Tables
-  - DataTable
   - SalesTable
   - Table
 - Timeline
@@ -132,27 +89,12 @@ All from previous version
 ```
 @fortawesome/fontawesome-free
 @material-ui/core
-@material-ui/data-grid
 @material-ui/icons
 @material-ui/lab
-bootstrap
-clsx
-jss-rtl
-list.js
-moment
 node-sass
-node-sass-package-importer
 nouislider
-quill
-react-bootstrap-sweetalert
-react-bootstrap-table-next
-react-bootstrap-table2-paginator
-react-bootstrap-table2-toolkit
 react-copy-to-clipboard
 react-datetime
-react-jvectormap
-react-perfect-scrollbar
-react-to-print
 ```
 
 ### Added dependencies
@@ -161,26 +103,10 @@ react-to-print
 @mui/material
 @mui/icons-material
 @mui/styled-engine
-@asseinfo/react-kanban
 @emotion/cache
-@fullcalendar/react
-@fullcalendar/timegrid
-@pathofdev/react-tag-input
-@react-leaflet/core
 chroma-js
-flatpickr
-formik
-react-flatpickr
-html-react-parser
-leaflet
-react-circular-slider-svg
 react-countup
-react-images-viewer
 react-github-btn
-react-leaflet
-react-quill
-react-select
-react-table
 stylis
 stylis-plugin-rtl
 uuid
@@ -194,10 +120,7 @@ swiper
 ```
 "@emotion/react":               "11.1.5"  ->  "11.9.0"
 "@emotion/styled":              "11.1.5"  ->  "11.8.1"
-"@fullcalendar/daygrid":        "5.5.0  ->  "5.11.0"
-"@fullcalendar/interaction":    "5.5.0  ->  "5.11.0"
 "chart.js":                     "2.9.4  ->  "3.4.1"
-"dropzone":                     "5.7.6  ->  "5.9.3"
 "prop-types":                   "15.7.2"  ->  "15.8.1"
 "react":                        "17.0.1"  ->  "18.1.0"
 "react-chartjs-2":              "2.11.1"  ->  "3.0.4"

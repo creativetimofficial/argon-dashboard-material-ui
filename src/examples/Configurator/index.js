@@ -226,11 +226,11 @@ function Configurator() {
         </ArgonBox>
         <ArgonBox display="flex" justifyContent="center">
           <GitHubButton
-            href="https://github.com/creativetimofficial/ct-argon-dashboard-material-ui"
+            href="https://github.com/creativetimofficial/argon-dashboard-material-ui"
             data-icon="octicon-star"
             data-size="large"
             data-show-count="true"
-            aria-label="Star creativetimofficial/ct-argon-dashboard-material-uit on GitHub"
+            aria-label="Star creativetimofficial/argon-dashboard-material-uit on GitHub"
           >
             Star
           </GitHubButton>
