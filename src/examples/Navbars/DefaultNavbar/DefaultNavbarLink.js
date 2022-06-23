@@ -3,7 +3,7 @@
 * Material Dashboard 2 PRO React - v2.1.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-pro-react
+* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
 * Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com

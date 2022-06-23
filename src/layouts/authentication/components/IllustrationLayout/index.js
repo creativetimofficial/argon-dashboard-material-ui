@@ -33,7 +33,7 @@ function IllustrationLayout({ color, header, title, description, button, illustr
       <DefaultNavbar
         action={{
           type: "external",
-          route: "https://creative-tim.com/product/argon-dashboard-pro-react",
+          route: "https://creative-tim.com/product/argon-dashboard-material-ui",
           label: "Free Download",
           ...button,
         }}
