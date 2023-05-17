@@ -1,5 +1,10 @@
 # Change Log
 
+## [3.0.1] 2023-05-17
+
+- Update dependencies
+- Fix installation issue
+
 ## [3.0.0] 2022-06-24
 
 ### Bug fixing
