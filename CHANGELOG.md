@@ -1,9 +1,10 @@
 # Change Log
 
-## [3.0.1] 2023-05-17
+## [3.0.1] 2023-05-30
 
 - Update dependencies
 - Fix installation issue
+- Fix sidenav color issue
 
 ## [3.0.0] 2022-06-24
 
